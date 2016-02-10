@@ -13,6 +13,9 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Math_App", "Math-App\Math_A
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Math-App\Math_App\Math_App.projitems*{1ab4184e-681e-47be-a105-ecbdd829afd7}*SharedItemsImports = 4
+		Math-App\Math_App\Math_App.projitems*{e099b178-eeaa-4509-a104-cc77134b7633}*SharedItemsImports = 4
+		Math-App\Math_App\Math_App.projitems*{48e8f485-94e8-4a3c-a9c1-fc647bc9eaa6}*SharedItemsImports = 4
 		Math-App\Math_App\Math_App.projitems*{aaf54c2d-b5d8-49d8-a625-279b6bff2305}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
