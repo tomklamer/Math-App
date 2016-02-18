@@ -39,4 +39,3 @@ namespace Math_App.Strategies
     }
 }
 
-}

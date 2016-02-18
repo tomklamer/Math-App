@@ -61,7 +61,7 @@ namespace Math_App.Brackets
                    equationConverted[i] == '*' ||
                    equationConverted[i] == '/')
                 {
-                    Console.WriteLine("Got Sign!");
+                    //Console.WriteLine("Got Sign!");
                     return equationConverted[i];
                 }
                 i++;
@@ -87,9 +87,9 @@ namespace Math_App.Brackets
                             sb[i] = '\0';
                             sb[j] = '\0';
                             this.equationConverted = sb.ToString();
-                            Console.WriteLine("Found a bracket!");
-                            Console.WriteLine(i);
-                            Console.WriteLine(j);
+                            //Console.WriteLine("Found a bracket!");
+                            //Console.WriteLine(i);
+                            //Console.WriteLine(j);
                             break;
                         }
                     }
@@ -123,9 +123,9 @@ namespace Math_App.Brackets
                                 {
                                     //indexer += 1;
                                     usedBrackets.Add(openCursorBis + 1);
-                                    Console.WriteLine("Found a bracket from {0} to {1}", openCursorBis, closeCursor);
-                                    Console.WriteLine(getEquationFragment(openCursorBis, closeCursor));
-                                    Console.WriteLine(indexer);
+                                    //Console.WriteLine("Found a bracket from {0} to {1}", openCursorBis, closeCursor);
+                                    //Console.WriteLine(getEquationFragment(openCursorBis, closeCursor));
+                                    //Console.WriteLine(indexer);
                                     list.Add(getEquationFragment(openCursorBis, closeCursor));
                                     break;
                                 }
@@ -140,7 +140,7 @@ namespace Math_App.Brackets
         // Check if the order is correct  >>>>>>>> buitenste haakjes fixen
         public bool isCorrectOrder(string a)
         {
-            ArrayList list = new ArrayList();
+            List<string> list = new List<string>();
             var regexItem = new Regex("^[(-) ]*$");
 
             foreach (char c in a)
@@ -184,7 +184,7 @@ namespace Math_App.Brackets
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Title <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         // check if everything is closed
-        public bool checkOrder(ArrayList lijst, int a)
+        public bool checkOrder(List<string> lijst, int a)
         {
             bool value = false;
             string tempChar = "x";

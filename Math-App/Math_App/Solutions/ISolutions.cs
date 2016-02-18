@@ -72,4 +72,3 @@ namespace Math_App.NewFolder
     }
 }
 
-}
