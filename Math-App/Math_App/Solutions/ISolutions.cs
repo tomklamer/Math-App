@@ -1,72 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Math_App.Strategies;
 
 namespace Math_App.NewFolder
 {
     public interface ISolutions
     {
-        List<Solution> getSolutions();
-        void addSolution(Solution s);
+        List<Solutions> getSolutions();
+        void addSolution(Solutions s);
     }
 
     public class Multiply : ISolutions
     {
-        private List<Solution> solutions = new List<Solution>();
+        private List<Solutions> solution = new List<Solutions>();
 
-        public List<Solution> getSolutions()
+        public List<Solutions> getSolutions()
         {
-            return this.solutions;
+            return this.solution;
         }
 
-        public void addSolution(Solution s)
+        public void addSolution(Solutions s)
         {
-
+            this.solution.Add(s);
         }
     }
 
     public class Devide : ISolutions
     {
-        private List<Solution> solutions = new List<Solution>();
+        private List<Solutions> solution = new List<Solutions>();
 
-        public List<Solution> getSolutions()
+        public List<Solutions> getSolutions()
         {
-            return this.solutions;
+            return this.solution;
         }
 
-        public void addSolution(Solution s)
+        public void addSolution(Solutions s)
         {
-            this.solutions.Add(s);
+            this.solution.Add(s);
         }
     }
 
     public class Minus : ISolutions
     {
-        private List<Solution> solutions = new List<Solution>();
+        private List<Solutions> solution = new List<Solutions>();
 
-        public List<Solution> getSolutions()
+        public List<Solutions> getSolutions()
         {
-            return this.solutions;
+            return this.solution;
         }
 
-        public void addSolution(Solution s)
+        public void addSolution(Solutions s)
         {
-            this.solutions.Add(s);
+            this.solution.Add(s);
         }
     }
 
     public class Fracture : ISolutions
     {
-        private List<Solution> solutions = new List<Solution>();
+        private List<Solutions> solution = new List<Solutions>();
 
-        public List<Solution> getSolutions()
+        public List<Solutions> getSolutions()
         {
-            return this.solutions;
+            return this.solution;
         }
 
-        public void addSolution(Solution s)
+        public void addSolution(Solutions s)
         {
-            this.solutions.Add(s);
+            this.solution.Add(s);
         }
     }
 }
