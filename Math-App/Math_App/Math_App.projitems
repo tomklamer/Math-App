@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -9,6 +9,10 @@
     <Import_RootNamespace>Math_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Brackets\Brackets.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Calculator\CalculationUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\ISolutions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Strategies\Solutions.cs" />
   </ItemGroup>
 </Project>
