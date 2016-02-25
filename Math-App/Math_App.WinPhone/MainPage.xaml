@@ -10,7 +10,7 @@
 
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,-26.667,0,-0.333" Width="400" Height="667" Background="Snow">
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="96" Width="400" Background="#FFFFA235">
-            <TextBox x:Name="RekenApp" Margin="9.167,48.167,152.167,-1" TextWrapping="Wrap" Text="RekenApp" VerticalAlignment="Stretch" TextChanged="RekenApp_TextChanged" Background="#FFFFA235" BorderBrush="Transparent" FontSize="26.667"/>
+            <TextBox x:Name="RekenApp" Margin="9.167,48.167,152.167,-1" TextWrapping="Wrap" Text="RekenApp" VerticalAlignment="Stretch" Background="#FFFFA235" BorderBrush="Transparent" FontSize="26.667"/>
         </Border>
         
         <Border BorderBrush="White" BorderThickness="0" Height="210">
@@ -19,10 +19,10 @@
                 <TextBox x:Name="calculation" 
         			Text="Hello!"
         			VerticalAlignment="Top"
-        			Foreground="Gray" BorderThickness="0,0,0,2.5" BorderBrush="Black" Background="White" Margin="18,10,14,-44" TextAlignment="Center"/>
+        			Foreground="Gray" BorderThickness="0,0,0,2.5" BorderBrush="Black" Background="White" Margin="18,10,14,-44" TextAlignment="Center" IsReadOnly="True"/>
 
                 <Button 
-        			Click="Button_Click" 
+        
         			BorderBrush="Transparent"
         			HorizontalAlignment="Stretch" 
         			VerticalAlignment="Stretch"
@@ -30,7 +30,7 @@
         			Margin="18,-13,298,-47" Grid.Row="0" Background="Black" Width="60" Height="60"/>
                 
                 <Button 
-        			Click="Button_Click"
+   
         			Width="60" 
         			BorderBrush="Transparent"
         			HorizontalAlignment="Right" 
