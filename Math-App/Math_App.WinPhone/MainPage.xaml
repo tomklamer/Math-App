@@ -19,18 +19,16 @@
                 <TextBox x:Name="calculation" 
         			Text="Hello!"
         			VerticalAlignment="Top"
-        			Foreground="Gray" BorderThickness="0,0,0,2.5" BorderBrush="Black" Background="White" Margin="18,10,14,-44" TextAlignment="Center" IsReadOnly="True"/>
+        			Foreground="Gray" BorderThickness="0,0,0,2.5" BorderBrush="Black" Background="White" Margin="18,10,14,-44" TextAlignment="Center" IsReadOnly="True" SelectionHighlightColor="Black"/>
 
-                <Button 
-        
+                <Button         
         			BorderBrush="Transparent"
         			HorizontalAlignment="Stretch" 
         			VerticalAlignment="Stretch"
         			MinWidth="0"
         			Margin="18,-13,298,-47" Grid.Row="0" Background="Black" Width="60" Height="60"/>
                 
-                <Button 
-   
+                <Button    
         			Width="60" 
         			BorderBrush="Transparent"
         			HorizontalAlignment="Right" 
@@ -74,5 +72,6 @@
             <Button MinWidth="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.Column="2" Background="Black" Margin="3,51.833,87,-1" Width="85" Height="85" Grid.ColumnSpan="2" Grid.RowSpan="2" Content=")" Foreground="#FFFFA235"/>
             <Button MinWidth="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.Column="3" Background="Black" Width="85" Height="85" Margin="2.5,51.833,0,-1" Grid.RowSpan="2" Content="+" Foreground="#FFFFA235"/>
         </Grid>
+        
     </StackPanel>
 </Page>
