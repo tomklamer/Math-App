@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Math_App.Models;
 
 namespace Math_App.Droid
 {
@@ -16,9 +17,6 @@ namespace Math_App.Droid
     public class SecondPage : Activity
 
     {
-        string[] range;
-        ArrayAdapter adapter;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -26,22 +24,41 @@ namespace Math_App.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.SecondPage);
 
+            // Construct the data source
+            List<Equation> arrayOfUsers = new List<Equation>();
+            // Create the adapter to convert the array to views
+            EquationsAdapter adapter = new EquationsAdapter(this, arrayOfUsers);
+            // Attach the adapter to a ListView
             ListView listView = (ListView)FindViewById(Resource.Id.listView1);
+            listView.Adapter = adapter;
 
-            range = new string[]{
-              "mono",
-              "monodroid",
-              "monotouch",
-              "monorail",
-              "monodevelop",
-              "monotone",
-              "monopoly",
-              "monomodal",
-              "mononucleosis"
+            //Add item to adapter
+            Equation newUser = new Equation("Nathan", "San Diego");
+            Equation newUser1 = new Equation("Nathan", "San Diego");
+            Equation newUser2 = new Equation("Nathan", "San Diego");
+            Equation newUser3 = new Equation("Nathan", "San Diego");
+            Equation newUser4 = new Equation("Nathan", "San Diego");
+            Equation newUser5 = new Equation("Nathan", "San Diego");
+            Equation newUser6 = new Equation("Nathan", "San Diego");
+            Equation newUser7 = new Equation("Nathan", "San Diego");
+            adapter.Add(newUser);
+            adapter.Add(newUser1);
+            adapter.Add(newUser2);
+            adapter.Add(newUser3);
+            adapter.Add(newUser4);
+            adapter.Add(newUser5);
+            adapter.Add(newUser6);
+            adapter.Add(newUser7);
+
+            TextView textView = (TextView)FindViewById(Resource.Id.textView1);
+            listView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
+            {
+                string selectedFromList = listView.GetItemAtPosition(e.Position).ToString();
+
+                Console.WriteLine(selectedFromList);
             };
 
-            adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, range);
-            listView.Adapter = adapter;
+            //adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, list);
         }
     }           
 }

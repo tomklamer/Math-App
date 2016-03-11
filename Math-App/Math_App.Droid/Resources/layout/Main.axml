@@ -5,218 +5,230 @@
     android:layout_height="fill_parent"
     android:background="@android:color/white">
     <TextView
-        android:text="Text"
+        android:text=""
         android:id="@+id/textView1"
         android:textColor="@android:color/black"
         android:gravity="center"
         android:ems="10"
         android:textSize="20dp"
         android:background="@android:drawable/spinner_dropdown_background"
-        android:layout_width="355.5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90.0dp"
-        android:layout_marginLeft="12.0dp"
-        android:layout_marginRight="203.5dp" />
+        android:layout_marginTop="117.5dp"
+        android:layout_marginLeft="25.0dp"
+        android:layout_marginRight="25.0dp" />
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="77.0dp">
+        android:layout_marginTop="40.0dp">
         <TableLayout
             android:id="@+id/tableId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            android:layout_margin="20dp">
+            <TableRow
+                android:id="@+id/tableRow1">
+                <Button
+                    android:id="@+id/ShowMe"
+                    android:text="Show me!"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:background="@android:color/black"
+                    android:gravity="center"
+                    android:layout_span="2"
+                    android:clickable="true"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:textSize="20dp" />
+                <Button
+                    android:id="@+id/Delete"
+                    android:text="text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:layout_margin="4dp"
+                    android:textSize="20dp" />
+                <Button
+                    android:id="@+id/Revert"
+                    android:text="text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:layout_margin="4dp"
+                    android:textSize="20dp" />
+            </TableRow>
             <TableRow>
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/Seven"
                     android:text="7"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
                     android:background="@android:color/black"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:clickable="true" />
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum8Id"
+                    android:id="@+id/Eight"
                     android:text="8"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@android:color/black"
+                    android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:layout_margin="4dp" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum9Id"
+                    android:id="@+id/Nine"
                     android:text="9"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@android:color/black"
+                    android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:layout_margin="4dp" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnDivId"
-                    android:text=""
+                    android:id="@+id/Devide"
+                    android:text="÷"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@android:color/black"
+                    android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:layout_margin="4dp" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
             </TableRow>
             <TableRow>
                 <Button
-                    android:id="@+id/btnNum4Id"
+                    android:id="@+id/Four"
                     android:text="4"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum5Id"
+                    android:id="@+id/Five"
                     android:text="5"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum6Id"
+                    android:id="@+id/Six"
                     android:text="6"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnMulId"
-                    android:text=""
+                    android:id="@+id/Multiply"
+                    android:text="x"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
             </TableRow>
             <TableRow>
                 <Button
-                    android:id="@+id/btnNum1Id"
+                    android:id="@+id/One"
                     android:text="1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum2Id"
+                    android:id="@+id/Two"
                     android:text="2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnNum3Id"
+                    android:id="@+id/Three"
                     android:text="3"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnSubId"
+                    android:id="@+id/Minus"
                     android:text="-"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
             </TableRow>
             <TableRow>
                 <Button
-                    android:id="@+id/btnNum0Id"
+                    android:id="@+id/BracketLeft"
+                    android:text="("
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
+                <Button
+                    android:id="@+id/Zero"
                     android:text="0"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnClearId"
-                    android:text="C"
+                    android:id="@+id/BracketRight"
+                    android:text=")"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
                 <Button
-                    android:id="@+id/btnEqualId"
-                    android:text="="
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
-                <Button
-                    android:id="@+id/btnAddId"
+                    android:id="@+id/Addition"
                     android:text="+"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
-            </TableRow>
-            <TableRow>
-                <Button
-                    android:id="@+id/btnNum0Id"
-                    android:text="0"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
-                <Button
-                    android:id="@+id/btnClearId"
-                    android:text="C"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
-                <Button
-                    android:id="@+id/btnEqualId"
-                    android:text="="
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
-                <Button
-                    android:id="@+id/btnAddId"
-                    android:text="+"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/black"
+                    android:textSize="20dp" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>
