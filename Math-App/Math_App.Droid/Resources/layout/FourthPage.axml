@@ -44,21 +44,21 @@
         android:layout_height="224.0dp"
         android:id="@+id/linearLayout1">
         <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/arrow2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/imageButton1"
-            android:background="@android:color/holo_orange_light" />
+            android:background="@android:color/transparent" />
         <Math_App.Droid.CustomGallery
             android:id="@+id/gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@android:color/white" />
         <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/arrow"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/imageButton2"
-            android:background="@android:color/holo_orange_light" />
+            android:background="@android:color/transparent" />
     </LinearLayout>
 </LinearLayout>

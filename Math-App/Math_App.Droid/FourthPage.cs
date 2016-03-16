@@ -15,7 +15,6 @@ namespace Math_App.Droid
     [Activity(Label = "RekenApp", Icon = "@drawable/icon")]
     public class FourthPage : Activity
     {
-        int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -24,13 +23,24 @@ namespace Math_App.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.FourthPage);
 
+            // Get our Gallery
             CustomGallery gallery = (CustomGallery)FindViewById<CustomGallery>(Resource.Id.gallery);
-
+            // Reference it to our adapter
             gallery.Adapter = new ImageAdapter(this);
 
-            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
-                Toast.MakeText(this, args.Position.ToString(), ToastLength.Short).Show();
+            // Create imageclick
+            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) {
+                int x = e.Position;
+                Console.WriteLine(x.ToString());
+                Intent fifth = new Intent(this, typeof(FifthPage));
+                Bundle extras = new Bundle();
+                extras.PutInt("index", x);
+                extras.PutString("EXTRA_PASSWORD", "my_password");
+                fifth.PutExtras(extras);
+                StartActivity(fifth);
             };
+
+
         }
     }
 }
