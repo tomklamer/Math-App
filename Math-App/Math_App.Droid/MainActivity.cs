@@ -33,7 +33,6 @@ namespace Math_App.Droid
             {              
                 //button.Text = string.Format("{0} user clicks!", 20);
                 var second = new Intent(this, typeof(SecondPage));
-                second.PutExtra("ActivityData", "Data from FirstActivity: ");
                 StartActivity(typeof(SecondPage));
             };
 

@@ -1,73 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Math_App.Strategies;
+using Math_App.Models.Strategies;
 
 namespace Math_App.NewFolder
 {
     public interface ISolutions
     {
-        List<Solutions> getSolutions();
-        void addSolution(Solutions s);
+        List<Strategy> getSolutions();
     }
 
+    // Strategies for Multiplication
     public class Multiply : ISolutions
     {
-        private List<Solutions> solution = new List<Solutions>();
+        private List<Strategy> Strategy = new List<Strategy>();
 
-        public List<Solutions> getSolutions()
+        public List<Strategy> getSolutions()
         {
-            return this.solution;
-        }
-
-        public void addSolution(Solutions s)
-        {
-            this.solution.Add(s);
+            return this.Strategy;
         }
     }
 
+    // Strategies for Deviding
     public class Devide : ISolutions
     {
-        private List<Solutions> solution = new List<Solutions>();
+        private List<Strategy> Strategy = new List<Strategy>();
 
-        public List<Solutions> getSolutions()
+        public List<Strategy> getSolutions()
         {
-            return this.solution;
-        }
-
-        public void addSolution(Solutions s)
-        {
-            this.solution.Add(s);
+            return this.Strategy;
         }
     }
 
+    // Strategies for Minus
     public class Minus : ISolutions
     {
-        private List<Solutions> solution = new List<Solutions>();
+        private List<Strategy> Strategy = new List<Strategy>();
 
-        public List<Solutions> getSolutions()
+        public List<Strategy> getSolutions()
         {
-            return this.solution;
-        }
-
-        public void addSolution(Solutions s)
-        {
-            this.solution.Add(s);
+            return this.Strategy;
         }
     }
 
+    // Strategies for Fractures
     public class Fracture : ISolutions
     {
-        private List<Solutions> solution = new List<Solutions>();
+        private List<Strategy> Strategy = new List<Strategy>();
 
-        public List<Solutions> getSolutions()
+        public List<Strategy> getSolutions()
         {
-            return this.solution;
-        }
-
-        public void addSolution(Solutions s)
-        {
-            this.solution.Add(s);
+            return this.Strategy;
         }
     }
 }

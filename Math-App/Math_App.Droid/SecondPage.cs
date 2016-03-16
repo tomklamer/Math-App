@@ -50,15 +50,18 @@ namespace Math_App.Droid
             adapter.Add(newUser6);
             adapter.Add(newUser7);
 
+            // item click -> navigate to next page
             TextView textView = (TextView)FindViewById(Resource.Id.textView1);
             listView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
-                string selectedFromList = listView.GetItemAtPosition(e.Position).ToString();
-
-                Console.WriteLine(selectedFromList);
+                int x = e.Position;
+                Intent third = new Intent(this, typeof(Thirdpage));
+                Bundle extras = new Bundle();
+                extras.PutInt("index", x);
+                extras.PutString("EXTRA_PASSWORD","my_password");
+                third.PutExtras(extras);
+                StartActivity(third);
             };
-
-            //adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, list);
         }
     }           
 }

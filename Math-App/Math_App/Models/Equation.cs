@@ -17,17 +17,7 @@ namespace Math_App.Models
 
         public override string ToString()
         {
-            return this.name + this.image + "  sss";
-        }
-
-        public String getName()
-        {
-            return this.name;
-        }
-
-        public String getImage()
-        {
-            return this.image;
+            return this.name + " " + this.image;
         }
     }
 }

@@ -9,12 +9,16 @@
     <Import_RootNamespace>Math_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Brackets\Brackets.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Calculator\CalculationUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Levels.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Equation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ISolutions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Strategies\Solutions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Brackets\" />
   </ItemGroup>
 </Project>
