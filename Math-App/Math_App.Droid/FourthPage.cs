@@ -9,10 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Content.PM;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class FourthPage : Activity
     {
 
