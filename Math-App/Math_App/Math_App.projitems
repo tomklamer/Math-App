@@ -11,8 +11,8 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Calculator\CalculationUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Levels.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Equation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ISolutions.cs" />
