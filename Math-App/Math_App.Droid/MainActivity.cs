@@ -8,10 +8,11 @@ using Android.Widget;
 using Android.OS;
 using Android.Views.Animations;
 using Math_App.Validator;
+using Android.Content.PM;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class MainActivity : Activity      {
 
         private ValidatorCalc val = new ValidatorCalc();

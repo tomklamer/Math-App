@@ -236,19 +236,16 @@ namespace Math_App.Droid
 			public const int Gridview = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int layout1 = 2130903044;
+			public const int Listview = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Listview = 2130903045;
+			public const int Main = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Main = 2130903046;
+			public const int SecondPage = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int SecondPage = 2130903047;
-			
-			// aapt resource value: 0x7f030008
-			public const int ThirdPage = 2130903048;
+			public const int ThirdPage = 2130903047;
 			
 			static Layout()
 			{
