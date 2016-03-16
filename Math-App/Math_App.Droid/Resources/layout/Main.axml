@@ -11,9 +11,9 @@
         android:gravity="center"
         android:ems="10"
         android:textSize="20dp"
-        android:background="@android:drawable/spinner_dropdown_background"
+        android:background="@drawable/text_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65.5dp"
         android:layout_marginTop="117.5dp"
         android:layout_marginLeft="25.0dp"
         android:layout_marginRight="25.0dp" />

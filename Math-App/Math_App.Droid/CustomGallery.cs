@@ -15,6 +15,8 @@ namespace Math_App.Droid
 {
     public class CustomGallery : Gallery
     {
+        public int SelectedIndexChanged { get; internal set; }
+
         public CustomGallery(Context context)
             : base(context)
         {
@@ -44,21 +46,22 @@ namespace Math_App.Droid
         {
 
         }
-
-        override
-        public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
-        {
+        
+        public override bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
+        {          
 
             //limit the max speed in either direction
             if (velocityX > 1700.0f)
             {
+                this.SelectedIndexChanged -= 1;
                 velocityX = 1700.0f;
             }
             else if (velocityX < -1700.0f)
             {
+                this.SelectedIndexChanged += 1;
                 velocityX = -1700.0f;
             }
-
+            
             return base.OnFling(e1, e2, velocityX, velocityY);
         }
     }

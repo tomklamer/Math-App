@@ -21,9 +21,9 @@
             android:gravity="center"
             android:ems="10"
             android:textSize="20dp"
-            android:background="@android:drawable/spinner_dropdown_background"
+            android:background="@drawable/text_background"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43.0dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="50.0dp"
             android:layout_marginLeft="180.5dp" />
@@ -35,9 +35,9 @@
         android:gravity="center"
         android:ems="10"
         android:textSize="20dp"
-        android:background="@android:drawable/spinner_dropdown_background"
+        android:background="@drawable/text_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45.5dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp" />
     <ListView

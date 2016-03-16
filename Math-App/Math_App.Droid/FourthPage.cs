@@ -28,8 +28,12 @@ namespace Math_App.Droid
             // Reference it to our adapter
             gallery.Adapter = new ImageAdapter(this);
 
+            // Get Level textfield
+            TextView level = (TextView)FindViewById<TextView>(Resource.Id.textLevel);
+
             // Create imageclick
-            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) {
+            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
+            {
                 int x = e.Position;
                 Console.WriteLine(x.ToString());
                 Intent fifth = new Intent(this, typeof(FifthPage));
@@ -39,8 +43,6 @@ namespace Math_App.Droid
                 fifth.PutExtras(extras);
                 StartActivity(fifth);
             };
-
-
         }
     }
 }
