@@ -7,8 +7,14 @@ namespace Math_App.Validator
     public class ValidatorCalc
     {
 
+        // Validator for calculation string input
         public bool checkCharacters(string a, string b)
         {
+            if (string.IsNullOrEmpty(a))
+            {
+                return false;
+            }
+
             switch (a)
             {
                 case "(":
@@ -22,19 +28,34 @@ namespace Math_App.Validator
                 case "x":
                     return multiply(a, b);
             }
+
+            if (IsDigitsOnly(a))
+            {
+                if (b == "(") return false;
+            }
+
+            return true;
+        }
+
+        public bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
             return true;
         }
 
         public bool leftBracket(string a,string b)
         {
-            if (b == ")") return false;
-            if (b == "+" || b == "x" || b == "/") return false;
+            if (b == "+" || b == "x" || b == "/" || b == ")" || b == "-") return false;
             return true;
         }
 
         public bool multiply(string a, string b)
         {
-            if (b == "-" || b == "/" || b == "x" || b == ")") return false;
+            if (b == "-" || b == "/" || b == "x" || b == ")" || b == "+") return false;
             return true;
         }
 
@@ -46,13 +67,13 @@ namespace Math_App.Validator
 
         public bool minus(string a, string b)
         {
-            if (b == "x" || b == "/" || b == ")" || b == "-") return false;
+            if (b == "x" || b == "/" || b == ")" || b == "-" || b == "+") return false;
             return true;
         }
 
         public bool addition(string a, string b)
         {
-            if (b == "x" || b == "/" || b == ")" || b == "-") return false;
+            if (b == "x" || b == "/" || b == ")" || b == "-" || b == "+") return false;
             return true;
         }
     }

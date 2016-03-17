@@ -31,8 +31,8 @@ namespace Math_App.Droid
             TextView tvName = (TextView)convertView.FindViewById(Resource.Id.tvName);
             TextView tvHome = (TextView)convertView.FindViewById(Resource.Id.tvHome);
             // Populate the data into the template view using the data object
-            tvName.Text = Equation.name;
-            tvHome.Text = Equation.image;
+            tvName.Text = Equation.partEquation;
+            tvHome.Text = Equation.partAnswer;
             // Return the completed view to render on screen
             return convertView;
         }

@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Math_App.Models;
+using Math_App.TempStorage;
+using Math_App.StaticObjects;
 
 namespace Math_App.Droid
 {
@@ -32,29 +34,51 @@ namespace Math_App.Droid
             ListView listView = (ListView)FindViewById(Resource.Id.listView1);
             listView.Adapter = adapter;
 
-            //Add item to adapter
-            Equation newUser = new Equation("Nathan", "San Diego");
-            Equation newUser1 = new Equation("Nathan", "San Diego");
-            Equation newUser2 = new Equation("Nathan", "San Diego");
-            Equation newUser3 = new Equation("Nathan", "San Diego");
-            Equation newUser4 = new Equation("Nathan", "San Diego");
-            Equation newUser5 = new Equation("Nathan", "San Diego");
-            Equation newUser6 = new Equation("Nathan", "San Diego");
-            Equation newUser7 = new Equation("Nathan", "San Diego");
-            adapter.Add(newUser);
-            adapter.Add(newUser1);
-            adapter.Add(newUser2);
-            adapter.Add(newUser3);
-            adapter.Add(newUser4);
-            adapter.Add(newUser5);
-            adapter.Add(newUser6);
-            adapter.Add(newUser7);
+            // Get data from bundle
+            Intent intent = this.Intent;
+            var calc = intent.GetStringExtra("calculation");
+
+            // Do calculation operations
+            MainEquation curEquation = new MainEquation();
+            Console.WriteLine(StringAnalyzer.AddStrings(calc));
+            curEquation.setString(StringAnalyzer.AddStrings(calc));
+            curEquation.buildBrackets();
+
+            // create equation class
+            List<Equation> equations = new List<Equation>();
+
+            // copy equations list and create equation class
+            for (int i = 0; i < curEquation.getEquationsStrings().Count; i++)
+            {
+                equations.Add( new Equation(curEquation.getSolution().ToString(), 
+                                            curEquation.getString(), 
+                                            curEquation.getEquationsStrings()[i], 
+                                            curEquation.getEquationsSolution()[i], 
+                                            curEquation.equationsToShow[i].a,
+                                            curEquation.equationsToShow[i].b,
+                                            curEquation.equationsToShow[i].sign));
+            }
+
+            // Set Answer and calculation
+            TextView answer = (TextView)FindViewById(Resource.Id.answer);
+            TextView calculation = (TextView)FindViewById(Resource.Id.calculation);
+            answer.Text = curEquation.getSolution().ToString();
+            calculation.Text = calc;
+
+            // Fill adapter
+            for (int i = 0; i < equations.Count; i++)
+            {
+                adapter.Add(equations[i]);
+            }
 
             // item click -> navigate to next page
             TextView textView = (TextView)FindViewById(Resource.Id.textView1);
             listView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 int x = e.Position;
+                Console.WriteLine(equations[x].partEquation);
+                Console.WriteLine(equations[x].sign);
+                Console.WriteLine(equations[x].partAnswer);
                 Intent third = new Intent(this, typeof(Thirdpage));
                 Bundle extras = new Bundle();
                 extras.PutInt("index", x);

@@ -153,11 +153,17 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f050027
 			public const int Zero = 2131034151;
 			
+			// aapt resource value: 0x7f05002a
+			public const int answer = 2131034154;
+			
+			// aapt resource value: 0x7f05002b
+			public const int calculation = 2131034155;
+			
 			// aapt resource value: 0x7f05000b
 			public const int gallery = 2131034123;
 			
-			// aapt resource value: 0x7f05002b
-			public const int grid = 2131034155;
+			// aapt resource value: 0x7f05002d
+			public const int grid = 2131034157;
 			
 			// aapt resource value: 0x7f05000a
 			public const int imageButton1 = 2131034122;
@@ -183,8 +189,8 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f050003
 			public const int linearLayout2 = 2131034115;
 			
-			// aapt resource value: 0x7f05002a
-			public const int listView1 = 2131034154;
+			// aapt resource value: 0x7f05002c
+			public const int listView1 = 2131034156;
 			
 			// aapt resource value: 0x7f050015
 			public const int tableId = 2131034133;
