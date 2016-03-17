@@ -12,10 +12,11 @@ using Android.Widget;
 using Math_App.Models;
 using Math_App.TempStorage;
 using Math_App.StaticObjects;
+using Android.Content.PM;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class SecondPage : Activity
 
     {
