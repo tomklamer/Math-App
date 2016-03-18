@@ -9,6 +9,11 @@
     <Import_RootNamespace>Math_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyAnalyzer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Strategy1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Strategy2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Analyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\BracketAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\SolutionFinder.cs" />
@@ -23,7 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\ISolutions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\IStrategyList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />
   </ItemGroup>
 </Project>
