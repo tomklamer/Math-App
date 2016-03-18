@@ -8,14 +8,14 @@ namespace Math_App.Solutions
 {
     public interface StrategyAnalyzer
     {
-        List<Strategy> GetStrategies();
+        List<string> GetStrategies();
     }
 
     public class MinusAnalyezer : StrategyAnalyzer
     {
-        public List<Strategy> GetStrategies()
+        public List<string> GetStrategies()
         {
-            List<Strategy> list = new List<Strategy>();
+            List<string> list = new List<string>();
 
 
 
@@ -24,10 +24,10 @@ namespace Math_App.Solutions
     }
 
     public class MultiplyAnalyezer : StrategyAnalyzer
-    {
-        public List<Strategy> GetStrategies()
+    { 
+        public List<string> GetStrategies()
         {
-            List<Strategy> list = new List<Strategy>();
+            List<string> list = new List<string>();
 
             return list;
         }
@@ -35,9 +35,9 @@ namespace Math_App.Solutions
 
     public class DevideAnalyezer : StrategyAnalyzer
     {
-        public List<Strategy> GetStrategies()
+        public List<string> GetStrategies()
         {
-            List<Strategy> list = new List<Strategy>();
+            List<string> list = new List<string>();
 
             return list;
         }
@@ -45,9 +45,9 @@ namespace Math_App.Solutions
 
     public class AdditionAnalyezer : StrategyAnalyzer
     {
-        public List<Strategy> GetStrategies()
+        public List<string> GetStrategies()
         {
-            List<Strategy> list = new List<Strategy>();
+            List<string> list = new List<string>();
 
             return list;
         }
@@ -55,9 +55,9 @@ namespace Math_App.Solutions
 
     public class FractionAnalyezer : StrategyAnalyzer
     {
-        public List<Strategy> GetStrategies()
+        public List<string> GetStrategies()
         {
-            List<Strategy> list = new List<Strategy>();
+            List<string> list = new List<string>();
 
             return list;
         }

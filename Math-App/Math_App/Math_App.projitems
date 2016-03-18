@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\IStrategyList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Strategy1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Strategy2.cs" />
@@ -28,7 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\IStrategyList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />
   </ItemGroup>
 </Project>
