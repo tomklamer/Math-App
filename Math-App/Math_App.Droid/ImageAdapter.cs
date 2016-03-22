@@ -45,9 +45,21 @@ namespace Math_App.Droid
             return i;
         }
 
+        public void FillImageList(List<int> a)
+        {
+            int i = 5;
+            while ( i < 6)
+            {
+                thumbIds[i] = a[i];
+                i += 1;
+            }
+        }
+
         // references to our images
-            int[] thumbIds = {
-            Resource.Drawable.bart,
+        int[] thumbIds = {
+            2130837506,
+            Resource.Drawable.maarten,
+            Resource.Drawable.maarten,
             Resource.Drawable.maarten,
             Resource.Drawable.tom
      };

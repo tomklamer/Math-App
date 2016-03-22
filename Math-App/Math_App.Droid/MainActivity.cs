@@ -13,8 +13,9 @@ using Android.Content.PM;
 namespace Math_App.Droid
 {
     [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
-    public class MainActivity : Activity      {
+    public class MainActivity : Activity       {
 
+        // validator class
         private ValidatorCalc val = new ValidatorCalc();
 
         protected override void OnCreate(Bundle bundle)
@@ -24,19 +25,29 @@ namespace Math_App.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            // Set button animation
             Animation animAlpha = AnimationUtils.LoadAnimation(this, Resource.Layout.ButtonAnimation);
 
+            // Set calculation textview
             TextView textviewCalc = FindViewById<TextView>(Resource.Id.textView1);
 
+            // Next page
             Button button = FindViewById<Button>(Resource.Id.ShowMe);
             button.Click += (sender, args) => button.StartAnimation(animAlpha);
             button.Click += delegate
-            {              
-                //button.Text = string.Format("{0} user clicks!", 20);
-                var second = new Intent(this, typeof(SecondPage));
-                StartActivity(typeof(SecondPage));
+            {
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
+                {
+                    var second = new Intent(this, typeof(SecondPage));
+                    Bundle extras = new Bundle();
+                    extras.PutString("calculation", textviewCalc.Text.ToString());
+                    second.PutExtras(extras);
+                    StartActivity(second);
+                }
             };
 
+            // Remove all input
             Button buttonRevert = FindViewById<Button>(Resource.Id.Revert);
             buttonRevert.Click += (sender, args) => buttonRevert.StartAnimation(animAlpha);
             buttonRevert.Click += delegate
@@ -49,6 +60,7 @@ namespace Math_App.Droid
                 }
             };
 
+            // Remove last input
             Button buttonDelete = FindViewById<Button>(Resource.Id.Delete);
             buttonDelete.Click += (sender, args) => buttonDelete.StartAnimation(animAlpha);
             buttonDelete.Click += delegate
@@ -60,6 +72,7 @@ namespace Math_App.Droid
                 }
             };
 
+            // Number input
             Button buttonZero = FindViewById<Button>(Resource.Id.Zero);
             buttonZero.Click += (sender, args) => buttonZero.StartAnimation(animAlpha);
             buttonZero.Click += delegate
@@ -130,58 +143,80 @@ namespace Math_App.Droid
                 textviewCalc.Text += "9";
             };
 
+            // Equation type input
             Button buttonMinus = FindViewById<Button>(Resource.Id.Minus);
             buttonMinus.Click += (sender, args) => buttonMinus.StartAnimation(animAlpha);
             buttonMinus.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "-"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += "-";
-                }                
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), "-"))
+                    {
+                        textviewCalc.Text += "-";
+                    }
+                }          
             };
 
             Button buttonMultiply = FindViewById<Button>(Resource.Id.Multiply);
             buttonMultiply.Click += (sender, args) => buttonMultiply.StartAnimation(animAlpha);
             buttonMultiply.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += "x";
-                }                    
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                    {
+                        textviewCalc.Text += "x";
+                    }
+                }                   
             };
 
             Button buttonDevide = FindViewById<Button>(Resource.Id.Devide);
             buttonDevide.Click += (sender, args) => buttonDevide.StartAnimation(animAlpha);
             buttonDevide.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += "/";
-                }                
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), "/"))
+                    {
+                        textviewCalc.Text += "/";
+                    }
+                }          
             };
 
             Button buttonAddition = FindViewById<Button>(Resource.Id.Addition);
             buttonAddition.Click += (sender, args) => buttonAddition.StartAnimation(animAlpha);
             buttonAddition.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += "+";
-                }                
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), "+"))
+                    {
+                        textviewCalc.Text += "+";
+                    }
+                }       
             };
 
+            // bracket type input
             Button buttonBracketLeft = FindViewById<Button>(Resource.Id.BracketLeft);
             buttonBracketLeft.Click += (sender, args) => buttonBracketLeft.StartAnimation(animAlpha);
             buttonBracketLeft.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += "(";
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), "("))
+                    {
+                        textviewCalc.Text += "(";
+                    }
                 }
             };
 
@@ -189,15 +224,17 @@ namespace Math_App.Droid
             buttonBracketRight.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
             buttonBracketRight.Click += delegate
             {
-                char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                if (val.checkCharacters(cLastCharacter.ToString(), "x"))
+                string text = textviewCalc.Text.ToString();
+                if (text.Length > 0)
                 {
-                    textviewCalc.Text += ")";
+                    char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
+                    if (val.checkCharacters(cLastCharacter.ToString(), ")"))
+                    {
+                        textviewCalc.Text += ")";
+                    }
                 }
             };
         }
-
-
     }
 }
 

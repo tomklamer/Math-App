@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Util;
+using Java.Lang;
 
 namespace Math_App.Droid
 {
@@ -51,15 +52,13 @@ namespace Math_App.Droid
         {          
 
             //limit the max speed in either direction
-            if (velocityX > 1700.0f)
+            if (velocityX > 1600.0f)
             {
-                this.SelectedIndexChanged -= 1;
-                velocityX = 1700.0f;
+                velocityX = 1600.0f;
             }
-            else if (velocityX < -1700.0f)
+            else if (velocityX < -1600.0f)
             {
-                this.SelectedIndexChanged += 1;
-                velocityX = -1700.0f;
+                velocityX = -1600.0f;
             }
             
             return base.OnFling(e1, e2, velocityX, velocityY);

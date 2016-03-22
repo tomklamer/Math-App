@@ -22,7 +22,6 @@ namespace Math_App.WinPhone
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        int count = 1;
 
         public MainPage()
         {

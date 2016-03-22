@@ -31,6 +31,7 @@ namespace Math_App.Droid
 
             // Get Level textfield
             TextView level = (TextView)FindViewById<TextView>(Resource.Id.textLevel);
+            level.Text = "Strategy" + " " + "Level1";   
 
             // Create imageclick
             gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
@@ -43,6 +44,71 @@ namespace Math_App.Droid
                 extras.PutString("EXTRA_PASSWORD", "my_password");
                 fifth.PutExtras(extras);
                 StartActivity(fifth);
+            };
+
+            // Get ImageViews
+            ImageView image1 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView1);
+            ImageView image2 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView2);
+            ImageView image3 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView3);
+            ImageView image4 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView4);
+            ImageView image5 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView5);
+
+            gallery.ItemSelected += (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs e ) =>
+            {
+                Console.WriteLine(gallery.SelectedItemId.ToString());
+                switch (gallery.SelectedItemPosition.ToString())
+                {
+                    case "0":
+                        level.Text = "Strategy" + " " + "Level1";
+
+                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                        image1.SetBackgroundColor(Android.Graphics.Color.Black);
+                        break;
+                    case "1":
+                        level.Text = "Strategy" + " " + "Level2";
+
+                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                        image2.SetBackgroundColor(Android.Graphics.Color.Black);
+                        break;
+                    case "2":
+                        level.Text = "Strategy" + " " + "Level3";
+
+                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                        image3.SetBackgroundColor(Android.Graphics.Color.Black);
+                        break;
+                    case "3":
+                        level.Text = "Strategy" + " " + "Level4";
+
+                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                        image4.SetBackgroundColor(Android.Graphics.Color.Black);
+                        break;
+                    case "4":
+                        level.Text = "Strategy" + " " + "Level5";
+
+                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                        image5.SetBackgroundColor(Android.Graphics.Color.Black);
+                        break;
+                };
             };
         }
     }
