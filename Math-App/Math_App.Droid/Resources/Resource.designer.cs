@@ -78,137 +78,146 @@ namespace Math_App.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05002c
+			public const int Addition = 2131034156;
+			
 			// aapt resource value: 0x7f050029
-			public const int Addition = 2131034153;
-			
-			// aapt resource value: 0x7f050026
-			public const int BracketLeft = 2131034150;
-			
-			// aapt resource value: 0x7f050028
-			public const int BracketRight = 2131034152;
-			
-			// aapt resource value: 0x7f050018
-			public const int Delete = 2131034136;
-			
-			// aapt resource value: 0x7f05001d
-			public const int Devide = 2131034141;
-			
-			// aapt resource value: 0x7f05001b
-			public const int Eight = 2131034139;
-			
-			// aapt resource value: 0x7f05001f
-			public const int Five = 2131034143;
-			
-			// aapt resource value: 0x7f05001e
-			public const int Four = 2131034142;
-			
-			// aapt resource value: 0x7f050010
-			public const int GridAnswer = 2131034128;
-			
-			// aapt resource value: 0x7f05000c
-			public const int GridContainer = 2131034124;
-			
-			// aapt resource value: 0x7f05000f
-			public const int GridEquation = 2131034127;
-			
-			// aapt resource value: 0x7f05000d
-			public const int GridImage = 2131034125;
-			
-			// aapt resource value: 0x7f05000e
-			public const int GridTitle = 2131034126;
-			
-			// aapt resource value: 0x7f050011
-			public const int Image = 2131034129;
-			
-			// aapt resource value: 0x7f050025
-			public const int Minus = 2131034149;
-			
-			// aapt resource value: 0x7f050021
-			public const int Multiply = 2131034145;
-			
-			// aapt resource value: 0x7f05001c
-			public const int Nine = 2131034140;
-			
-			// aapt resource value: 0x7f050022
-			public const int One = 2131034146;
-			
-			// aapt resource value: 0x7f050019
-			public const int Revert = 2131034137;
-			
-			// aapt resource value: 0x7f05001a
-			public const int Seven = 2131034138;
-			
-			// aapt resource value: 0x7f050017
-			public const int ShowMe = 2131034135;
-			
-			// aapt resource value: 0x7f050020
-			public const int Six = 2131034144;
-			
-			// aapt resource value: 0x7f050024
-			public const int Three = 2131034148;
-			
-			// aapt resource value: 0x7f050023
-			public const int Two = 2131034147;
-			
-			// aapt resource value: 0x7f050027
-			public const int Zero = 2131034151;
-			
-			// aapt resource value: 0x7f05000b
-			public const int gallery = 2131034123;
+			public const int BracketLeft = 2131034153;
 			
 			// aapt resource value: 0x7f05002b
-			public const int grid = 2131034155;
+			public const int BracketRight = 2131034155;
 			
-			// aapt resource value: 0x7f05000a
-			public const int imageButton1 = 2131034122;
+			// aapt resource value: 0x7f05001b
+			public const int Delete = 2131034139;
 			
-			// aapt resource value: 0x7f050004
-			public const int imageView1 = 2131034116;
+			// aapt resource value: 0x7f050020
+			public const int Devide = 2131034144;
 			
-			// aapt resource value: 0x7f050005
-			public const int imageView2 = 2131034117;
+			// aapt resource value: 0x7f05001e
+			public const int Eight = 2131034142;
 			
-			// aapt resource value: 0x7f050006
-			public const int imageView3 = 2131034118;
+			// aapt resource value: 0x7f050022
+			public const int Five = 2131034146;
 			
-			// aapt resource value: 0x7f050007
-			public const int imageView4 = 2131034119;
-			
-			// aapt resource value: 0x7f050008
-			public const int imageView5 = 2131034120;
-			
-			// aapt resource value: 0x7f050000
-			public const int linearLayout1 = 2131034112;
-			
-			// aapt resource value: 0x7f050003
-			public const int linearLayout2 = 2131034115;
-			
-			// aapt resource value: 0x7f05002a
-			public const int listView1 = 2131034154;
-			
-			// aapt resource value: 0x7f050015
-			public const int tableId = 2131034133;
-			
-			// aapt resource value: 0x7f050016
-			public const int tableRow1 = 2131034134;
-			
-			// aapt resource value: 0x7f050009
-			public const int textLevel = 2131034121;
-			
-			// aapt resource value: 0x7f050014
-			public const int textView1 = 2131034132;
-			
-			// aapt resource value: 0x7f050002
-			public const int textView3 = 2131034114;
-			
-			// aapt resource value: 0x7f050001
-			public const int textView4 = 2131034113;
+			// aapt resource value: 0x7f050021
+			public const int Four = 2131034145;
 			
 			// aapt resource value: 0x7f050013
-			public const int tvHome = 2131034131;
+			public const int GridAnswer = 2131034131;
+			
+			// aapt resource value: 0x7f05000f
+			public const int GridContainer = 2131034127;
 			
 			// aapt resource value: 0x7f050012
-			public const int tvName = 2131034130;
+			public const int GridEquation = 2131034130;
+			
+			// aapt resource value: 0x7f050010
+			public const int GridImage = 2131034128;
+			
+			// aapt resource value: 0x7f050011
+			public const int GridTitle = 2131034129;
+			
+			// aapt resource value: 0x7f050014
+			public const int Image = 2131034132;
+			
+			// aapt resource value: 0x7f050028
+			public const int Minus = 2131034152;
+			
+			// aapt resource value: 0x7f050024
+			public const int Multiply = 2131034148;
+			
+			// aapt resource value: 0x7f05001f
+			public const int Nine = 2131034143;
+			
+			// aapt resource value: 0x7f050025
+			public const int One = 2131034149;
+			
+			// aapt resource value: 0x7f05001c
+			public const int Revert = 2131034140;
+			
+			// aapt resource value: 0x7f05001d
+			public const int Seven = 2131034141;
+			
+			// aapt resource value: 0x7f05001a
+			public const int ShowMe = 2131034138;
+			
+			// aapt resource value: 0x7f050023
+			public const int Six = 2131034147;
+			
+			// aapt resource value: 0x7f050027
+			public const int Three = 2131034151;
+			
+			// aapt resource value: 0x7f050026
+			public const int Two = 2131034150;
+			
+			// aapt resource value: 0x7f05002a
+			public const int Zero = 2131034154;
+			
+			// aapt resource value: 0x7f050002
+			public const int explanation = 2131034114;
+			
+			// aapt resource value: 0x7f05000e
+			public const int gallery = 2131034126;
+			
+			// aapt resource value: 0x7f05002e
+			public const int grid = 2131034158;
+			
+			// aapt resource value: 0x7f05000d
+			public const int imageButton1 = 2131034125;
+			
+			// aapt resource value: 0x7f050007
+			public const int imageView1 = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int imageView2 = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int imageView3 = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int imageView4 = 2131034122;
+			
+			// aapt resource value: 0x7f05000b
+			public const int imageView5 = 2131034123;
+			
+			// aapt resource value: 0x7f050000
+			public const int imageview1 = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int linearLayout1 = 2131034115;
+			
+			// aapt resource value: 0x7f050006
+			public const int linearLayout2 = 2131034118;
+			
+			// aapt resource value: 0x7f05002d
+			public const int listView1 = 2131034157;
+			
+			// aapt resource value: 0x7f050001
+			public const int nameAndLevel = 2131034113;
+			
+			// aapt resource value: 0x7f050018
+			public const int tableId = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int tableRow1 = 2131034137;
+			
+			// aapt resource value: 0x7f05000c
+			public const int textLevel = 2131034124;
+			
+			// aapt resource value: 0x7f050017
+			public const int textView1 = 2131034135;
+			
+			// aapt resource value: 0x7f050005
+			public const int textView3 = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int textView4 = 2131034116;
+			
+			// aapt resource value: 0x7f050016
+			public const int tvHome = 2131034134;
+			
+			// aapt resource value: 0x7f050015
+			public const int tvName = 2131034133;
 			
 			static Id()
 			{

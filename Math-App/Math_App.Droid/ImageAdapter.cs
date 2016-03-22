@@ -46,7 +46,7 @@ namespace Math_App.Droid
         }
 
         // references to our images
-        int[] thumbIds = {
+            int[] thumbIds = {
             Resource.Drawable.bart,
             Resource.Drawable.maarten,
             Resource.Drawable.tom
