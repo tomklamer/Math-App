@@ -36,7 +36,7 @@ namespace Math_App.Droid
             // Create imageclick
             gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
             {
-                int x = e.Position;
+                int x = gallery.SelectedItemPosition;
                 Console.WriteLine(x.ToString());
                 Intent fifth = new Intent(this, typeof(FifthPage));
                 Bundle extras = new Bundle();
