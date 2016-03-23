@@ -15,7 +15,7 @@
         android:layout_marginTop="41.5dp">
         <TextView
             android:text="Text"
-            android:id="@+id/textView4"
+            android:id="@+id/page3_equation"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:ems="10"
@@ -27,7 +27,7 @@
             android:layout_marginLeft="20dp" />
         <TextView
             android:text="Text"
-            android:id="@+id/textView3"
+            android:id="@+id/page3_answer"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:ems="10"

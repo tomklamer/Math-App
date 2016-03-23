@@ -10,20 +10,21 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Math_App.Models;
+using Math_App.Solutions;
 
 namespace Math_App.Droid
 {
-    public class GridAdapter : ArrayAdapter<StrategyInfo>
+    public class GridAdapter : ArrayAdapter<ICheckStrategy>
     {
 
-        public GridAdapter(Context context, List<StrategyInfo> list) : base(context, 0, list)
+        public GridAdapter(Context context, List<ICheckStrategy> list) : base(context, 0, list)
         {
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             // Get the data item for this position
-            StrategyInfo StrategyInfo = GetItem(position);
+            ICheckStrategy StrategyInfo = GetItem(position);
             // Check if an existing view is being reused, otherwise inflate the view
             if (convertView == null)
             {
@@ -36,11 +37,18 @@ namespace Math_App.Droid
             TextView Equation = (TextView)convertView.FindViewById(Resource.Id.GridEquation);
 
             // Populate the data into the template view using the data object
-            title.Text = StrategyInfo.title;
-            answer.Text = StrategyInfo.answer;
-            Equation.Text = StrategyInfo.equation;
+            title.Text = StrategyInfo.ReturnTitle();
+            answer.Text = "";
+            Equation.Text = "";
 
-            convertView.SetBackgroundColor(Android.Graphics.Color.Black);
+            if(StrategyInfo.ReturnImportance() == 1)
+            {
+                convertView.SetBackgroundColor(Android.Graphics.Color.DarkOrange);
+            }
+            else
+            {
+                convertView.SetBackgroundColor(Android.Graphics.Color.Black);
+            }            
             title.SetTextColor(Android.Graphics.Color.White);
             answer.SetTextColor(Android.Graphics.Color.White);
             Equation.SetTextColor(Android.Graphics.Color.White);

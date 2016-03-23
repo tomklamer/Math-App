@@ -162,8 +162,8 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f05000b
 			public const int gallery = 2131034123;
 			
-			// aapt resource value: 0x7f05002d
-			public const int grid = 2131034157;
+			// aapt resource value: 0x7f05002f
+			public const int grid = 2131034159;
 			
 			// aapt resource value: 0x7f05000a
 			public const int imageButton1 = 2131034122;
@@ -191,6 +191,12 @@ namespace Math_App.Droid
 			
 			// aapt resource value: 0x7f05002c
 			public const int listView1 = 2131034156;
+			
+			// aapt resource value: 0x7f05002e
+			public const int page3_answer = 2131034158;
+			
+			// aapt resource value: 0x7f05002d
+			public const int page3_equation = 2131034157;
 			
 			// aapt resource value: 0x7f050015
 			public const int tableId = 2131034133;
@@ -242,16 +248,19 @@ namespace Math_App.Droid
 			public const int Gridview = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Listview = 2130903044;
+			public const int layout2 = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Main = 2130903045;
+			public const int Listview = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int SecondPage = 2130903046;
+			public const int Main = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int ThirdPage = 2130903047;
+			public const int SecondPage = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int ThirdPage = 2130903048;
 			
 			static Layout()
 			{

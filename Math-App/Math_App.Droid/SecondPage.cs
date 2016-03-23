@@ -77,13 +77,16 @@ namespace Math_App.Droid
             listView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 int x = e.Position;
-                Console.WriteLine(equations[x].partEquation);
-                Console.WriteLine(equations[x].sign);
-                Console.WriteLine(equations[x].partAnswer);
                 Intent third = new Intent(this, typeof(Thirdpage));
                 Bundle extras = new Bundle();
                 extras.PutInt("index", x);
-                extras.PutString("EXTRA_PASSWORD","my_password");
+                extras.PutString("sign", equations[x].sign.ToString());
+                extras.PutString("partAnswer", equations[x].partAnswer);
+                extras.PutString("partEquation", equations[x].partEquation);
+                extras.PutString("solution", equations[x].completeAnswer);
+                extras.PutString("equation", equations[x].completeEquation);
+                extras.PutFloat("a", equations[x].a);
+                extras.PutFloat("b", equations[x].b);
                 third.PutExtras(extras);
                 StartActivity(third);
             };

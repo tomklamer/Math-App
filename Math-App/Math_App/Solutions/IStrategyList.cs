@@ -8,7 +8,8 @@ namespace Math_App.Solutions
 {
     public interface IStrategyList
     {
-        List<string> getSolutions();
+        List<ICheckStrategy> getSolutions();
+        void chainOrder();
     }
 
     // Strategies for Multiplication
@@ -17,14 +18,21 @@ namespace Math_App.Solutions
         ICheckStrategy strat1;
         ICheckStrategy strat2;
 
-        public Multiply()
+        public Multiply(string a, string b)
         {
+               
         }
 
-        public List<string> getSolutions()
+        public List<ICheckStrategy> getSolutions()
         {
-            StrategyAnalyzer an = new MultiplyAnalyezer();
-            return an.GetStrategies();
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+
+            return lijst;
+        }
+
+        public void chainOrder()
+        {
+
         }
     }
 
@@ -38,10 +46,16 @@ namespace Math_App.Solutions
         {
         }
 
-        public List<string> getSolutions()
+        public List<ICheckStrategy> getSolutions()
         {
-            StrategyAnalyzer an = new MultiplyAnalyezer();
-            return an.GetStrategies();
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+
+            return lijst;
+        }
+
+        public void chainOrder()
+        {
+
         }
     }
 
@@ -55,10 +69,15 @@ namespace Math_App.Solutions
         {
         }
 
-        public List<string> getSolutions()
+        public List<ICheckStrategy> getSolutions()
         {
-            StrategyAnalyzer an = new MultiplyAnalyezer();
-            return an.GetStrategies();
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+
+            return lijst;
+        }
+        public void chainOrder()
+        {
+
         }
     }
 
@@ -72,27 +91,60 @@ namespace Math_App.Solutions
         {
         }
 
-        public List<string> getSolutions()
+        public List<ICheckStrategy> getSolutions()
         {
-            StrategyAnalyzer an = new MultiplyAnalyezer();
-            return an.GetStrategies();
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+
+            return lijst;
+        }
+
+        public void chainOrder()
+        {
+
         }
     }
 
     // Strategies for Addition
     public class Addition : IStrategyList
     {
-        ICheckStrategy strat1;
-        ICheckStrategy strat2;
+        ICheckStrategy analogie;
+        ICheckStrategy optellen_kolomsgewijs;
+        ICheckStrategy rekenen_met_mooie_getallen;
+        ICheckStrategy rekenen_met_rond_getal;
+        ICheckStrategy splitstrategie;
 
-        public Addition()
+        public Addition(string a, string b)
         {
+            analogie = new Analogie();
+            optellen_kolomsgewijs = new Optellen_kolomsgewijs();
+            rekenen_met_mooie_getallen = new Rekenen_met_mooie_getallen();
+            rekenen_met_rond_getal = new Rekenen_met_rond_getal();
+            splitstrategie = new Splitstrategie();
+            chainOrder();
+            analogie.DoAnalyze(a, b);
+            //rekenen_met_mooie_getallen.DoAnalyze(a, b);   
         }
 
-        public List<string> getSolutions()
+        public List<ICheckStrategy> getSolutions()
         {
-            StrategyAnalyzer an = new MultiplyAnalyezer();
-            return an.GetStrategies();
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+            lijst.Add(analogie.ReturnStrat());
+            lijst.Add(splitstrategie.ReturnStrat());
+            lijst.Add(rekenen_met_rond_getal.ReturnStrat());
+            lijst.Add(rekenen_met_mooie_getallen.ReturnStrat());
+            lijst.Add(optellen_kolomsgewijs.ReturnStrat());
+
+            lijst.RemoveAll(item => item == null);
+
+            return lijst;
+        }
+
+        public void chainOrder()
+        {
+            analogie.setNextChain(optellen_kolomsgewijs);
+            optellen_kolomsgewijs.setNextChain(rekenen_met_mooie_getallen);
+            rekenen_met_mooie_getallen.setNextChain(rekenen_met_rond_getal);
+            rekenen_met_rond_getal.setNextChain(splitstrategie);
         }
     }
 }

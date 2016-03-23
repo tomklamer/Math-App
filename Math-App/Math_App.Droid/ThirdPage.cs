@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Math_App.Models;
 using Android.Content.PM;
+using Math_App.Solutions;
 
 namespace Math_App.Droid
 {
@@ -25,54 +26,36 @@ namespace Math_App.Droid
             SetContentView(Resource.Layout.ThirdPage);
 
             // Construct the data source
-            List<StrategyInfo> arrayOfUsers = new List<StrategyInfo>();
+            List<ICheckStrategy> arrayOfUsers = new List<ICheckStrategy>();
             // Create the adapter to convert the array to views
             GridAdapter adapter = new GridAdapter(this, arrayOfUsers);
             // Attach the adapter to a ListView
             GridView grid = (GridView)FindViewById(Resource.Id.grid);
             grid.Adapter = adapter;
 
-            //Add item to adapter
-            StrategyInfo newUser = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser1 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser2 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser3 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser4 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser5 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser6 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser7 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser8 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser9 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser10 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser11 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser12 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser13 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser14 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            StrategyInfo newUser15 = new StrategyInfo("Nathan", "San Diego", "San Diego", "San Diego");
-            adapter.Add(newUser);
-            adapter.Add(newUser1);
-            adapter.Add(newUser2);
-            adapter.Add(newUser3);
-            adapter.Add(newUser4);
-            adapter.Add(newUser5);
-            adapter.Add(newUser6);
-            adapter.Add(newUser7);
-            adapter.Add(newUser8);
-            adapter.Add(newUser9);
-            adapter.Add(newUser10);
-            adapter.Add(newUser11);
-            adapter.Add(newUser12);
-            adapter.Add(newUser13);
-            adapter.Add(newUser14);
-            adapter.Add(newUser15);
-
+            // Get intent data
             Intent intent = this.Intent;
-            var text = intent.GetStringExtra("EXTRA_PASSWORD");
+            string sign = intent.GetStringExtra("sign");
+            string partAnswer = intent.GetStringExtra("partAnswer");
+            string partEquation = intent.GetStringExtra("partEquation");
+            string solution = intent.GetStringExtra("solution");
+            string equation = intent.GetStringExtra("equation");
+            string a = intent.GetFloatExtra("a", -1).ToString();
+            string b = intent.GetFloatExtra("b", -1).ToString();
             var nb = intent.GetIntExtra("index", -1);
 
-            TextView textview = (TextView)FindViewById(Resource.Id.textView3);
+            CalculationTypeAnalyzer an = new CalculationTypeAnalyzer();
+            List<ICheckStrategy> lijst = an.GetCalcType(sign, a, b).getSolutions();           
 
-            textview.Text = nb.ToString();
+            for(int i = 0; i < lijst.Count; i++)
+            {
+                adapter.Add(lijst[i]);
+            }
+
+            TextView textview0 = (TextView)FindViewById(Resource.Id.page3_equation);
+            textview0.Text = partEquation;
+            TextView textview1 = (TextView)FindViewById(Resource.Id.page3_answer);
+            textview1.Text = partAnswer;
 
             // item click -> navigate to next page
             GridView gridje = (GridView)FindViewById(Resource.Id.grid);

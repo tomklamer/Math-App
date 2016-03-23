@@ -6,8 +6,10 @@ namespace Math_App.Solutions
 {
     public interface ICheckStrategy
     {
+        void DoAnalyze(string a, string b);
         void setNextChain(ICheckStrategy nextChain);
-        bool CheckStrat();
-        string ReturnStrat();
+        ICheckStrategy ReturnStrat();
+        string ReturnTitle();
+        int ReturnImportance();
     }
 }
