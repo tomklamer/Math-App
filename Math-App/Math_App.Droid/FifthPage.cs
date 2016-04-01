@@ -11,6 +11,11 @@ using Android.Views;
 using Android.Widget;
 using Android.Text.Method;
 using Android.Graphics;
+using System.Xml;
+using System.Reflection;
+using System.IO;
+using System.Xml.Serialization;
+using Math_App.Xml;
 
 namespace Math_App.Droid
 {
@@ -33,16 +38,14 @@ namespace Math_App.Droid
 
             TextView nameandlevel = FindViewById<TextView>(Resource.Id.nameAndLevel);
             TextView explanation = FindViewById<TextView>(Resource.Id.explanation);
-            explanation.MovementMethod = new ScrollingMovementMethod();
-
+            explanation.MovementMethod = new ScrollingMovementMethod();          
 
             string explantiontext = "Lorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum"
                 + "Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum"
                 + " Lorum ipsum Lorum ipsumvLorum ipsum Lorum ipsum Lorum ipsumv Lorum ipsum Lorum ipsum"
                 + " Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum BOE";
             nameandlevel.Text = "Strategy name - Level " + level;
-            explanation.Text = explantiontext;
-            
+            explanation.Text = explantiontext;            
 
         }
     }

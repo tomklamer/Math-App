@@ -9,6 +9,11 @@ using Android.OS;
 using Android.Views.Animations;
 using Math_App.Validator;
 using Android.Content.PM;
+using System.IO;
+using System.Reflection;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Math_App.Xml;
 
 namespace Math_App.Droid
 {
@@ -20,7 +25,23 @@ namespace Math_App.Droid
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);            
+            base.OnCreate(bundle);
+
+            // Prefix
+            var resourcePrefix = "Math_App.Droid.";
+
+            // Create stream with path
+            var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); ;
+
+            // Read Xml file & creat strategy object
+            StrategyXmlObject strat = new StrategyXmlObject();
+            strat = ReaderXml.ReadFile(stream, "Banaan");
+
+            // Test
+            Console.WriteLine(strat.Level1.text);
+            Console.WriteLine(strat.Level2.image);
+            Console.WriteLine(strat.Title);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
