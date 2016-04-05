@@ -12,11 +12,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\IStrategyList.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Analogie.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Optellen_kolomsgewijs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Rekenen_met_mooie_getallen.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Rekenen_met_rond_getal.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Splitstrategie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Analogie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_kolomsgewijs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_mooie_getallen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_rond_getal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Splitstrategie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_door_verschil_te_bepalen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Komols_gewijs_Aftrekken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Rekenen_met_een_rond_getal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Splitstrategie_substraction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Analyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\BracketAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\SolutionFinder.cs" />
@@ -32,5 +36,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\" />
   </ItemGroup>
 </Project>
