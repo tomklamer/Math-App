@@ -16,16 +16,17 @@ namespace Math_App.Solutions.StrategyChain.Substraction
             int first = Convert.ToInt32(b);
             int second = Convert.ToInt32(c);
             int difference = first - second;
-            if(difference < 10)
-            {
-                this.use = true;
-                //this.importance = ;
-                if(difference < 3)
-                {
-                    this.importance = 4;
-                }
+			//this.use = true;
+			//if (difference < 10)
+   //         {
+   //             this.use = true;
+   //             //this.importance = ;
+   //             //if(difference < 3)
+   //             //{
+   //             //    this.importance = 4;
+   //             //}
 
-            }
+   //         }
 
             nextInChain.DoAnalyze(b, c);
         }

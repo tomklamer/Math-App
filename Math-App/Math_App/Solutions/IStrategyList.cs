@@ -87,7 +87,12 @@ namespace Math_App.Solutions
             lijst.Add(komols_gewijs_aftrekken.ReturnStrat());
             lijst.Add(rekenen_met_een_rond_getal.ReturnStrat());
             lijst.Add(splitstrategie_substraction.ReturnStrat());
-            return lijst;
+
+
+			lijst.RemoveAll(item => item == null);
+
+
+			return lijst;
         }
         public void chainOrder()
         {
