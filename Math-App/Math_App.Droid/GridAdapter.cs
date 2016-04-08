@@ -41,13 +41,16 @@ namespace Math_App.Droid
             answer.Text = "";
             Equation.Text = "";
 
+            // importancy strategy check
             if(StrategyInfo.ReturnImportance() == 1)
             {
-                convertView.SetBackgroundColor(Android.Graphics.Color.DarkOrange);
+                convertView.SetPadding(10, 10, 10, 10);
+                LinearLayout back = (LinearLayout)convertView.FindViewById(Resource.Id.GridColor);
+                back.SetBackgroundColor(Android.Graphics.Color.Orange);
             }
             else
             {
-                convertView.SetBackgroundColor(Android.Graphics.Color.Black);
+                // something
             }            
             title.SetTextColor(Android.Graphics.Color.White);
             answer.SetTextColor(Android.Graphics.Color.White);

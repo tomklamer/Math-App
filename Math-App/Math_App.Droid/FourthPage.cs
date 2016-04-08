@@ -53,6 +53,7 @@ namespace Math_App.Droid
             ImageView image4 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView4);
             ImageView image5 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView5);
 
+            // Item selected change events
             gallery.ItemSelected += (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs e ) =>
             {
                 Console.WriteLine(gallery.SelectedItemId.ToString());

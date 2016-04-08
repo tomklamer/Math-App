@@ -26,7 +26,7 @@ namespace Math_App.StaticObjects
 				if (sign == 'x' || sign == '/')
 				{
 					a = Convert.ToSingle(Analyzer.getNumber(calculationList.ElementAt(i), current, brackets));
-					b = Convert.ToSingle(Analyzer.getNumber(calculationList.ElementAt(i + 1), current, brackets));
+					b = Convert.ToSingle(Analyzer.getNumber(calculationList.ElementAt(i + 1), current, brackets));//TODO try catch << error preventing 
 					calculationList.RemoveAt(i);
 					tempSolution = performCalculation(a, b, sign);
 					EquationToShow tempEquation = new EquationToShow();

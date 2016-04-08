@@ -2,4 +2,6 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">Math_App.Droid</string>
+  <string name="Dialog_Ok">Ok</string>
+  <string name="Dialog_Cancel">Cancel</string>
 </resources>

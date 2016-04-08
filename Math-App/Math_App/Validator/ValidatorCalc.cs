@@ -23,7 +23,7 @@ namespace Math_App.Validator
                     return addition(a, b);
                 case "-":
                     return minus(a, b);
-                case "/":
+                case "÷":
                     return devide(a, b);
                 case "x":
                     return multiply(a, b);
@@ -37,6 +37,14 @@ namespace Math_App.Validator
             return true;
         }
 
+        // check last char
+        public bool lastChar(string a)
+        {
+            if (a == "x" || a == "-" || a == "+" || a == "÷" || a == "(") return false;
+            return true;
+        }
+
+        // check only digits
         public bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -47,34 +55,50 @@ namespace Math_App.Validator
             return true;
         }
 
+        // check leftbracket
         public bool leftBracket(string a,string b)
         {
-            if (b == "+" || b == "x" || b == "/" || b == ")" || b == "-") return false;
+            if (b == "+" || b == "x" || b == "÷" || b == ")" || b == "-" ) return false;
             return true;
         }
 
+        // check multiply
         public bool multiply(string a, string b)
         {
-            if (b == "-" || b == "/" || b == "x" || b == ")" || b == "+") return false;
+            if (b == "-" || b == "÷" || b == "x" || b == ")" || b == "+" ) return false;
             return true;
         }
 
+        // check devide
         public bool devide(string a, string b)
         {
-            if (b == "x" || b == "-" || b == ")" || b == "+" || b == "/") return false;
+            if (b == "x" || b == "-" || b == ")" || b == "+" || b == "÷" ) return false;
             return true;
         }
 
+        // check minus
         public bool minus(string a, string b)
         {
-            if (b == "x" || b == "/" || b == ")" || b == "-" || b == "+") return false;
+            if (b == "x" || b == "÷" || b == ")" || b == "-" || b == "+" ) return false;
             return true;
         }
 
+        // check addition
         public bool addition(string a, string b)
         {
-            if (b == "x" || b == "/" || b == ")" || b == "-" || b == "+") return false;
+            if (b == "x" || b == "÷" || b == ")" || b == "-" || b == "+" ) return false;
             return true;
+        }
+
+        // create fraction
+        public string CreateFraction(string b, string c)
+        {
+            if (b.Length != 0 && c.Length != 0)
+            {
+                string tempString = "(" + b + "/" + c + ")";
+                return tempString;
+            }
+            return "";
         }
     }
 }
