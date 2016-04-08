@@ -37,7 +37,7 @@ namespace Math_App.Droid
             TextView Equation = (TextView)convertView.FindViewById(Resource.Id.GridEquation);
 
             // Populate the data into the template view using the data object
-            title.Text = StrategyInfo.ReturnTitle();
+				title.Text = StrategyInfo.ReturnTitle();
             answer.Text = "";
             Equation.Text = "";
 

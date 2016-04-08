@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Math_App.Solutions.StrategyChain;
+using Math_App.Solutions.StrategyChain.Substraction;
+using Math_App.Models.Strategies;
 
 namespace Math_App.Solutions
 {
@@ -14,17 +16,19 @@ namespace Math_App.Solutions
     // Strategies for Multiplication
     public class Multiply : IStrategyList
     {
-        ICheckStrategy strat1;
-        ICheckStrategy strat2;
+
 
         public Multiply(string a, string b)
         {
-               
+
+             
         }
 
         public List<ICheckStrategy> getSolutions()
         {
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+
+
 
             return lijst;
         }
@@ -35,7 +39,7 @@ namespace Math_App.Solutions
         }
     }
 
-    // Strategies for Deviding
+    // Strategies for Dividing
     public class Devide : IStrategyList
     {
         ICheckStrategy strat1;
@@ -61,21 +65,40 @@ namespace Math_App.Solutions
     // Strategies for Minus
     public class Minus : IStrategyList
     {
-        ICheckStrategy strat1;
-        ICheckStrategy strat2;
+        ICheckStrategy aftrekken_door_verschil_te_bepalen;
+        ICheckStrategy komols_gewijs_aftrekken;
+        ICheckStrategy rekenen_met_een_rond_getal;
+        ICheckStrategy splitstrategie_substraction;
 
-        public Minus()
+        public Minus(string a, string b)
         {
+            aftrekken_door_verschil_te_bepalen = new Aftrekken_door_verschil_te_bepalen();
+            komols_gewijs_aftrekken = new Komols_gewijs_aftrekken();
+            rekenen_met_een_rond_getal = new Rekenen_met_een_rond_getal();
+            splitstrategie_substraction = new Splitstrategie_substraction();
+            chainOrder();
+            aftrekken_door_verschil_te_bepalen.DoAnalyze(a, b);
         }
 
         public List<ICheckStrategy> getSolutions()
         {
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+            lijst.Add(aftrekken_door_verschil_te_bepalen.ReturnStrat());
+            lijst.Add(komols_gewijs_aftrekken.ReturnStrat());
+            lijst.Add(rekenen_met_een_rond_getal.ReturnStrat());
+            lijst.Add(splitstrategie_substraction.ReturnStrat());
 
-            return lijst;
+
+			lijst.RemoveAll(item => item == null);
+
+
+			return lijst;
         }
         public void chainOrder()
         {
+            aftrekken_door_verschil_te_bepalen.setNextChain(komols_gewijs_aftrekken);
+            komols_gewijs_aftrekken.setNextChain(rekenen_met_een_rond_getal);
+            rekenen_met_een_rond_getal.setNextChain(splitstrategie_substraction);
 
         }
     }

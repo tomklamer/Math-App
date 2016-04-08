@@ -11,7 +11,7 @@ namespace Math_App.Solutions
             switch (sign)
             {
                 case "-":
-                    return new Minus();
+                    return new Minus(b, c);
                 case "+":
                     return new Addition(b, c);
                 case "/":
