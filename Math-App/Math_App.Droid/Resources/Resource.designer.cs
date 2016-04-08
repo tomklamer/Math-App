@@ -157,26 +157,26 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f070035
 			public const int FracionC = 2131165237;
 			
-			// aapt resource value: 0x7f070018
-			public const int GridAnswer = 2131165208;
-			
-			// aapt resource value: 0x7f070014
-			public const int GridColor = 2131165204;
-			
-			// aapt resource value: 0x7f070013
-			public const int GridContainer = 2131165203;
-			
-			// aapt resource value: 0x7f070017
-			public const int GridEquation = 2131165207;
+			// aapt resource value: 0x7f070019
+			public const int GridAnswer = 2131165209;
 			
 			// aapt resource value: 0x7f070015
-			public const int GridImage = 2131165205;
+			public const int GridColor = 2131165205;
+			
+			// aapt resource value: 0x7f070014
+			public const int GridContainer = 2131165204;
+			
+			// aapt resource value: 0x7f070018
+			public const int GridEquation = 2131165208;
 			
 			// aapt resource value: 0x7f070016
-			public const int GridTitle = 2131165206;
+			public const int GridImage = 2131165206;
 			
-			// aapt resource value: 0x7f070019
-			public const int Image = 2131165209;
+			// aapt resource value: 0x7f070017
+			public const int GridTitle = 2131165207;
+			
+			// aapt resource value: 0x7f07001a
+			public const int Image = 2131165210;
 			
 			// aapt resource value: 0x7f07002e
 			public const int Minus = 2131165230;
@@ -226,14 +226,14 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f07003d
 			public const int grid = 2131165245;
 			
-			// aapt resource value: 0x7f07001c
-			public const int hlTopBar = 2131165212;
+			// aapt resource value: 0x7f07001d
+			public const int hlTopBar = 2131165213;
 			
 			// aapt resource value: 0x7f070011
 			public const int imageButton1 = 2131165201;
 			
-			// aapt resource value: 0x7f07001d
-			public const int imageButton2 = 2131165213;
+			// aapt resource value: 0x7f070013
+			public const int imageButton2 = 2131165203;
 			
 			// aapt resource value: 0x7f07000b
 			public const int imageView1 = 2131165195;
@@ -301,11 +301,11 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f070008
 			public const int textView2 = 2131165192;
 			
-			// aapt resource value: 0x7f07001b
-			public const int tvHome = 2131165211;
+			// aapt resource value: 0x7f07001c
+			public const int tvHome = 2131165212;
 			
-			// aapt resource value: 0x7f07001a
-			public const int tvName = 2131165210;
+			// aapt resource value: 0x7f07001b
+			public const int tvName = 2131165211;
 			
 			static Id()
 			{
@@ -336,19 +336,16 @@ namespace Math_App.Droid
 			public const int layout2 = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int layout3 = 2130903045;
+			public const int Listview = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Listview = 2130903046;
+			public const int Main = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Main = 2130903047;
+			public const int SecondPage = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int SecondPage = 2130903048;
-			
-			// aapt resource value: 0x7f030009
-			public const int ThirdPage = 2130903049;
+			public const int ThirdPage = 2130903048;
 			
 			static Layout()
 			{

@@ -44,6 +44,7 @@ namespace Math_App.Droid
                 extras.PutString("EXTRA_PASSWORD", "my_password");
                 fifth.PutExtras(extras);
                 StartActivity(fifth);
+
             };
 
             // Get ImageViews
@@ -110,6 +111,22 @@ namespace Math_App.Droid
                         image5.SetBackgroundColor(Android.Graphics.Color.Black);
                         break;
                 };
+            };
+
+            ImageButton previousButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton1);
+            previousButton.Click += delegate {
+                if(gallery.SelectedItemPosition != 0)
+                {
+                    gallery.SetSelection(gallery.SelectedItemPosition + -1);
+                }
+            };
+
+            ImageButton nextButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton2);
+            nextButton.Click += delegate{
+                if(gallery.SelectedItemPosition != 4)
+                {
+                    gallery.SetSelection(gallery.SelectedItemPosition + 1);
+                }
             };
         }
     }
