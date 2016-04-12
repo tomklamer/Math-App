@@ -30,13 +30,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)TempStorage\Bracket.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TempStorage\EquationToShow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TempStorage\MainEquation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Constants\Constants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Levels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Equation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Strategies\Strategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Xml\ReaderXml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Xml\XmlObjecten.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Strategies.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\" />

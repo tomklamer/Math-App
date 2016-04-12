@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ArrayOfStrategyXmlObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <StrategyXmlObject>
+       <Level1>
+           <image>plaatjep</image>
+           <text>ghhhhh</text>
+          <title>henkie</title>
+         
+       </Level1>
+       
+       <Level2>
+           <image>plaatjei</image>
+           <text>sdfsdf</text>
+           <title>bartje</title>
+         
+       </Level2>
+     
+       <Level3>
+           <image>plaatjef</image>
+           <text>sdfsdf</text>
+           <title>frans</title>
+         
+       </Level3>
+     
+       <Level4>
+           <image>plaatjer</image>
+           <text>sdfsdf</text>
+           <title>sjakie</title>
+         
+       </Level4>
+     
+       <Level5>
+           <image>plaatjex</image>
+           <text>dsfsdf</text>
+           <title>gert</title>
+         
+       </Level5>
+     
+       <Title>Africa</Title>
+     
+  </StrategyXmlObject>
+
+  <StrategyXmlObject>
+    <Level1>
+      <image>plaakkkktjep</image>
+      <text>ghhkkkhhh</text>
+      <title>henkkkkkie</title>
+
+    </Level1>
+
+    <Level2>
+      <image>plaatjei</image>
+      <text>sdfsdf</text>
+      <title>bartje</title>
+
+    </Level2>
+
+    <Level3>
+      <image>plkkkaatjef</image>
+      <text>sdfkkksdf</text>
+      <title>frkkkans</title>
+
+    </Level3>
+
+    <Level4>
+      <image>kkkk</image>
+      <text>sdfkksdf</text>
+      <title>sjkkakie</title>
+
+    </Level4>
+
+    <Level5>
+      <image>fsdf</image>
+      <text>dsfsdfssdf</text>
+      <title>gekkkrt</title>
+
+    </Level5>
+
+    <Title>Banaan</Title>
+
+  </StrategyXmlObject>
+
+  <StrategyXmlObject>
+    <Level1>
+      <image>plaatjep</image>
+      <text>ghhhhh</text>
+      <title>henkie</title>
+
+    </Level1>
+
+    <Level2>
+      <image>plaatjei</image>
+      <text>sdfsdf</text>
+      <title>bartje</title>
+
+    </Level2>
+
+    <Level3>
+      <image>plaatjef</image>
+      <text>sdfsdf</text>
+      <title>frans</title>
+
+    </Level3>
+
+    <Level4>
+      <image>plaatjer</image>
+      <text>sdfsdf</text>
+      <title>sjakie</title>
+
+    </Level4>
+
+    <Level5>
+      <image>plaatjex</image>
+      <text>dsfsdf</text>
+      <title>gert</title>
+
+    </Level5>
+
+    <Title>Africa</Title>
+
+  </StrategyXmlObject>
+
+</ArrayOfStrategyXmlObject>

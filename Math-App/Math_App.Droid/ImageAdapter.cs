@@ -45,6 +45,7 @@ namespace Math_App.Droid
             return i;
         }
 
+        // fill adapter image list
         public void FillImageList(List<int> a)
         {
             int i = 5;

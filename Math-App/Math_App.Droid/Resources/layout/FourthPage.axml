@@ -4,39 +4,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:background="@android:color/white"
     android:minHeight="25px">
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="40.0dp"
+        android:layout_height="110.0dp"
         android:id="@+id/linearLayout1"
-        android:layout_marginBottom="15.5dp"
-        android:layout_marginTop="41.5dp">
-        <TextView
-            android:text="Text"
-            android:id="@+id/textView4"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:ems="10"
-            android:textSize="20dp"
-            android:background="@drawable/text_background"
-            android:layout_width="185.0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp" />
-        <TextView
-            android:text="Text"
-            android:id="@+id/textView3"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:ems="10"
-            android:textSize="20dp"
-            android:background="@drawable/text_background"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp" />
+        android:layout_marginBottom="0.0dp"
+        android:background="@drawable/text_background">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="right"
+            android:id="@+id/linearLayout3"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:text="Answer:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:textColor="@color/window_background"
+                android:layout_marginRight="22.0dp"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:text="Text"
+                android:id="@+id/page4_answer"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:ems="10"
+                android:textSize="20dp"
+                android:background="@drawable/text_background"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="22.0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="right"
+            android:id="@+id/linearLayout4">
+            <TextView
+                android:text="Equation:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:textColor="@color/window_background"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:text="Text"
+                android:id="@+id/page4_equation"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:ems="10"
+                android:textSize="20dp"
+                android:background="@drawable/text_background"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="22.0dp" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -98,12 +128,12 @@
             android:id="@+id/gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@android:color/white" />
+            android:background="@android:color/transparent" />
         <ImageButton
             android:src="@drawable/arrow"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton1"
+            android:id="@+id/imageButton2"
             android:background="@android:color/transparent"
             android:layout_marginTop="60dp" />
     </LinearLayout>

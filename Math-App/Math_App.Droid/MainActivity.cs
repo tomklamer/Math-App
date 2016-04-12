@@ -9,18 +9,44 @@ using Android.OS;
 using Android.Views.Animations;
 using Math_App.Validator;
 using Android.Content.PM;
+using System.IO;
+using System.Reflection;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using Math_App.Xml;
 
 namespace Math_App.Droid
 {
     [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
-    public class MainActivity : Activity       {
+    public class MainActivity : Activity
+    {       
 
         // validator class
         private ValidatorCalc val = new ValidatorCalc();
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);            
+            base.OnCreate(bundle);
+
+            // Prefix
+            var resourcePrefix = "Math_App.Droid.";
+
+            // NumberPicker values
+            string pickerB = "";
+            string pickerC = "";
+
+            // Create stream with path
+            var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); ;
+
+            // Read Xml file & create strategy object
+            StrategyXmlObject strat = new StrategyXmlObject();
+            strat = ReaderXml.ReadFile(stream, "Banaan");
+
+            // Test
+            Console.WriteLine(strat.Level1.text);
+            Console.WriteLine(strat.Level2.image);
+            Console.WriteLine(strat.Title);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -37,7 +63,7 @@ namespace Math_App.Droid
             button.Click += delegate
             {
                 string text = textviewCalc.Text.ToString();
-                if (text.Length > 0)
+                if (text.Length > 0 && val.lastChar(text.Substring(Math.Max(0, text.Length - 1)) ))
                 {
                     var second = new Intent(this, typeof(SecondPage));
                     Bundle extras = new Bundle();
@@ -51,9 +77,9 @@ namespace Math_App.Droid
             Button buttonRevert = FindViewById<Button>(Resource.Id.Revert);
             buttonRevert.Click += (sender, args) => buttonRevert.StartAnimation(animAlpha);
             buttonRevert.Click += delegate
-            {                
+            {
                 string text = textviewCalc.Text.ToString();
-                if(text.Length > 0)
+                if (text.Length > 0)
                 {
                     text = text.Remove(text.Length - 1);
                     textviewCalc.Text = text;
@@ -156,7 +182,7 @@ namespace Math_App.Droid
                     {
                         textviewCalc.Text += "-";
                     }
-                }          
+                }
             };
 
             Button buttonMultiply = FindViewById<Button>(Resource.Id.Multiply);
@@ -171,7 +197,7 @@ namespace Math_App.Droid
                     {
                         textviewCalc.Text += "x";
                     }
-                }                   
+                }
             };
 
             Button buttonDevide = FindViewById<Button>(Resource.Id.Devide);
@@ -182,11 +208,11 @@ namespace Math_App.Droid
                 if (text.Length > 0)
                 {
                     char cLastCharacter = textviewCalc.Text.ToString()[textviewCalc.Text.ToString().Length - 1];
-                    if (val.checkCharacters(cLastCharacter.ToString(), "/"))
+                    if (val.checkCharacters(cLastCharacter.ToString(), "÷"))
                     {
-                        textviewCalc.Text += "/";
+                        textviewCalc.Text += "÷";
                     }
-                }          
+                }
             };
 
             Button buttonAddition = FindViewById<Button>(Resource.Id.Addition);
@@ -201,10 +227,10 @@ namespace Math_App.Droid
                     {
                         textviewCalc.Text += "+";
                     }
-                }       
+                }
             };
 
-            // bracket type input
+            // Bracket type input
             Button buttonBracketLeft = FindViewById<Button>(Resource.Id.BracketLeft);
             buttonBracketLeft.Click += (sender, args) => buttonBracketLeft.StartAnimation(animAlpha);
             buttonBracketLeft.Click += delegate
@@ -218,8 +244,9 @@ namespace Math_App.Droid
                         textviewCalc.Text += "(";
                     }
                 }
-            };
+            };           
 
+            // NumberPicker dialogs
             Button buttonBracketRight = FindViewById<Button>(Resource.Id.BracketRight);
             buttonBracketRight.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
             buttonBracketRight.Click += delegate
@@ -233,6 +260,50 @@ namespace Math_App.Droid
                         textviewCalc.Text += ")";
                     }
                 }
+            };
+
+            Button FracB = FindViewById<Button>(Resource.Id.FracionB);
+            FracB.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
+            FracB.Click += delegate
+            {
+                NumberPicker picker = new NumberPicker(this);
+                picker.MaxValue = 10;
+                picker.MinValue = 1;
+                AlertDialog.Builder builder = new AlertDialog.Builder(this).SetView(picker);
+                builder.SetTitle("Number");
+                builder.SetNegativeButton(Resource.String.Dialog_Cancel, (s, a) => { });
+                builder.SetPositiveButton(Resource.String.Dialog_Ok, (s, a) => {
+                    pickerB = Convert.ToString(picker.Value);
+                    FracB.Text = Convert.ToString(picker.Value);
+                });
+                builder.Show();
+            };
+
+            Button FracC = FindViewById<Button>(Resource.Id.FracionC);
+            FracC.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
+            FracC.Click += delegate
+            {
+                NumberPicker picker = new NumberPicker(this);
+                picker.MaxValue = 10;
+                picker.MinValue = 1;
+                AlertDialog.Builder builder = new AlertDialog.Builder(this).SetView(picker);
+                builder.SetTitle("Number");
+                builder.SetNegativeButton(Resource.String.Dialog_Cancel, (s, a) => { });
+                builder.SetPositiveButton(Resource.String.Dialog_Ok, (s, a) => {
+                    pickerC = Convert.ToString(picker.Value);
+                    FracC.Text = Convert.ToString(picker.Value);
+                    
+                });
+                builder.Show();
+            };
+
+            Button FracAdd = FindViewById<Button>(Resource.Id.FracionAdd);
+            FracAdd.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
+            FracAdd.Click += delegate
+            {
+                textviewCalc.Text += val.CreateFraction(pickerB, pickerC);                
+                pickerC = "";
+                pickerB = "";
             };
         }
     }

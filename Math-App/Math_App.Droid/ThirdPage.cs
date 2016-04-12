@@ -44,14 +44,17 @@ namespace Math_App.Droid
             string b = intent.GetFloatExtra("b", -1).ToString();
             var nb = intent.GetIntExtra("index", -1);
 
+            // Get Strategy types
             CalculationTypeAnalyzer an = new CalculationTypeAnalyzer();
             List<ICheckStrategy> lijst = an.GetCalcType(sign, a, b).getSolutions();           
 
+            // Put Strategy info in view
             for(int i = 0; i < lijst.Count; i++)
             {
                 adapter.Add(lijst[i]);
             }
 
+            // Put Strategies info in view
             TextView textview0 = (TextView)FindViewById(Resource.Id.page3_equation);
             textview0.Text = partEquation;
             TextView textview1 = (TextView)FindViewById(Resource.Id.page3_answer);
