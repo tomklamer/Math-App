@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_mooie_getallen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Splitstrategie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Class1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_door_verschil_te_bepalen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Komols_gewijs_Aftrekken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Rekenen_met_een_rond_getal.cs" />
@@ -39,6 +40,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\" />
   </ItemGroup>
 </Project>
