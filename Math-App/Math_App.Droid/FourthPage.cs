@@ -24,10 +24,23 @@ namespace Math_App.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.FourthPage);
 
+            // Set answer/equation textview
+            TextView answer = (TextView)FindViewById<TextView>(Resource.Id.page4_answer);
+            TextView equation = (TextView)FindViewById<TextView>(Resource.Id.page4_equation);
+            answer.Text = Intent.GetStringExtra("answer");
+            equation.Text = Intent.GetStringExtra("equation");
+
             // Get our Gallery
             CustomGallery gallery = (CustomGallery)FindViewById<CustomGallery>(Resource.Id.gallery);
+
             // Reference it to our adapter
-            gallery.Adapter = new ImageAdapter(this);
+            gallery.Adapter = new ImageAdapter(this, new List<int> {
+                2130837506,
+                Resource.Drawable.maarten,
+                Resource.Drawable.maarten,
+                Resource.Drawable.maarten,
+                Resource.Drawable.tom
+            });            
 
             // Get Level textfield
             TextView level = (TextView)FindViewById<TextView>(Resource.Id.textLevel);
@@ -41,10 +54,15 @@ namespace Math_App.Droid
                 Intent fifth = new Intent(this, typeof(FifthPage));
                 Bundle extras = new Bundle();
                 extras.PutInt("index", x);
-                extras.PutString("EXTRA_PASSWORD", "my_password");
+                extras.PutString("answer", Intent.GetStringExtra("answer"));
+                extras.PutString("equation", Intent.GetStringExtra("equation"));
                 fifth.PutExtras(extras);
                 StartActivity(fifth);
             };
+
+            // Get Buttons
+            ImageButton back = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton1);
+            ImageButton next = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton2);
 
             // Get ImageViews
             ImageView image1 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView1);
@@ -53,8 +71,8 @@ namespace Math_App.Droid
             ImageView image4 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView4);
             ImageView image5 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView5);
 
-            // Item selected change events
-            gallery.ItemSelected += (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs e ) =>
+        // Item selected change events
+        gallery.ItemSelected += (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs e ) =>
             {
                 Console.WriteLine(gallery.SelectedItemId.ToString());
                 switch (gallery.SelectedItemPosition.ToString())

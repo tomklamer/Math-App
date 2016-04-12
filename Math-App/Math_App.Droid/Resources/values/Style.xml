@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="RekenAppTheme.Base" parent="android:Theme.Holo.Light">
+  </style>
+  <style name="RekenAppTheme">
+      <!-- Override the app bar color -->
+      <item name="android:colorPrimary">@color/accent</item>
+      <!-- Override the color of UI controls -->
+      <item name="android:colorAccent">@color/window_background</item>
+      <!-- The color of the status bar and contextual app bars; this is normally a dark version of colorPrimary -->
+      <item name="android:colorPrimaryDark">@color/accent</item>
+      <!-- The color of the screen background -->
+      <item name="android:windowBackground">@color/window_background</item>
+      <!-- he color of UI text in the app bar -->
+      <item name="android:textColorPrimary">@color/window_background</item>
+      <!-- The color of the status bar -->
+      <item name="android:statusBarColor">@color/accent</item>
+      <!-- The color of the navigation bar -->
+      <item name="android:navigationBarColor">@color/accent</item>
+  </style>
+  </resources>

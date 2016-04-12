@@ -47,7 +47,7 @@ namespace Math_App.Droid
         {
 
         }
-        
+
         public override bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {          
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using Math_App.Solutions.StrategyChain;
 using Math_App.Solutions.StrategyChain.Substraction;
-using Math_App.Models.Strategies;
 
 namespace Math_App.Solutions
 {
@@ -20,7 +19,6 @@ namespace Math_App.Solutions
 
         public Multiply(string a, string b)
         {
-
              
         }
 

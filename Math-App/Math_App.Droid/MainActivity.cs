@@ -305,6 +305,15 @@ namespace Math_App.Droid
                 pickerC = "";
                 pickerB = "";
             };
+
+            //Button FracAdd = FindViewById<Button>(Resource.Id.FracionAdd);
+            //FracAdd.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
+            //FracAdd.Click += delegate
+            //{
+            //    textviewCalc.Text += val.CreateFraction(pickerB, pickerC);
+            //    pickerC = "";
+            //    pickerB = "";
+            //};
         }
     }
 }

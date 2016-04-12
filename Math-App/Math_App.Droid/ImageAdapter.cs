@@ -16,9 +16,11 @@ namespace Math_App.Droid
     {
         Context context;
 
-        public ImageAdapter(Context c)
+        public ImageAdapter(Context c, List<int> a)
         {
             context = c;
+
+            thumbIds = a.ToArray();
         }
 
         public override int Count { get { return thumbIds.Length; } }
@@ -45,24 +47,9 @@ namespace Math_App.Droid
             return i;
         }
 
-        // fill adapter image list
-        public void FillImageList(List<int> a)
-        {
-            int i = 5;
-            while ( i < 6)
-            {
-                thumbIds[i] = a[i];
-                i += 1;
-            }
-        }
-
         // references to our images
-        int[] thumbIds = {
-            2130837506,
-            Resource.Drawable.maarten,
-            Resource.Drawable.maarten,
-            Resource.Drawable.maarten,
-            Resource.Drawable.tom
-     };
+        private int[] thumbIds = {
+           
+        };
     }
 }
