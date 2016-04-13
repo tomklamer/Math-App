@@ -391,6 +391,12 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f060000
 			public const int RekenAppTheme_Base = 2131099648;
 			
+			// aapt resource value: 0x7f060003
+			public const int RobotoButtonStyle = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int RobotoTextViewStyle = 2131099650;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
