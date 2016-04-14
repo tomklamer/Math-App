@@ -7,8 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,-26.667,0,-0.333" Width="400" Height="667" Background="Snow">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="96" Width="400" Background="#FFFFA235">
+            <TextBox x:Name="RekenApp" Margin="9.167,48.167,152.167,-1" TextWrapping="Wrap" Text="RekenApp" VerticalAlignment="Stretch" Background="#FFFFA235" BorderBrush="Transparent" FontSize="26.667"/>
+        </Border>
+        <StackPanel Height="100">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Actual" Height="50"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="TextBlock" Height="50"/>
+        </StackPanel>
+    </StackPanel>
 
-    <Grid>
-
-    </Grid>
+    
 </Page>
