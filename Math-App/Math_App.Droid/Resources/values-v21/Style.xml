@@ -17,5 +17,17 @@
       <item name="android:statusBarColor">@color/accent</item>
       <!-- The color of the navigation bar -->
       <item name="android:navigationBarColor">@color/accent</item>
+      <!-- The font of textviews-->
+      <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+      <!-- The font of buttons-->
+      <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+  </style>
+
+  <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+    <item name="android:fontFamily">sans-serif-medium</item>
+  </style>
+
+  <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+    <item name="android:fontFamily">sans-serif-medium</item>
   </style>
 </resources>

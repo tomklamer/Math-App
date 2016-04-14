@@ -16,17 +16,33 @@ namespace Math_App.Solutions.StrategyChain.Substraction
             int first = Convert.ToInt32(b);
             int second = Convert.ToInt32(c);
             int difference = first - second;
-			//this.use = true;
-			//if (difference < 10)
-   //         {
-   //             this.use = true;
-   //             //this.importance = ;
-   //             //if(difference < 3)
-   //             //{
-   //             //    this.importance = 4;
-   //             //}
 
-   //         }
+			//// Conditions:
+			//	1. Both numbers are two digit numbers
+			//	2. Difference between them is up to 4.
+			//	3. a1 < b1
+
+			//check if numbers are both two digit numbers
+			if(b.Length == 2 && c.Length == 2)
+			{
+				//check difference
+				if (difference <= 4)
+				{
+					//get digits into variables
+					int a1 = first % 10;
+					//int a2 = (first - first % 10) / 10;
+					int b1 = second % 10;
+					//int b2 = (second - second % 10) / 10;
+
+					if (a1 < b1)
+					{
+						this.use = true;
+					}
+				}
+				//else false
+			}
+
+
 
             nextInChain.DoAnalyze(b, c);
         }
