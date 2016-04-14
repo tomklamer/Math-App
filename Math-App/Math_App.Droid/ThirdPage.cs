@@ -64,11 +64,10 @@ namespace Math_App.Droid
             GridView gridje = (GridView)FindViewById(Resource.Id.grid);
             gridje.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
-                int x = e.Position;
                 Intent fourth = new Intent(this, typeof(FourthPage));
                 Bundle extras = new Bundle();
-                extras.PutInt("index", x);
-                extras.PutString("EXTRA_PASSWORD", "my_password");
+                extras.PutString("answer", partAnswer);
+                extras.PutString("equation", partEquation);
                 fourth.PutExtras(extras);
                 StartActivity(fourth);
             };

@@ -47,14 +47,14 @@ namespace Math_App.Droid
                 convertView.SetPadding(10, 10, 10, 10);
                 LinearLayout back = (LinearLayout)convertView.FindViewById(Resource.Id.GridColor);
                 back.SetBackgroundColor(Android.Graphics.Color.Orange);
+                title.SetTextColor(Android.Graphics.Color.White);
+                answer.SetTextColor(Android.Graphics.Color.White);
+                Equation.SetTextColor(Android.Graphics.Color.White);
             }
             else
             {
                 // something
-            }            
-            title.SetTextColor(Android.Graphics.Color.White);
-            answer.SetTextColor(Android.Graphics.Color.White);
-            Equation.SetTextColor(Android.Graphics.Color.White);
+            }                        
 
             // Return the completed view to render on screen
             return convertView;

@@ -19,7 +19,6 @@ namespace Math_App.Solutions
 
         public Multiply(string a, string b)
         {
-
              
         }
 

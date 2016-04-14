@@ -73,9 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="63.0dp"
         android:id="@+id/linearLayout2"
-        android:layout_marginRight="51.5dp"
-        android:layout_marginLeft="46.5dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@color/window_background">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
@@ -109,13 +108,14 @@
         android:id="@+id/textLevel"
         android:layout_marginBottom="13.0dp"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:textSize="20dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="224.0dp"
+        android:gravity="center"
         android:id="@+id/linearLayout1">
         <ImageButton
             android:src="@drawable/arrow2"

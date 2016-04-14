@@ -16,10 +16,11 @@ using System.Reflection;
 using System.IO;
 using System.Xml.Serialization;
 using Math_App.Xml;
+using Android.Content.PM;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class FifthPage : Activity
 
     {
@@ -29,6 +30,12 @@ namespace Math_App.Droid
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.FifthPage);
+
+            // Set answer/equation textview
+            TextView answer = (TextView)FindViewById<TextView>(Resource.Id.page5_answer);
+            TextView equation = (TextView)FindViewById<TextView>(Resource.Id.page5_equation);
+            answer.Text = Intent.GetStringExtra("answer");
+            equation.Text = Intent.GetStringExtra("equation");
 
             ImageView imageview = (ImageView)FindViewById<ImageView>(Resource.Id.imageview1);
             int level = Intent.GetIntExtra("index", -1);

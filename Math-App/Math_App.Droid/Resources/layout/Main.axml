@@ -6,7 +6,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="111dp"
         android:id="@+id/linearLayout1"
         android:gravity="center"
         android:background="@drawable/text_background">
