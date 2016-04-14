@@ -37,6 +37,16 @@ namespace Math_App.Validator
             return true;
         }
 
+        //check for unwanted zeroes
+        public bool checkZero(string str)
+        {
+            if (str == "") return false;
+            char lastChar = str[str.Length - 1];
+            if (lastChar == 'x' || lastChar == '-' || lastChar == '+'
+                || lastChar == '÷' || lastChar == '(' || lastChar == ')') return false;
+            return true;
+        }
+
         // check last char
         public bool lastChar(string a)
         {
