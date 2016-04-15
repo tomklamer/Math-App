@@ -18,9 +18,9 @@ namespace Math_App.Solutions.StrategyChain
                 char[] listB = b.ToCharArray();
                 char[] listC = c.ToCharArray();
 
-                for (int i = 0; i < listB.Length; i++)
+                for (int i = 1; i < listB.Length; i++)
                 {
-                    if (i > 0 && listB[i].ToString() == "0" && listC[i].ToString() == "0")
+                    if (listB[i].ToString() == "0" && listC[i].ToString() == "0")
                     {
                         this.use = true;
                     }
