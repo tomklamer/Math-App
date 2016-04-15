@@ -30,7 +30,7 @@ namespace Math_App.Solutions.StrategyChain
 
             for(int i = 0; i < ListCount; i ++)
             {
-                if((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) > 10)
+                if((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) < 10)
                 {
                     this.use = true;
                 }
