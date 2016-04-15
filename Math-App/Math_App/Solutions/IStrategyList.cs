@@ -142,7 +142,6 @@ namespace Math_App.Solutions
             splitstrategie = new Splitstrategie();
             chainOrder();
             analogie.DoAnalyze(a, b);
-            //rekenen_met_mooie_getallen.DoAnalyze(a, b);   
         }
 
         public List<ICheckStrategy> getSolutions()
@@ -161,10 +160,10 @@ namespace Math_App.Solutions
 
         public void chainOrder()
         {
-            analogie.setNextChain(optellen_kolomsgewijs);
+            analogie.setNextChain(splitstrategie);
+            splitstrategie.setNextChain(rekenen_met_rond_getal);
+            rekenen_met_rond_getal.setNextChain(optellen_kolomsgewijs);
             optellen_kolomsgewijs.setNextChain(rekenen_met_mooie_getallen);
-            rekenen_met_mooie_getallen.setNextChain(rekenen_met_rond_getal);
-            rekenen_met_rond_getal.setNextChain(splitstrategie);
         }
     }
 }

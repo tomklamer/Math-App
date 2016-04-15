@@ -8,16 +8,67 @@ namespace Math_App.Solutions.StrategyChain
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 5;
         public string title = "Rekenen_met_mooie_getallen";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
-            if (b.Length <= 2 && c.Length <= 2)
+            char[] listB = b.ToCharArray();
+            char[] listC = c.ToCharArray();
+            Array.Reverse(listB);
+            Array.Reverse(listC);
+            int ListCount;
+
+            if (listB.Length < listC.Length)
             {
-                this.use = true;
+                ListCount = listB.Length;
             }
-            nextInChain.DoAnalyze(b, c);
+            else
+            {
+                ListCount = listC.Length;
+            }
+
+            for (int i = 0; i < ListCount; i++)
+            {
+                if ((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) == 10)
+                {
+                    this.use = true;
+                }
+            }
+
+            if (d != null)
+            {
+                bool tempBool = false;
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i] == importance)
+                    {
+                        tempBool = true;
+                    }
+                };
+                if (!tempBool)
+                {
+                    this.use = false;
+                }
+                if(this.nextInChain != null)
+                {
+                    nextInChain.DoAnalyze(b, c, d);
+                }
+            }
+            else
+            {
+                if (!this.use)
+                {
+                    if(nextInChain != null)
+                    {
+                        nextInChain.DoAnalyze(b, c);
+                    }
+                }
+                else
+                {
+                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+                }
+            }        
         }
 
         public string ReturnTitle()

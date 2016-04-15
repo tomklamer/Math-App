@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private int importance = 2;
         public string title = "Komols gewijs Aftrekken";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
 			//// Conditions:
 			//	1. Both numbers are three digit numbers

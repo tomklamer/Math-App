@@ -36,8 +36,8 @@ namespace Math_App.Validator
 
             return true;
         }
-
-        //check for unwanted zeroes
+         
+        // check for unwanted zeroes
         public bool checkZero(string str)
         {
             if (str == "") return false;

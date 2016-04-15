@@ -4,48 +4,37 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain
 {
-    public class Rekenen_met_rond_getal : ICheckStrategy
+    public class Optellen_met_reigen : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 3;
-        public string title = "Rekenen met rond getal";
+        public string title = "Optellen met reigen";
 
         public void DoAnalyze(string b, string c, List<int> d)
         {
-            //this.use = true;
-            var arrayA = b.ToCharArray();
-            var arrayB = c.ToCharArray();
+            char[] listB = b.ToCharArray();
+            char[] listC = c.ToCharArray();
+            Array.Reverse(listB);
+            Array.Reverse(listC);
+            int ListCount;
 
-            bool temp = false;
-            for (int i = 0; i < arrayA.Length; i++)
+            if (listB.Length < listC.Length)
             {
-                if (i != 0)
-                {
-                    if (arrayA[i].ToString() == "9" ||
-                        arrayA[i].ToString() == "6" ||
-                        arrayA[i].ToString() == "4" ||
-                        arrayA[i].ToString() == "1")
-                    {
-                        temp = true;
-                    }
-                }
+                ListCount = listB.Length;
             }
-            for (int i = 0; i < arrayB.Length; i++)
+            else
             {
-                if (i != 0)
-                {
-                    if (arrayB[i].ToString() == "9" ||
-                        arrayB[i].ToString() == "6" ||
-                        arrayB[i].ToString() == "4" ||
-                        arrayB[i].ToString() == "1")
-                    {
-                        temp = true;
-                    }
-                }
+                ListCount = listC.Length;
             }
 
-            if (temp) { this.use = true;  }
+            for (int i = 0; i < ListCount; i++)
+            {
+                if ((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) > 10)
+                {
+                    this.use = true;
+                }
+            }
 
             if (d != null)
             {

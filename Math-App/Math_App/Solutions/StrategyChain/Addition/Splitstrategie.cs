@@ -8,13 +8,67 @@ namespace Math_App.Solutions.StrategyChain
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 3;
+        private int importance = 2;
         public string title = "Splitstrategie";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
-            this.use = true;
-            //nextInChain.DoAnalyze(b, c);
+            char[] listB = b.ToCharArray();
+            char[] listC = c.ToCharArray();
+            Array.Reverse(listB);
+            Array.Reverse(listC);
+            int ListCount;
+
+            if(listB.Length < listC.Length)
+            {
+                ListCount = listB.Length;
+            }
+            else
+            {
+                ListCount = listC.Length;
+            }
+
+            for(int i = 0; i < ListCount; i ++)
+            {
+                if((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) < 10)
+                {
+                    this.use = true;
+                }
+            }
+
+            if (d != null)
+            {
+                bool tempBool = false;
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i] == importance)
+                    {
+                        tempBool = true;
+                    }
+                };
+                if (!tempBool)
+                {
+                    this.use = false;
+                }
+                if (this.nextInChain != null)
+                {
+                    nextInChain.DoAnalyze(b, c, d);
+                }
+            }
+            else
+            {
+                if (!this.use)
+                {
+                    if(nextInChain != null)
+                    {
+                        nextInChain.DoAnalyze(b, c);
+                    }
+                }
+                else
+                {
+                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+                }
+            }
         }
 
         public string ReturnTitle()

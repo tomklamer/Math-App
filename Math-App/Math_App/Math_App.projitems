@@ -10,10 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\DataStrategies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\IStrategyList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Analogie.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_kolomsgewijs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_met_reigen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_mooie_getallen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Rekenen_met_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Splitstrategie.cs" />

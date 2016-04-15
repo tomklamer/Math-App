@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private int importance = 3;
         public string title = "Rekenen met enn rond getal";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
 			// Conditions
 			// 1. Both numbers are two digit numbers
