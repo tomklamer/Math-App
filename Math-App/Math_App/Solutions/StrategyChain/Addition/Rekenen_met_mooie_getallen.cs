@@ -41,7 +41,10 @@ namespace Math_App.Solutions.StrategyChain
             {
                 if (!this.use)
                 {
-                    nextInChain.DoAnalyze(b, c);
+                    if(nextInChain != null)
+                    {
+                        nextInChain.DoAnalyze(b, c);
+                    }
                 }
                 else
                 {
