@@ -7,10 +7,16 @@ using Math_App.StaticObjects;
 
 namespace Math_App.TempStorage
 {
+// Main equation class contains all info about equation
+// It interprets equation
+// EquationToShow is a list of single equations displayed in app
+// 
+
 	public class MainEquation
 	{
 		public string equation = "0";
 		public float solution = 0;
+
 		public List<Bracket> brackets = new List<Bracket>();
 		public List<EquationToShow> equationsToShow = new List<EquationToShow>();
 
