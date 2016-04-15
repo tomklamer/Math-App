@@ -103,7 +103,10 @@ namespace Math_App.Droid
             buttonZero.Click += (sender, args) => buttonZero.StartAnimation(animAlpha);
             buttonZero.Click += delegate
             {
-                textviewCalc.Text += "0";
+                if (val.checkZero(textviewCalc.Text))
+                {
+                    textviewCalc.Text += "0";
+                }
             };
 
             Button buttonOne = FindViewById<Button>(Resource.Id.One);
