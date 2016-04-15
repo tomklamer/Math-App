@@ -23,7 +23,7 @@ namespace Math_App.StaticObjects
 				int j = i;
 				StringBuilder sb = new StringBuilder();
 				sign = StringAnalyzer.getSign(calculationList.ElementAt(i));
-				if (sign == 'x' || sign == '/')
+				if (sign == 'x' || sign == '÷')
 				{
 					a = Convert.ToSingle(Analyzer.getNumber(calculationList.ElementAt(i), current, brackets));
 					b = Convert.ToSingle(Analyzer.getNumber(calculationList.ElementAt(i + 1), current, brackets));//TODO try catch << error preventing 
@@ -88,7 +88,7 @@ namespace Math_App.StaticObjects
 						solution = a * b;
 						break;
 					}
-				case '/':
+				case '÷':
 					{
 						solution = a / b;
 						break;

@@ -14,7 +14,7 @@ namespace Math_App.Solutions
                     return new Minus(b, c);
                 case "+":
                     return new Addition(b, c);
-                case "/":
+                case "÷":
                     return new Devide();
                 case "x":
                     return new Multiply(b, c);

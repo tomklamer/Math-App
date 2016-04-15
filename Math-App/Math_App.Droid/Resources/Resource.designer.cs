@@ -348,19 +348,16 @@ namespace Math_App.Droid
 			public const int layout2 = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int layout3 = 2130903045;
+			public const int Listview = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Listview = 2130903046;
+			public const int Main = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Main = 2130903047;
+			public const int SecondPage = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int SecondPage = 2130903048;
-			
-			// aapt resource value: 0x7f030009
-			public const int ThirdPage = 2130903049;
+			public const int ThirdPage = 2130903048;
 			
 			static Layout()
 			{
@@ -405,6 +402,12 @@ namespace Math_App.Droid
 			
 			// aapt resource value: 0x7f060000
 			public const int RekenAppTheme_Base = 2131099648;
+			
+			// aapt resource value: 0x7f060003
+			public const int RobotoButtonStyle = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int RobotoTextViewStyle = 2131099650;
 			
 			static Style()
 			{

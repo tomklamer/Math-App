@@ -138,7 +138,7 @@ namespace Math_App.StaticObjects
 			if (toCheck == '+' ||
 				toCheck == '-' ||
 				toCheck == 'x' ||
-				toCheck == '/')
+				toCheck == '÷')
 			{
 				return true;
 			}

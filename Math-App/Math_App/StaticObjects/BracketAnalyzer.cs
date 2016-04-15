@@ -56,7 +56,7 @@ namespace Math_App.StaticObjects
 					if (toCheck[i] == '+' ||
 					toCheck[i] == '-' ||
 					toCheck[i] == 'x' ||
-					toCheck[i] == '/')
+					toCheck[i] == '÷')
 					{
 						return toCheck[i];
 					}
