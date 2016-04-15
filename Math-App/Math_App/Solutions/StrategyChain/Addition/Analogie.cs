@@ -11,12 +11,60 @@ namespace Math_App.Solutions.StrategyChain
         private int importance = 1;
         public string title = "Analogie";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
-            this.use = true;
-            nextInChain.DoAnalyze(b, c);
+            if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
+            {
+                char[] listB = b.ToCharArray();
+                char[] listC = c.ToCharArray();
+
+                for (int i = 0; i < listB.Length; i++)
+                {
+                    if (i > 0 && listB[i].ToString() == "0" && listC[i].ToString() == "0")
+                    {
+                        this.use = true;
+                    }
+                    else
+                    {
+                        this.use = false;
+                        break;
+                    }
+                }
+            }
+
+            if (d != null)
+            {
+                bool tempBool = false;
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i] == importance)
+                    {
+                        tempBool = true;
+                    }
+                };
+                if (!tempBool)
+                {
+                    this.use = false;
+                }
+                if (this.nextInChain != null)
+                {
+                    nextInChain.DoAnalyze(b, c, d);
+                }
+            }
+            else
+            {
+                if (!this.use)
+                {
+                    nextInChain.DoAnalyze(b, c);
+                }
+                else
+                {
+                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+                }
+            }
         }
-        
+
+
         public string ReturnTitle()
         {
             return this.title;

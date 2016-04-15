@@ -8,16 +8,46 @@ namespace Math_App.Solutions.StrategyChain
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 5;
+        private int importance = 4;
         public string title = "Optellen kolomsgewijs";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
             if (b.Length >= 3 && c.Length >= 3)
             {
                 this.use = true;
             }
-            nextInChain.DoAnalyze(b, c);
+
+            if (d != null)
+            {
+                bool tempBool = false;
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i] == importance)
+                    {
+                        tempBool = true;
+                    }
+                };
+                if (!tempBool)
+                {
+                    this.use = false;
+                }
+                if (this.nextInChain != null)
+                {
+                    nextInChain.DoAnalyze(b, c, d);
+                }
+            }
+            else
+            {
+                if (!this.use)
+                {
+                    nextInChain.DoAnalyze(b, c);
+                }
+                else
+                {
+                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+                }
+            }
         }
 
         public string ReturnTitle()

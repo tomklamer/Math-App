@@ -4,35 +4,31 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain
 {
-    public class Splitstrategie : ICheckStrategy
+    public class Optellen_met_reigen : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
-        public string title = "Splitstrategie";
+        private int importance = 3;
+        public string title = "Optellen met reigen";
 
         public void DoAnalyze(string b, string c, List<int> d)
         {
-            char[] listB = b.ToCharArray();
-            char[] listC = c.ToCharArray();
-            Array.Reverse(listB);
-            Array.Reverse(listC);
-            int ListCount;
+            if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
+            {
+                char[] listB = b.ToCharArray();
+                char[] listC = c.ToCharArray();
 
-            if(listB.Length < listC.Length)
-            {
-                ListCount = listB.Length;
-            }
-            else
-            {
-                ListCount = listC.Length;
-            }
-
-            for(int i = 0; i < ListCount; i ++)
-            {
-                if((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) > 10)
+                for (int i = 1; i < listB.Length - 1; i++)
                 {
-                    this.use = true;
+                    if (listB[i].ToString() == "0" && listC[i].ToString() == "0")
+                    {
+                        this.use = true;
+                    }
+                    else
+                    {
+                        this.use = false;
+                        break;
+                    }
                 }
             }
 

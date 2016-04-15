@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private int importance = 1;
         public string title = "Aftrekken door verschil te bepalen";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
             int first = Convert.ToInt32(b);
             int second = Convert.ToInt32(c);

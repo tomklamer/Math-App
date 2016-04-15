@@ -8,16 +8,46 @@ namespace Math_App.Solutions.StrategyChain
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 5;
         public string title = "Rekenen_met_mooie_getallen";
 
-        public void DoAnalyze(string b, string c)
+        public void DoAnalyze(string b, string c, List<int> d)
         {
             if (b.Length <= 2 && c.Length <= 2)
             {
                 this.use = true;
             }
-            nextInChain.DoAnalyze(b, c);
+
+            if (d != null)
+            {
+                bool tempBool = false;
+                for (int i = 0; i < d.Count; i++)
+                {
+                    if (d[i] == importance)
+                    {
+                        tempBool = true;
+                    }
+                };
+                if (!tempBool)
+                {
+                    this.use = false;
+                }
+                if(this.nextInChain != null)
+                {
+                    nextInChain.DoAnalyze(b, c, d);
+                }
+            }
+            else
+            {
+                if (!this.use)
+                {
+                    nextInChain.DoAnalyze(b, c);
+                }
+                else
+                {
+                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+                }
+            }        
         }
 
         public string ReturnTitle()
