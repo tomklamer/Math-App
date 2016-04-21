@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Splitstrategie_substraction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Analyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\BracketAnalyzer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Contants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\SolutionFinder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\StringAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fractions\Fraction.cs" />
