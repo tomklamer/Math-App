@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain
         private int importance = 2;
         public string title = "Splitstrategie";
 
-        public void DoAnalyze(string b, string c, List<int> d)
+        public void DoAnalyze(string b, string c)
         {
             char[] listB = b.ToCharArray();
             char[] listC = c.ToCharArray();
@@ -19,7 +19,10 @@ namespace Math_App.Solutions.StrategyChain
             Array.Reverse(listC);
             int ListCount;
 
-            if(listB.Length < listC.Length)
+            int A;
+            int B;
+
+            if (listB.Length < listC.Length)
             {
                 ListCount = listB.Length;
             }
@@ -30,45 +33,19 @@ namespace Math_App.Solutions.StrategyChain
 
             for(int i = 0; i < ListCount; i ++)
             {
-                if((Convert.ToInt32(listB[i]) + Convert.ToInt32(listC[i])) < 10)
+                // Char.GetNumericValue returns value of type double
+                A = (int)Char.GetNumericValue(listB[i]);
+                B = (int)Char.GetNumericValue(listC[i]);
+
+                A = Convert.ToInt32(Char.GetNumericValue(listB[i]));
+                B = Convert.ToInt32(Char.GetNumericValue(listC[i]));
+
+                if (A + B < 10)
                 {
                     this.use = true;
                 }
             }
-
-            if (d != null)
-            {
-                bool tempBool = false;
-                for (int i = 0; i < d.Count; i++)
-                {
-                    if (d[i] == importance)
-                    {
-                        tempBool = true;
-                    }
-                };
-                if (!tempBool)
-                {
-                    this.use = false;
-                }
-                if (this.nextInChain != null)
-                {
-                    nextInChain.DoAnalyze(b, c, d);
-                }
-            }
-            else
-            {
-                if (!this.use)
-                {
-                    if(nextInChain != null)
-                    {
-                        nextInChain.DoAnalyze(b, c);
-                    }
-                }
-                else
-                {
-                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
-                }
-            }
+            nextInChain.DoAnalyze(b, c);
         }
 
         public string ReturnTitle()

@@ -24,13 +24,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textv"
+                android:id="@+id/textView1"
                 android:textColor="@color/window_background"
                 android:layout_marginRight="22.0dp"
                 android:layout_marginTop="10dp" />
             <TextView
                 android:text="Text"
-                android:id="@+id/page5_answer"
+                android:id="@+id/page4_answer"
                 android:textColor="@android:color/black"
                 android:gravity="center"
                 android:ems="10"
@@ -57,7 +57,7 @@
                 android:layout_marginTop="10dp" />
             <TextView
                 android:text="Text"
-                android:id="@+id/page5_equation"
+                android:id="@+id/page4_equation"
                 android:textColor="@android:color/black"
                 android:gravity="center"
                 android:ems="10"
@@ -69,40 +69,72 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scroller"
-        android:scrollbars="vertical">
+        android:layout_height="63.0dp"
+        android:id="@+id/linearLayout2"
+        android:gravity="center"
+        android:background="@color/window_background">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="match_parent"
-            android:layout_height="258.0dp"
-            android:id="@+id/imageview1"
-            android:layout_margin="10dp" />
-        <TextView
-            android:text="Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nameAndLevel"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:textSize="23dp"
-            android:background="@drawable/text_background"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:padding="5dp" />
-        <TextView
-            android:text="Text"
-            android:layout_width="match_parent"
+            android:id="@+id/imageView1" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView5" />
+    </LinearLayout>
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="45.0dp"
+        android:id="@+id/textLevel"
+        android:layout_marginBottom="13.0dp"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="224.0dp"
+        android:gravity="center"
+        android:id="@+id/linearLayout1">
+        <ImageButton
+            android:src="@drawable/arrow2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton1"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="60dp" />
+        <Math_App.Droid.CustomGallery
+            android:id="@+id/gallery"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/explanation"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:background="@color/white"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:padding="5dp"
-            android:scrollbars="none" />
+            android:background="@android:color/transparent" />
+        <ImageButton
+            android:src="@drawable/arrow"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton2"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="60dp" />
     </LinearLayout>
 </LinearLayout>

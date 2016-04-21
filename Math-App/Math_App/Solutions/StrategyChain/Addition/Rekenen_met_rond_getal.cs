@@ -8,12 +8,11 @@ namespace Math_App.Solutions.StrategyChain
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 3;
+        private int importance = 4;
         public string title = "Rekenen met rond getal";
 
-        public void DoAnalyze(string b, string c, List<int> d)
+        public void DoAnalyze(string b, string c)
         {
-            //this.use = true;
             var arrayA = b.ToCharArray();
             var arrayB = c.ToCharArray();
 
@@ -47,39 +46,7 @@ namespace Math_App.Solutions.StrategyChain
 
             if (temp) { this.use = true;  }
 
-            if (d != null)
-            {
-                bool tempBool = false;
-                for (int i = 0; i < d.Count; i++)
-                {
-                    if (d[i] == importance)
-                    {
-                        tempBool = true;
-                    }
-                };
-                if (!tempBool)
-                {
-                    this.use = false;
-                }
-                if (this.nextInChain != null)
-                {
-                    nextInChain.DoAnalyze(b, c, d);
-                }
-            }
-            else
-            {
-                if (!this.use)
-                {
-                    if(nextInChain != null)
-                    {
-                        nextInChain.DoAnalyze(b, c);
-                    }
-                }
-                else
-                {
-                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
-                }
-            }
+            nextInChain.DoAnalyze(b, c);
         }
 
         public string ReturnTitle()

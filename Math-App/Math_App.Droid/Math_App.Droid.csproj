@@ -50,10 +50,10 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FourthPage.cs" />
     <Compile Include="CustomGallery.cs" />
     <Compile Include="EquationsAdapter.cs" />
-    <Compile Include="FifthPage.cs" />
-    <Compile Include="FourthPage.cs" />
+    <Compile Include="sss.cs" />
     <Compile Include="GridAdapter.cs" />
     <Compile Include="ImageAdapter.cs" />
     <Compile Include="SecondPage.cs" />
@@ -70,16 +70,16 @@
     <AndroidResource Include="Resources\layout\SecondPage.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\FourthPage.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\FifthPage.axml">
+    <AndroidResource Include="Resources\layout\sss.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ThirdPage.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\layout2.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FourthPage.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -166,6 +166,18 @@
     <AndroidResource Include="Resources\values\Style.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Slidein_top" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Slidein_bot" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Slideout_top" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Slideout_bot" />
   </ItemGroup>
   <Import Project="..\Math_App\Math_App.projitems" Label="Shared" Condition="Exists('..\Math_App\Math_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

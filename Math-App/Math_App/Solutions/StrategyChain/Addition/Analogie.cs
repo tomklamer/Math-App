@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain
         private int importance = 1;
         public string title = "Analogie";
 
-        public void DoAnalyze(string b, string c, List<int> d)
+        public void DoAnalyze(string b, string c)
         {
             if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
             {
@@ -32,39 +32,41 @@ namespace Math_App.Solutions.StrategyChain
                 }
             }
 
-            if (d != null)
-            {
-                bool tempBool = false;
-                for (int i = 0; i < d.Count; i++)
-                {
-                    if (d[i] == importance)
-                    {
-                        tempBool = true;
-                    }
-                };
-                if (!tempBool)
-                {
-                    this.use = false;
-                }
-                if (this.nextInChain != null)
-                {
-                    nextInChain.DoAnalyze(b, c, d);
-                }
-            }
-            else
-            {
-                if (!this.use)
-                {
-                    if(nextInChain != null)
-                    {
-                        nextInChain.DoAnalyze(b, c);
-                    }
-                }
-                else
-                {
-                    nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
-                }
-            }
+            nextInChain.DoAnalyze(b, c);
+
+            //if (d != null)
+            //{
+            //    bool tempBool = false;
+            //    for (int i = 0; i < d.Count; i++)
+            //    {
+            //        if (d[i] == importance)
+            //        {
+            //            tempBool = true;
+            //        }
+            //    };
+            //    if (!tempBool)
+            //    {
+            //        this.use = false;
+            //    }
+            //    if (this.nextInChain != null)
+            //    {
+            //        nextInChain.DoAnalyze(b, c, d);
+            //    }
+            //}
+            //else
+            //{
+            //    if (!this.use)
+            //    {
+            //        if(nextInChain != null)
+            //        {
+            //            nextInChain.DoAnalyze(b, c);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        nextInChain.DoAnalyze(b, c, DataStrategies.ReturnStratsToAnalyse(importance));
+            //    }
+            //}
         }
 
 

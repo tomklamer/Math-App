@@ -9,144 +9,103 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Text.Method;
+using Math_App.Xml;
+using System.Reflection;
+using System.IO;
 using Android.Content.PM;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
-    public class FourthPage : Activity
+
+    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
+    public class ViewFlipperActivity : Activity
     {
 
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
+        private ViewFlipper _flipper;
+        private Button btnPrev, btnNext;
+        private TextView info, titel, info2, titel2, info3, titel3, info4, titel4;
+        private ImageView image, image2, image3, image4;
 
-            // Set our view from the "main" layout resource
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
             SetContentView(Resource.Layout.FourthPage);
 
-            // Set answer/equation textview
-            TextView answer = (TextView)FindViewById<TextView>(Resource.Id.page4_answer);
-            TextView equation = (TextView)FindViewById<TextView>(Resource.Id.page4_equation);
-            answer.Text = Intent.GetStringExtra("answer");
-            equation.Text = Intent.GetStringExtra("equation");
+            // Prefix
+            var resourcePrefix = "Math_App.Droid.";
 
-            // Get our Gallery
-            CustomGallery gallery = (CustomGallery)FindViewById<CustomGallery>(Resource.Id.gallery);
+            // Create stream with path
+            var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); ;
 
-            // Reference it to our adapter
-            gallery.Adapter = new ImageAdapter(this, new List<int> {
-                2130837506,
-                Resource.Drawable.maarten,
-                Resource.Drawable.maarten,
-                Resource.Drawable.maarten,
-                Resource.Drawable.tom
-            });            
+            // Read Xml file & create strategy object
+            StrategyXmlObject strat = new StrategyXmlObject();
+            strat = ReaderXml.ReadFile(stream, "Banaan");
 
-            // Get Level textfield
-            TextView level = (TextView)FindViewById<TextView>(Resource.Id.textLevel);
-            level.Text = "Strategy" + " " + "Level1";   
+            _flipper = FindViewById<ViewFlipper>(Resource.Id.viewFlipper);
 
-            // Create imageclick
-            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
-            {
-                int x = gallery.SelectedItemPosition;
-                Console.WriteLine(x.ToString());
-                Intent fifth = new Intent(this, typeof(FifthPage));
-                Bundle extras = new Bundle();
-                extras.PutInt("index", x);
-                extras.PutString("answer", Intent.GetStringExtra("answer"));
-                extras.PutString("equation", Intent.GetStringExtra("equation"));
-                fifth.PutExtras(extras);
-                StartActivity(fifth);
+            btnNext = FindViewById<Button>(Resource.Id.btnNext);
+            btnPrev = FindViewById<Button>(Resource.Id.btnPrev);
 
+            titel = FindViewById<TextView>(Resource.Id.nameAndLevel);
+            titel.Text = strat.Level1.title;
+            info = FindViewById<TextView>(Resource.Id.explanation);
+            info.Text = strat.Level1.text;
+
+            image = FindViewById<ImageView>(Resource.Id.img);
+            int id = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
+            image.SetImageResource(id);
+
+            titel2 = FindViewById<TextView>(Resource.Id.nameAndLevel2);
+            titel2.Text = strat.Level2.title;
+            info2 = FindViewById<TextView>(Resource.Id.explanation2);
+            info2.Text = strat.Level2.text;
+
+            image2 = FindViewById<ImageView>(Resource.Id.img2);
+            int id2 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
+            image2.SetImageResource(id);
+
+            titel3 = FindViewById<TextView>(Resource.Id.nameAndLevel3);
+            titel3.Text = strat.Level3.title;
+            info3 = FindViewById<TextView>(Resource.Id.explanation3);
+            info3.Text = strat.Level3.text;
+
+            image3 = FindViewById<ImageView>(Resource.Id.img3);
+            int id3 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
+            image3.SetImageResource(id);
+
+            titel4 = FindViewById<TextView>(Resource.Id.nameAndLevel4);
+            titel4.Text = strat.Level4.title;
+            info4 = FindViewById<TextView>(Resource.Id.explanation4);
+            info4.Text = strat.Level4.text;
+
+            image4 = FindViewById<ImageView>(Resource.Id.img4);
+            int id4 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
+            image4.SetImageResource(id);
+
+
+            // Use button clicks to cycle through views
+            btnNext.Click += (sender, e) => {
+                // Use custom animations
+                _flipper.SetOutAnimation(this, Resource.Layout.Slideout_top);
+                _flipper.SetInAnimation(this, Resource.Layout.Slidein_bot);
+                // Use Android built-in animations
+                //_flipper.SetInAnimation(this, Android.Resource.Animation.SlideInLeft);      
+                //_flipper.SetOutAnimation(this, Android.Resource.Animation.SlideOutRight);
+                _flipper.ShowNext();
+            };
+            btnPrev.Click += (sender, e) => {
+                // Use custom animations
+                _flipper.SetOutAnimation(this, Resource.Layout.Slideout_bot);
+                _flipper.SetInAnimation(this, Resource.Layout.Slidein_top);
+                // Use Android built-in animations
+                //_flipper.SetInAnimation(this, Android.Resource.Animation.SlideInLeft);
+                //_flipper.SetOutAnimation(this, Android.Resource.Animation.SlideOutRight);
+                _flipper.ShowPrevious();
             };
 
-            // Get Buttons
-            ImageButton back = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton1);
-            ImageButton next = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton2);
-
-            // Get ImageViews
-            ImageView image1 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView1);
-            ImageView image2 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView2);
-            ImageView image3 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView3);
-            ImageView image4 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView4);
-            ImageView image5 = (ImageView)FindViewById<ImageView>(Resource.Id.imageView5);
-
-        // Item selected change events
-        gallery.ItemSelected += (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs e ) =>
-            {
-                Console.WriteLine(gallery.SelectedItemId.ToString());
-                switch (gallery.SelectedItemPosition.ToString())
-                {
-                    case "0":
-                        level.Text = "Strategy" + " " + "Level1";
-
-                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                        image1.SetBackgroundColor(Android.Graphics.Color.Black);
-                        break;
-                    case "1":
-                        level.Text = "Strategy" + " " + "Level2";
-
-                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                        image2.SetBackgroundColor(Android.Graphics.Color.Black);
-                        break;
-                    case "2":
-                        level.Text = "Strategy" + " " + "Level3";
-
-                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                        image3.SetBackgroundColor(Android.Graphics.Color.Black);
-                        break;
-                    case "3":
-                        level.Text = "Strategy" + " " + "Level4";
-
-                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image5.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                        image4.SetBackgroundColor(Android.Graphics.Color.Black);
-                        break;
-                    case "4":
-                        level.Text = "Strategy" + " " + "Level5";
-
-                        image1.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image2.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image3.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                        image4.SetBackgroundColor(Android.Graphics.Color.Transparent);
-
-                        image5.SetBackgroundColor(Android.Graphics.Color.Black);
-                        break;
-                };
-            };
-
-            ImageButton previousButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton1);
-            previousButton.Click += delegate {
-                if(gallery.SelectedItemPosition != 0)
-                {
-                    gallery.SetSelection(gallery.SelectedItemPosition + -1);
-                }
-            };
-
-            ImageButton nextButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton2);
-            nextButton.Click += delegate{
-                if(gallery.SelectedItemPosition != 4)
-                {
-                    gallery.SetSelection(gallery.SelectedItemPosition + 1);
-                }
-            };
         }
     }
 }
-
