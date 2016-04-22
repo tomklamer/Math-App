@@ -51,12 +51,12 @@ namespace Math_App.Droid
             // copy equations list and create equation class
             for (int i = 0; i < curEquation.getEquationsStrings().Count; i++)
             {
-                equations.Add( new Equation(curEquation.getSolution().ToString(), 
+                equations.Add( new Equation(curEquation.getSolution(), 
                                             curEquation.getString(), 
                                             curEquation.getEquationsStrings()[i], 
                                             curEquation.getEquationsSolution()[i], 
                                             curEquation.equationsToShow[i].a,
-                                            curEquation.equationsToShow[i].b,
+											curEquation.equationsToShow[i].b,
                                             curEquation.equationsToShow[i].sign));
             }
 
@@ -84,10 +84,12 @@ namespace Math_App.Droid
                 extras.PutString("partAnswer", equations[x].partAnswer);
                 extras.PutString("partEquation", equations[x].partEquation);
                 extras.PutString("solution", equations[x].completeAnswer);
-                extras.PutString("equation", equations[x].completeEquation);
-                extras.PutFloat("a", equations[x].a);
-                extras.PutFloat("b", equations[x].b);
-                third.PutExtras(extras);
+				extras.PutString("equation", equations[x].completeEquation);
+				//extras.PutFloat("a", equations[x].a);
+				//extras.PutFloat("b", equations[x].b);
+				extras.PutString("a", equations[x].a);
+				extras.PutString("b", equations[x].b);
+				third.PutExtras(extras);
                 StartActivity(third);
             };
         }
