@@ -9,7 +9,6 @@
     <Import_RootNamespace>Math_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Fractions\FractionCalc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\DataStrategies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />

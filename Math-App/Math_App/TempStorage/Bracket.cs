@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Math_App.StaticObjects;
 
 namespace Math_App.TempStorage
 {
     public class Bracket
     {
 		string bracketString;
-		//float solution;
-		string solution;
+		float solution;
 		bool containsBracket;
 		int bracketCount;
 		int usedBracketCount = 0;
@@ -33,18 +31,13 @@ namespace Math_App.TempStorage
 			this.calculationList.Add(argument);
 		}
 
-		public string getSolution()
+		public float getSolution()
 		{
-			if( Analyzer.isFraction(this.bracketString) == true && Analyzer.hasSign(this.bracketString) == false)
-			{
-				return this.bracketString;
-			}else
-			{
-				return this.solution;
-			}
+
+			return solution;
 		}
 
-		public void setSolution(string argument)
+		public void setSolution(float argument)
 		{
 			this.solution = argument;
 		}

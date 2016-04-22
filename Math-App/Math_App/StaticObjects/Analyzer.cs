@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Math_App.TempStorage;
-using System.Diagnostics;
 
 namespace Math_App.StaticObjects
 {
@@ -91,38 +90,29 @@ namespace Math_App.StaticObjects
 			int index = 0;
 			foreach(Bracket bracket in equation.brackets)
 			{
-				//if (isFraction(bracket.getString()))
-				if( hasSign( bracket.getString() ) == false )
+				index = 0;
+				StringBuilder sb = new StringBuilder();
+
+				// Go through whole string in bracket and
+				// Convert it to strings of <number / bracket> <sign>
+				// for example 
+				// 2 +
+				// 3-
+				// (4-3)+
+				// 2
+
+				while(index + 1 < bracket.getString().Length)
 				{
-					bracket.addToCalculationList(bracket.getString());
-				} else {
-					index = 0;
-					StringBuilder sb = new StringBuilder();
+					//Get number / bracket first
+					sb.Append(getNumberOrBracket(bracket.getString(), ref index));
 
-					// Go through whole string in bracket and
-					// Convert it to strings of <number / bracket> <sign>
-					// for example 
-					// 2 +
-					// 3-
-					// (4-3)+
-					// 2
+					//Then get sign
+					sb.Append(getSign(bracket.getString(), ref index));
 
-					while (index + 1 < bracket.getString().Length)
-					{
-						//Debug.WriteLine("Index is {0}", index);
-						//Get number / bracket first
-						sb.Append(getNumberOrBracket(bracket.getString(), ref index));
+					//End of element - add it to Calculation List 
+					bracket.addToCalculationList(sb.ToString());
 
-						//Then get sign
-						sb.Append(getSign(bracket.getString(), ref index));
-
-						//End of element - add it to Calculation List 
-						bracket.addToCalculationList(sb.ToString());
-
-						sb.Clear();
-
-					}
-
+					sb.Clear();
 				}
 				//Console.WriteLine("Build Calculation List: ");
 			}
@@ -196,11 +186,9 @@ namespace Math_App.StaticObjects
 			{
 				if (isSign(equation[i]))
 				{
-					//Debug.WriteLine("{0} has a sign", equation);
 					return equation[i];
 				}
 			}
-			//Debug.WriteLine("{0} has no sign", equation);
 			return '\0';
 		}
 
@@ -221,36 +209,6 @@ namespace Math_App.StaticObjects
 			}
 		}
 
-		public static bool hasSign(string toCheck)
-		{
-			for (int i = 0; i < toCheck.Length; i++)
-			{
-				if (isSign(toCheck[i]))
-				{
-					Debug.WriteLine("{0} has a sign", toCheck);
-					return true;
-				}
-			}
-			Debug.WriteLine("{0} has no sign", toCheck);
-			return false;
-		}
-
-
-		public static bool isFraction(string toCheck)
-		{
-			for(int i = 0; i < toCheck.Length; i++)
-			{
-				if(toCheck[i] == '/')
-				{
-					Debug.WriteLine("{0} is fraction", toCheck);
-
-					return true;
-				}
-			}
-			Debug.WriteLine("{0} is not a fraction", toCheck);
-			return false;
-		}
-
 		// Gets number from prepared into of format <number><sign>
 		// In case of bracket it returns the solution of bracket equation
 
@@ -258,8 +216,7 @@ namespace Math_App.StaticObjects
 		{
 			StringBuilder sb = new StringBuilder();
 			bool containsBracket = false;
-			bool hasSign = false;
-			bool isFraction = false;
+
 			// Go through string
 
 			for (int i = 0; i < stringToCheck.Length; i++)
@@ -277,20 +234,15 @@ namespace Math_App.StaticObjects
 					if (stringToCheck[i] == '(')
 					{
 						containsBracket = true;
-					} else if(stringToCheck[i] == '/'){
-						isFraction = true;
 					}
 
 					// Append digit or bracket opening
-					
+
 					sb.Append(stringToCheck[i]);
-
-
 				}
 				else
 				// Encounters sign
 				{
-					hasSign = true;
 					if (containsBracket == true)
 					{
 						if(brackets[curBracket].getBracketCount() > 1)
@@ -313,12 +265,7 @@ namespace Math_App.StaticObjects
 										// Reduce BracketCount by one
 
 										brackets[curBracket].setBracketCount(brackets[curBracket].getBracketCount() - 1);
-										//if (isFraction)
-										//{
-										//	return sb.ToString();
-										//}
-
-										return brackets[j - 1].getSolution();
+										return brackets[j - 1].getSolution().ToString("G");
 									}
 								}
 							}
@@ -326,22 +273,13 @@ namespace Math_App.StaticObjects
 						else
 						{
 							// Single bracket - return its solution
-							//if (isFraction)
-							//{
-							//	return sb.ToString();
-							//}
-							return brackets[curBracket - 1].getSolution();
+							return brackets[curBracket - 1].getSolution().ToString("G");
 						}
-						//if (isFraction)
-						//{
-						//	return sb.ToString();
-						//}
-						return brackets[curBracket - 1].getSolution();
+						return brackets[curBracket - 1].getSolution().ToString("G");
 					}
 					break;
 				}
 			}
-
 			return sb.ToString();
 
 		}

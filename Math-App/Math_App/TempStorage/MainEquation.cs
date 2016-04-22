@@ -15,7 +15,7 @@ namespace Math_App.TempStorage
 	public class MainEquation
 	{
 		public string equation = "0";
-		public string solution = "0";
+		public float solution = 0;
 
 		public List<Bracket> brackets = new List<Bracket>();
 		public List<EquationToShow> equationsToShow = new List<EquationToShow>();
@@ -50,7 +50,7 @@ namespace Math_App.TempStorage
 			return this.equation;
 		}
 
-		public string getSolution()
+		public float getSolution()
 		{
 			return this.solution;
 		}

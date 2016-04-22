@@ -12,11 +12,11 @@ namespace Math_App.Models
         public string partEquation;
         public string partAnswer;
         public string image;
-        public string a;
-        public string b;
+        public float a;
+        public float b;
         public char sign;
 
-        public Equation(string a, string b, string c, string d, string e, string f, char g)
+        public Equation(string a, string b, string c, string d, float e, float f, char g)
         {
             this.completeAnswer = a;
             this.completeEquation = b;
