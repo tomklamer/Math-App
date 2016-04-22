@@ -2,41 +2,55 @@
 <ArrayOfStrategyXmlObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <StrategyXmlObject>
        <Level1>
-           <image>plaatjep</image>
-           <text>ghhhhh</text>
-          <title>henkie</title>
+           <image>foto1</image>
+           <text>
+             Bij de som 40+50= denk je direct aan de som
+             4+5=9; dus 40+50=90.
+           </text>
+          <title>Symboliseren</title>
          
        </Level1>
        
        <Level2>
-           <image>plaatjei</image>
-           <text>sdfsdf</text>
-           <title>bartje</title>
+           <image>foto2</image>
+           <text>
+             De som 4+5=9 is geautomatiseerde kennis.
+             Wanneer je de som 40+50= moet uitrekenen,
+             denk je direct aan de som 4+5=9. Dus dan is de
+             som 40+50=90.
+           </text>
+           <title>Voorstellen - schematiseren</title>
          
        </Level2>
      
        <Level3>
-           <image>plaatjef</image>
-           <text>sdfsdf</text>
-           <title>frans</title>
+           <image>foto3</image>
+           <text>
+             Op de tafel liggen vier briefjes van tien euro.
+             Ernaast liggen vijf briefjes van tien euro. Je weet
+             de som 4+5=9. Dus er zijn 4+5=9 briefjes van
+             tien euro. Als 4+5=9 is, dan weet je nu ook dat
+             40+50=90.
+           </text>
+           <title>Voorstellen - concreet</title>
          
        </Level3>
      
        <Level4>
-           <image>plaatjer</image>
-           <text>sdfsdf</text>
-           <title>sjakie</title>
+           <image>foto4</image>
+           <text>
+             Tel de eieren. In iedere eierdoos zitten tien
+             eieren. Je hebt vier dozen van tien eieren en je
+             hebt vijf dozen van tien eieren. De som van de
+             eieren is dus 40+50= . Je ziet 4+5 dozen, dus 9
+             dozen. Je denkt daarom dan aan de som 4+5=9.
+             Dan is 40+50=90.
+           </text>
+           <title>Concreet handelen</title>
          
        </Level4>
      
-       <Level5>
-           <image>plaatjex</image>
-           <text>dsfsdf</text>
-           <title>gert</title>
-         
-       </Level5>
-     
-       <Title>Africa</Title>
+       <Title>Optellen naar analogie</Title>
      
   </StrategyXmlObject>
 
@@ -68,13 +82,6 @@
       <title>sjkkakie</title>
 
     </Level4>
-
-    <Level5>
-      <image>fsdf</image>
-      <text>dsfsdfssdf</text>
-      <title>gekkkrt</title>
-
-    </Level5>
 
     <Title>Banaan</Title>
 
@@ -108,13 +115,6 @@
       <title>sjakie</title>
 
     </Level4>
-
-    <Level5>
-      <image>plaatjex</image>
-      <text>dsfsdf</text>
-      <title>gert</title>
-
-    </Level5>
 
     <Title>Africa</Title>
 

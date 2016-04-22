@@ -4,60 +4,263 @@ using System.Text;
 
 namespace Math_App.Solutions
 {
-    public static class DataStrategies
+    public class DataStrategies
     {
-        private static List<int> Analogie = new List<int>()
-        {
-            3            
-        };
-
-        public static List<int> Optellen_kolomsgewijs = new List<int>()
-        {
-
-        };
-
-        private static List<int> Optellen_met_reigen = new List<int>()
-        {
-            2,
-            5
-        };
-
-        private static List<int> Optellen_met_mooie_getallen = new List<int>()
-        {
-            3,
-            4,
-            2
-        };
-
-        private static List<int> Optellen_met_een_rond_getal = new List<int>()
-        {
-            2,
-            3
-        };
-
-        private static List<int> splitsstrategie = new List<int>()
-        {
-            3
-        };
-
-        public static List<int> ReturnStratsToAnalyse(int value)
+        // Fuction for getting right equation list
+        public List<int> ReturnStrats(int value, List<int> list)
         {
             switch (value)
             {
                 case 1:
-                    return Analogie;
+                    return GetCombination(list, ADDcombinations);
                 case 2:
-                    return splitsstrategie;
+                    return GetCombination(list, DEVcombinations);
                 case 3:
-                    return Optellen_met_reigen;
+                    return GetCombination(list, MINcombinations);  
                 case 4:
-                    return Optellen_met_een_rond_getal;
+                    return GetCombination(list, MULcombinations);  
                 case 5:
-                    return Optellen_kolomsgewijs;
-                case 6:
-                    return Optellen_met_mooie_getallen;
+                    return GetCombination(list, FRAcombinations);  
             }
-            return Analogie;
+            return null;
         }
+
+        // Function for getting the right combination list
+        private List<int> GetCombination(List<int> a, List<Combination> b)
+        {            
+            for (int i = 0; i < b.Count; i++)
+            {
+                bool temp = false;
+                if (a.Count == b[i].strategies.Count)
+                {
+                    for (int x = 0; x < b[i].strategies.Count; x++)
+                    {
+                        if(b[i].strategies[x] != a[x])
+                        {
+                            temp = false;
+                            break;
+                        }
+                        temp = true;
+                    }
+                    if (temp)
+                    {
+                        return b[i].usedStrategies;                        
+                    }            
+                }
+            }
+            return null;
+        }
+
+
+        // All addition combination stored in list
+        private List<Combination> ADDcombinations = new List<Combination>()
+        {            
+             new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    2
+                },
+                usedStrategies = new List<int>
+                {
+                    2
+                }
+            },
+              new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    3
+                },
+                usedStrategies = new List<int>
+                {
+                    3
+                }
+            },
+                  new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    4
+                },
+                usedStrategies = new List<int>
+                {
+                    4
+                }
+            },
+                  new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    2
+                }
+            },
+                        new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2,
+                    3,
+                    5
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    2,
+                    3,
+                    5
+                }
+            },
+                  new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2,
+                    5
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    2,
+                    5
+                }
+            },
+               new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    2,
+                    4
+                },
+                usedStrategies = new List<int>
+                {
+                    2,
+                    4
+                }
+            },             
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2,
+                    3
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    2,
+                    3
+                }
+            },
+             new Combination()
+            {
+                strategies = new List<int>()
+                {                    
+                    2,
+                    3,
+                    4
+                },
+                usedStrategies = new List<int>
+                {                    
+                    2,
+                    3,
+                    4
+                }
+            },
+             new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    2
+                }
+            },
+              new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    2,
+                    3
+                },
+                usedStrategies = new List<int>
+                {
+                    2,
+                    3
+                }
+            }
+        };
+
+        // All devition combination stored in list
+        private List<Combination> DEVcombinations = new List<Combination>()
+        {
+            new Combination()
+            {
+
+            },
+            new Combination()
+            {
+
+            }
+        };
+
+        // All minus combination stored in list
+        private List<Combination> MINcombinations = new List<Combination>()
+        {
+            new Combination()
+            {
+
+            },
+            new Combination()
+            {
+
+            }
+        };
+
+        // All muliplication combination stored in list
+        private List<Combination> MULcombinations = new List<Combination>()
+        {
+            new Combination()
+            {
+
+            },
+            new Combination()
+            {
+
+            }
+        };
+
+        // All fraction combination stored in list
+        private List<Combination> FRAcombinations = new List<Combination>()
+        {
+            new Combination()
+            {
+
+            },
+            new Combination()
+            {
+
+            }
+        };
+    }
+
+    // DTO object 
+    public class Combination
+    {
+        public List<int> strategies;
+        public List<int> usedStrategies;
     }
 }

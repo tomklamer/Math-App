@@ -127,11 +127,14 @@ namespace Math_App.Solutions
     // Strategies for Addition
     public class Addition : IStrategyList
     {
+        DataStrategies data = new DataStrategies();
+
         ICheckStrategy analogie;
         ICheckStrategy optellen_kolomsgewijs;
         ICheckStrategy rekenen_met_mooie_getallen;
         ICheckStrategy rekenen_met_rond_getal;
         ICheckStrategy splitstrategie;
+        ICheckStrategy optellen_met_reigen;
 
         public Addition(string a, string b)
         {
@@ -140,6 +143,7 @@ namespace Math_App.Solutions
             rekenen_met_mooie_getallen = new Rekenen_met_mooie_getallen();
             rekenen_met_rond_getal = new Rekenen_met_rond_getal();
             splitstrategie = new Splitstrategie();
+            optellen_met_reigen = new Optellen_met_reigen();
             chainOrder();
             analogie.DoAnalyze(a, b);
         }
@@ -149,19 +153,40 @@ namespace Math_App.Solutions
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
             lijst.Add(analogie.ReturnStrat());
             lijst.Add(splitstrategie.ReturnStrat());
+            lijst.Add(optellen_met_reigen.ReturnStrat());
             lijst.Add(rekenen_met_rond_getal.ReturnStrat());
-            lijst.Add(rekenen_met_mooie_getallen.ReturnStrat());
             lijst.Add(optellen_kolomsgewijs.ReturnStrat());
+            lijst.Add(rekenen_met_mooie_getallen.ReturnStrat());                     
 
             lijst.RemoveAll(item => item == null);
 
-            return lijst;
+            List<int> tempList = new List<int>();
+            for(int i = 0; i < lijst.Count; i++)
+            {
+                tempList.Add(lijst[i].ReturnImportance());
+                Console.WriteLine(tempList[i]);
+            }
+            
+            List<int> stratsImp = data.ReturnStrats(1, tempList);
+            List<ICheckStrategy> finalList = new List<ICheckStrategy>();
+            for(int i = 0; i < stratsImp.Count; i++)
+            {
+                for(int x = 0; x < lijst.Count; x++)
+                {
+                    if(stratsImp[i] == lijst[x].ReturnImportance())
+                    {
+                        finalList.Add(lijst[x]);
+                    }
+                }
+            }
+            return finalList;
         }
 
         public void chainOrder()
         {
             analogie.setNextChain(splitstrategie);
-            splitstrategie.setNextChain(rekenen_met_rond_getal);
+            splitstrategie.setNextChain(optellen_met_reigen);
+            optellen_met_reigen.setNextChain(rekenen_met_rond_getal);
             rekenen_met_rond_getal.setNextChain(optellen_kolomsgewijs);
             optellen_kolomsgewijs.setNextChain(rekenen_met_mooie_getallen);
         }

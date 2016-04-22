@@ -35,19 +35,6 @@ namespace Math_App.Droid
             string pickerB = "";
             string pickerC = "";
 
-            // Create stream with path
-            var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); ;
-
-            // Read Xml file & create strategy object
-            StrategyXmlObject strat = new StrategyXmlObject();
-            strat = ReaderXml.ReadFile(stream, "Banaan");
-
-            // Test
-            Console.WriteLine(strat.Level1.text);
-            Console.WriteLine(strat.Level2.image);
-            Console.WriteLine(strat.Title);
-
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 

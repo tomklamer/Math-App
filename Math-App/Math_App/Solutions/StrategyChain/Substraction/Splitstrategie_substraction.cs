@@ -11,7 +11,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private int importance = 4;
         public string title = "Splitstrategie";
 
-        public void DoAnalyze(string b, string c, List<int> d)
+        public void DoAnalyze(string b, string c)
         {
 			//// Conditions:
 			//	1. Both numbers are two digit numbers

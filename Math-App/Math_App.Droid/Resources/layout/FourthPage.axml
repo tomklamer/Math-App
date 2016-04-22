@@ -2,139 +2,222 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_height="match_parent">
+<!--Navigation Buttons-->
     <LinearLayout
+        android:layout_margin="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="110.0dp"
-        android:id="@+id/linearLayout1"
-        android:layout_marginBottom="0.0dp"
-        android:background="@drawable/text_background">
-        <LinearLayout
-            android:orientation="horizontal"
+        android:layout_height="fill_parent"
+        android:layout_weight="10"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/btnPrev"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="right"
-            android:id="@+id/linearLayout3"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Answer:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/textView1"
-                android:textColor="@color/window_background"
-                android:layout_marginRight="22.0dp"
-                android:layout_marginTop="10dp" />
-            <TextView
-                android:text="Text"
-                android:id="@+id/page4_answer"
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:ems="10"
-                android:textSize="20dp"
-                android:background="@drawable/text_background"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="22.0dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="right"
-            android:id="@+id/linearLayout4">
-            <TextView
-                android:text="Equation:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/textView2"
-                android:textColor="@color/window_background"
-                android:layout_marginRight="22dp"
-                android:layout_marginTop="10dp" />
-            <TextView
-                android:text="Text"
-                android:id="@+id/page4_equation"
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:ems="10"
-                android:textSize="20dp"
-                android:background="@drawable/text_background"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="22.0dp" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="63.0dp"
-        android:id="@+id/linearLayout2"
-        android:gravity="center"
-        android:background="@color/window_background">
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView1" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView2" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView3" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView4" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView5" />
-    </LinearLayout>
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="45.0dp"
-        android:id="@+id/textLevel"
-        android:layout_marginBottom="13.0dp"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:gravity="center" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="224.0dp"
-        android:gravity="center"
-        android:id="@+id/linearLayout1">
-        <ImageButton
-            android:src="@drawable/arrow2"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton1"
-            android:background="@android:color/transparent"
-            android:layout_marginTop="60dp" />
-        <Math_App.Droid.CustomGallery
-            android:id="@+id/gallery"
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent" />
-        <ImageButton
-            android:src="@drawable/arrow"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
-            android:background="@android:color/transparent"
-            android:layout_marginTop="60dp" />
+            android:text="Prev"
+            android:background="@color/accent" />
+    </LinearLayout>
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal">
+    <!--view 1-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroller"
+            android:scrollbars="vertical">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/img"
+                android:layout_margin="10dp" />
+            <TextView
+                android:text="Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameAndLevel"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:background="@drawable/text_background"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp" />
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:fillViewport="true">
+                <TextView
+                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/explanation"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    <!--view 2-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/scroller"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/img2"
+                android:layout_margin="10dp" />
+            <TextView
+                android:text="Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameAndLevel2"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:background="@drawable/text_background"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp" />
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:fillViewport="true">
+                <TextView
+                    android:text="Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/explanation2"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    <!--view 3-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroller"
+            android:scrollbars="vertical">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/img3"
+                android:layout_margin="10dp" />
+            <TextView
+                android:text="Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameAndLevel3"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:background="@drawable/text_background"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp" />
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:fillViewport="true">
+                <TextView
+                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/explanation3"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    <!--view 4-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroller"
+            android:scrollbars="vertical">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/img4"
+                android:layout_margin="10dp" />
+            <TextView
+                android:text="Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameAndLevel4"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:background="@drawable/text_background"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp" />
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:fillViewport="true">
+                <TextView
+                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/explanation4"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    </ViewFlipper>
+<!--Navigation Buttons-->
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="10">
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Next"
+            android:background="@color/accent" />
     </LinearLayout>
 </LinearLayout>
