@@ -20,6 +20,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_met_mooie_getallen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_met_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Addition\Optellen_Splitstrategie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_gebruik_van_inverse_relatie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_herhaald_aftrekken%28rest%29.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_herhaald_aftrekken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_herhaald_aftrekken_met_afschatten.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_naar_analogie_met_nullen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_door_halveren.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_kolomsgewijs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_meer.cs" />
@@ -59,6 +64,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Fraction\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\" />
   </ItemGroup>
 </Project>
