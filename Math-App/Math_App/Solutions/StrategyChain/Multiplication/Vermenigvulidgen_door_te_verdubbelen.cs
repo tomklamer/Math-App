@@ -13,7 +13,14 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 
         public void DoAnalyze(string b, string c)
         {
+            if(((Convert.ToInt32(b) % 2 == 0) && (c[c.Length-1] == '5'))
+                || ((Convert.ToInt32(c) % 2 == 0) && (b[b.Length-1] == '5')))
+            {
+                this.use = true;
+            }
+
             nextInChain.DoAnalyze(b, c);
+
         }
 
         public string ReturnTitle()

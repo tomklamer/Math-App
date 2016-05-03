@@ -13,7 +13,12 @@ namespace Math_App.Solutions.StrategyChain.Substraction
 
         public void DoAnalyze(string b, string c)
         {
-                nextInChain.DoAnalyze(b, c);
+            if(Convert.ToInt32(b) == 5 || Convert.ToInt32(c) == 5)
+            {
+                this.use = true;
+            }
+
+            nextInChain.DoAnalyze(b, c);
         }
 
         public string ReturnTitle()

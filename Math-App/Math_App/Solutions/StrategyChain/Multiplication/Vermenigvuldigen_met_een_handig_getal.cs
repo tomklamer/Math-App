@@ -13,6 +13,14 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 
         public void DoAnalyze(string b, string c)
         {
+            int firstCheck = Convert.ToInt32(b) % 4;
+            int secondCheck = Convert.ToInt32(c) % 25;
+
+            if(firstCheck == 0 && secondCheck == 0)
+            {
+                this.use = true;
+            }
+
             nextInChain.DoAnalyze(b, c);
         }
 

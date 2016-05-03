@@ -13,6 +13,12 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 
         public void DoAnalyze(string b, string c)
         {
+            if((Convert.ToInt32(b) == 49 || Convert.ToInt32(b) == 99)
+                || (Convert.ToInt32(c) == 49 || Convert.ToInt32(c) == 99))
+            {
+                this.use = true;
+            }
+
             nextInChain.DoAnalyze(b, c);
         }
 
