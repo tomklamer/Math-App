@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Math_App.Solutions.StrategyChain
+namespace Math_App.Solutions.StrategyChain.Substraction
 {
-    public class Optellen_met_reigen : ICheckStrategy
+    public class Aftrekken_met_reigen : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 3;
-        public string title = "Optellen met reigen";
+        private int importance = 1;
+        public string title = "Aftrekken met reigen";
 
         public void DoAnalyze(string b, string c)
         {
@@ -43,7 +43,7 @@ namespace Math_App.Solutions.StrategyChain
                 A = Convert.ToInt32(Char.GetNumericValue(listB[i]));
                 B = Convert.ToInt32(Char.GetNumericValue(listC[i]));
 
-                if (A + B > 10)
+                if (A - B < 0)
                 {
                     this.use = true;
                 }

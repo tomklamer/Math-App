@@ -6,6 +6,7 @@ using Math_App.Solutions.StrategyChain.Substraction;
 
 namespace Math_App.Solutions
 {
+
     public interface IStrategyList
     {
         List<ICheckStrategy> getSolutions();
@@ -15,7 +16,7 @@ namespace Math_App.Solutions
     // Strategies for Multiplication
     public class Multiply : IStrategyList
     {
-
+        StrategiesToDisplay data = new StrategiesToDisplay();
 
         public Multiply(string a, string b)
         {
@@ -40,6 +41,8 @@ namespace Math_App.Solutions
     // Strategies for Dividing
     public class Devide : IStrategyList
     {
+        StrategiesToDisplay data = new StrategiesToDisplay();
+
         ICheckStrategy strat1;
         ICheckStrategy strat2;
 
@@ -63,10 +66,14 @@ namespace Math_App.Solutions
     // Strategies for Minus
     public class Minus : IStrategyList
     {
+        StrategiesToDisplay data = new StrategiesToDisplay();
+
         ICheckStrategy aftrekken_door_verschil_te_bepalen;
         ICheckStrategy komols_gewijs_aftrekken;
         ICheckStrategy rekenen_met_een_rond_getal;
         ICheckStrategy splitstrategie_substraction;
+        ICheckStrategy aftrekken_analogie;
+        ICheckStrategy Aftrekken_met_reigen;
 
         public Minus(string a, string b)
         {
@@ -74,6 +81,8 @@ namespace Math_App.Solutions
             komols_gewijs_aftrekken = new Komols_gewijs_aftrekken();
             rekenen_met_een_rond_getal = new Rekenen_met_een_rond_getal();
             splitstrategie_substraction = new Splitstrategie_substraction();
+            aftrekken_analogie = new Aftrekken_Analogie();
+            Aftrekken_met_reigen = new Aftrekken_met_reigen();
             chainOrder();
             aftrekken_door_verschil_te_bepalen.DoAnalyze(a, b);
         }
@@ -85,25 +94,28 @@ namespace Math_App.Solutions
             lijst.Add(komols_gewijs_aftrekken.ReturnStrat());
             lijst.Add(rekenen_met_een_rond_getal.ReturnStrat());
             lijst.Add(splitstrategie_substraction.ReturnStrat());
+            lijst.Add(aftrekken_analogie.ReturnStrat());
+            lijst.Add(Aftrekken_met_reigen.ReturnStrat());
 
+            lijst.RemoveAll(item => item == null);
 
-			lijst.RemoveAll(item => item == null);
-
-
-			return lijst;
+            return data.GetStratsToDisplay(lijst);
         }
         public void chainOrder()
         {
             aftrekken_door_verschil_te_bepalen.setNextChain(komols_gewijs_aftrekken);
             komols_gewijs_aftrekken.setNextChain(rekenen_met_een_rond_getal);
             rekenen_met_een_rond_getal.setNextChain(splitstrategie_substraction);
-
+            splitstrategie_substraction.setNextChain(aftrekken_analogie);
+            aftrekken_analogie.setNextChain(Aftrekken_met_reigen);
         }
     }
 
     // Strategies for Fractures
     public class Fracture : IStrategyList
     {
+        StrategiesToDisplay data = new StrategiesToDisplay();
+
         ICheckStrategy strat1;
         ICheckStrategy strat2;
 
@@ -127,7 +139,7 @@ namespace Math_App.Solutions
     // Strategies for Addition
     public class Addition : IStrategyList
     {
-        DataStrategies data = new DataStrategies();
+        StrategiesToDisplay data = new StrategiesToDisplay();
 
         ICheckStrategy analogie;
         ICheckStrategy optellen_kolomsgewijs;
@@ -160,26 +172,7 @@ namespace Math_App.Solutions
 
             lijst.RemoveAll(item => item == null);
 
-            List<int> tempList = new List<int>();
-            for(int i = 0; i < lijst.Count; i++)
-            {
-                tempList.Add(lijst[i].ReturnImportance());
-                Console.WriteLine(tempList[i]);
-            }
-            
-            List<int> stratsImp = data.ReturnStrats(1, tempList);
-            List<ICheckStrategy> finalList = new List<ICheckStrategy>();
-            for(int i = 0; i < stratsImp.Count; i++)
-            {
-                for(int x = 0; x < lijst.Count; x++)
-                {
-                    if(stratsImp[i] == lijst[x].ReturnImportance())
-                    {
-                        finalList.Add(lijst[x]);
-                    }
-                }
-            }
-            return finalList;
+            return data.GetStratsToDisplay(lijst);
         }
 
         public void chainOrder()

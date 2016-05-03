@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Math_App.Solutions.StrategyChain.Substraction
@@ -16,35 +17,40 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         {
             int first = Convert.ToInt32(b);
             int second = Convert.ToInt32(c);
-            int difference = first - second;
+            int ListCount;
 
-			//// Conditions:
-			//	1. Both numbers are two digit numbers
-			//	2. Difference between them is up to 4.
-			//	3. a1 < b1
+            char[] bAr = b.ToCharArray();
+            char[] cAr = c.ToCharArray();
 
-			//check if numbers are both two digit numbers
-			if(b.Length == 2 && c.Length == 2)
-			{
-				//check difference
-				if (difference <= 4)
-				{
-					//get digits into variables
-					int a1 = first % 10;
-					//int a2 = (first - first % 10) / 10;
-					int b1 = second % 10;
-					//int b2 = (second - second % 10) / 10;
+            if (bAr.Length < cAr.Length)
+            {
+                ListCount = bAr.Length;
+            }
+            else
+            {
+                ListCount = cAr.Length;
+            }
 
-					if (a1 < b1)
-					{
-						this.use = true;
-					}
-				}
-				//else false
-			}
-
-
-
+            if (((bAr.Length == 2 || cAr.Length == 2) ||
+                (bAr.Length == 2 || cAr.Length == 3) || 
+                (bAr.Length == 3 && cAr.Length == 2)) &&
+                Math.Abs(first - second) <= 5)
+            {
+                if (bAr.First() != cAr.First())
+                {
+                    this.use = true;
+                }
+            }
+            else if((bAr.Length == 3 && cAr.Length == 3) && Math.Abs(first - second) <= 20)
+            {
+                for (int i = 0; i < ListCount; i++)
+                {
+                    if (bAr.First() != cAr.First())
+                    {
+                        this.use = true;
+                    }
+                }
+            }
             nextInChain.DoAnalyze(b, c);
         }
 

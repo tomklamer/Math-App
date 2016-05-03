@@ -42,7 +42,7 @@ namespace Math_App.Droid
 
             // Read Xml file & create strategy object
             StrategyXmlObject strat = new StrategyXmlObject();
-            strat = ReaderXml.ReadFile(stream, "Banaan");
+            strat = ReaderXml.ReadFile(stream, "Optellen naar analogie");
 
             _flipper = FindViewById<ViewFlipper>(Resource.Id.viewFlipper);
 
@@ -54,36 +54,36 @@ namespace Math_App.Droid
             info = FindViewById<TextView>(Resource.Id.explanation);
             info.Text = strat.Level1.text;
 
-            image = FindViewById<ImageView>(Resource.Id.img);
-            int id = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
-            image.SetImageResource(id);
+            //image = FindViewById<ImageView>(Resource.Id.img);
+            //int id = Resources.GetIdentifier(strat.Level1.image, "drawable", "Math_App.Droid");
+            //image.SetImageResource(id);
 
             titel2 = FindViewById<TextView>(Resource.Id.nameAndLevel2);
             titel2.Text = strat.Level2.title;
             info2 = FindViewById<TextView>(Resource.Id.explanation2);
             info2.Text = strat.Level2.text;
 
-            image2 = FindViewById<ImageView>(Resource.Id.img2);
-            int id2 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
-            image2.SetImageResource(id);
+            //image2 = FindViewById<ImageView>(Resource.Id.img2);
+            //int id2 = Resources.GetIdentifier(strat.Level2.image, "drawable", "Math_App.Droid");
+            //image2.SetImageResource(id2);
 
             titel3 = FindViewById<TextView>(Resource.Id.nameAndLevel3);
             titel3.Text = strat.Level3.title;
             info3 = FindViewById<TextView>(Resource.Id.explanation3);
             info3.Text = strat.Level3.text;
 
-            image3 = FindViewById<ImageView>(Resource.Id.img3);
-            int id3 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
-            image3.SetImageResource(id);
+            //image3 = FindViewById<ImageView>(Resource.Id.img3);
+            //int id3 = Resources.GetIdentifier(strat.Level3.image, "drawable", "Math_App.Droid");
+            //image3.SetImageResource(id3);
 
             titel4 = FindViewById<TextView>(Resource.Id.nameAndLevel4);
             titel4.Text = strat.Level4.title;
             info4 = FindViewById<TextView>(Resource.Id.explanation4);
             info4.Text = strat.Level4.text;
 
-            image4 = FindViewById<ImageView>(Resource.Id.img4);
-            int id4 = Resources.GetIdentifier("bart.jpg", "drawable", "Math_App.Droid");
-            image4.SetImageResource(id);
+            //image4 = FindViewById<ImageView>(Resource.Id.img4);
+            //int id4 = Resources.GetIdentifier(strat.Level4.image, "drawable", "Math_App.Droid");
+            //image4.SetImageResource(id4);
 
 
             // Use button clicks to cycle through views

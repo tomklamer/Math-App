@@ -35,11 +35,11 @@ namespace Math_App.Droid
 
             // Reference it to our adapter
             gallery.Adapter = new ImageAdapter(this, new List<int> {
-                2130837506,
-                Resource.Drawable.maarten,
-                Resource.Drawable.maarten,
-                Resource.Drawable.maarten,
-                Resource.Drawable.tom
+                //2130837506,
+                //Resource.Drawable.maarten,
+                //Resource.Drawable.maarten,
+                //Resource.Drawable.maarten,
+                //Resource.Drawable.tom
             });            
 
             // Get Level textfield

@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:layout_gravity="center_horizontal">
         <Button
             android:id="@+id/btnPrev"
@@ -36,7 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal" />
             <TextView
                 android:text="Text"
                 android:layout_width="match_parent"
@@ -44,28 +45,27 @@
                 android:id="@+id/nameAndLevel"
                 android:textColor="@android:color/black"
                 android:gravity="center"
-                android:textSize="23dp"
+                android:textSize="21dp"
                 android:background="@drawable/text_background"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:padding="5dp" />
             <ScrollView
                 android:id="@+id/SCROLLER_ID"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:fillViewport="true">
                 <TextView
-                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/explanation"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
-                    android:background="@color/white"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
                     android:padding="5dp"
+                    android:background="@color/white"
                     android:scrollbars="vertical" />
             </ScrollView>
         </LinearLayout>
@@ -81,7 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:id="@+id/img2"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal" />
             <TextView
                 android:text="Text"
                 android:layout_width="match_parent"
@@ -96,9 +97,11 @@
                 android:padding="5dp" />
             <ScrollView
                 android:id="@+id/SCROLLER_ID"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:fillViewport="true">
                 <TextView
                     android:text="Text"
@@ -107,10 +110,8 @@
                     android:id="@+id/explanation2"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
-                    android:background="@color/white"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
                     android:padding="5dp"
+                    android:background="@color/white"
                     android:scrollbars="vertical" />
             </ScrollView>
         </LinearLayout>
@@ -126,7 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img3"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal" />
             <TextView
                 android:text="Text"
                 android:layout_width="match_parent"
@@ -141,21 +143,21 @@
                 android:padding="5dp" />
             <ScrollView
                 android:id="@+id/SCROLLER_ID"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:fillViewport="true">
                 <TextView
-                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
+                    android:text="Text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/explanation3"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
-                    android:background="@color/white"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
                     android:padding="5dp"
+                    android:background="@color/white"
                     android:scrollbars="vertical" />
             </ScrollView>
         </LinearLayout>
@@ -171,7 +173,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img4"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal" />
             <TextView
                 android:text="Text"
                 android:layout_width="match_parent"
@@ -186,21 +189,21 @@
                 android:padding="5dp" />
             <ScrollView
                 android:id="@+id/SCROLLER_ID"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:fillViewport="true">
                 <TextView
-                    android:text="TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText"
+                    android:text="Text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/explanation4"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
-                    android:background="@color/white"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
                     android:padding="5dp"
+                    android:background="@color/white"
                     android:scrollbars="vertical" />
             </ScrollView>
         </LinearLayout>
@@ -212,7 +215,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="10">
+        android:layout_weight="8">
         <Button
             android:id="@+id/btnNext"
             android:layout_width="match_parent"

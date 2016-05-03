@@ -4,47 +4,33 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain.Substraction
 {
-    public class Komols_gewijs_aftrekken : ICheckStrategy
+    public class Aftrekken_Analogie : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
-        public string title = "Komols gewijs Aftrekken";
+        private int importance = 1;
+        public string title = "Aftrekken door verschil te bepalen";
 
         public void DoAnalyze(string b, string c)
         {
-			//// Conditions:
-			//	1. Both numbers are three digit numbers
-			//	2. a1 > b1, a2 > b2, a3 > b3
+            if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
+            {
+                char[] listB = b.ToCharArray();
+                char[] listC = c.ToCharArray();
 
-			//condition 1
-
-			if(b.Length == 3 && c.Length == 3)
-			{
-				//condition 2
-
-				int first = Convert.ToInt32(b);
-				int second = Convert.ToInt32(c);
-
-				int a1 = first % 10;
-				int a2 = ((first - a1) / 10) % 10;
-				int a3 = (first - a2 * 10 - a1) / 100;
-
-				int b1 = second % 10;
-				int b2 = ((second - b1) / 10) % 10;
-				int b3 = (second - b2 * 10 - b1) / 100;
-
-				if(a1 > b1 &&
-					a2 > b2 &&
-					a3 > b3)
-				{
-					this.use = true;
-					this.importance = 1;
-				}
-
-			}
-
-			//this.use = true;
+                for (int i = 1; i < listB.Length; i++)
+                {
+                    if (listB[i].ToString() == "0" && listC[i].ToString() == "0")
+                    {
+                        this.use = true;
+                    }
+                    else
+                    {
+                        this.use = false;
+                        break;
+                    }
+                }
+            }
             nextInChain.DoAnalyze(b, c);
         }
 
