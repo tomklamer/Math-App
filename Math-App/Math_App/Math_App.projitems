@@ -29,7 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_kolomsgewijs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_meer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_minder%2810%29.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_minder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_minder(5).cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_de_helft_van_10x.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_een_handig_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_omkeringsprincipe.cs" />

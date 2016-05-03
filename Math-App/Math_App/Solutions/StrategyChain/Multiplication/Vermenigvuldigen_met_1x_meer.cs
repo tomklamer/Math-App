@@ -13,6 +13,12 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 
         public void DoAnalyze(string b, string c)
         {
+            if (Convert.ToInt32(b) == 6 || Convert.ToInt32(c) == 6 ||
+                Convert.ToInt32(b) == 11 || Convert.ToInt32(c) == 11)
+            {
+                this.use = true;
+            }
+
             nextInChain.DoAnalyze(b, c);
         }
 

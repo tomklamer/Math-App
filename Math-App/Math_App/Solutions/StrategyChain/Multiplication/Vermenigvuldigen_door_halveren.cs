@@ -13,11 +13,8 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 
         public void DoAnalyze(string b, string c)
         {
-            if (b.Length >= 3 && c.Length >= 3)
-            {
-
-                nextInChain.DoAnalyze(b, c);
-            }
+            this.use = true;
+            nextInChain.DoAnalyze(b, c);
         }
 
         public string ReturnTitle()

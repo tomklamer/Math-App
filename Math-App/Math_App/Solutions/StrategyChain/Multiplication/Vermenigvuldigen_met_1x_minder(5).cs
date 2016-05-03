@@ -9,11 +9,16 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 2;
-        public string title = "Vermenigvuldigen met 1x minder";
+        public string title = "Vermenigvuldigen met 1x minder(5)";
 
         public void DoAnalyze(string b, string c)
         {
-                nextInChain.DoAnalyze(b, c);
+            if(Convert.ToInt32(b) == 4 || Convert.ToInt32(c) == 4)
+            {
+                this.use = true;
+            }
+
+            nextInChain.DoAnalyze(b, c);
         }
 
         public string ReturnTitle()
