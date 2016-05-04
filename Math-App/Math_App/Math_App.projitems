@@ -25,6 +25,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_herhaald_aftrekken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_door_herhaald_aftrekken_met_afschatten.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Division\Delen_naar_analogie_met_nullen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Cijferend.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_oppervlaktemodel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_sprongen_op_de_getallenlijn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_door_halveren.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_kolomsgewijs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Multiplication\Vermenigvuldigen_met_1x_meer.cs" />

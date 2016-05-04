@@ -235,11 +235,148 @@ namespace Math_App.Solutions
         {
             new Combination()
             {
-
+                strategies = new List<int>()
+                {
+                    6,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    6,
+                    12
+                }
             },
             new Combination()
             {
-
+                strategies = new List<int>()
+                {
+                    1,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    1,
+                    12
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    5,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    5,
+                    12
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    4,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    4,
+                    12
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    3,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    3,
+                    12
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    8,
+                    12
+                },
+                usedStrategies = new List<int>()
+                {
+                    8,
+                    12
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    10,
+                    12,
+                    13
+                },
+                usedStrategies = new List<int>()
+                {
+                    10,
+                    12,
+                    13
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    7,
+                    2
+                },
+                usedStrategies = new List<int>()
+                {
+                    7,
+                    2
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    2,
+                    14
+                },
+                usedStrategies = new List<int>()
+                {
+                    2,
+                    14
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    9,
+                    2
+                },
+                usedStrategies = new List<int>()
+                {
+                    9,
+                    2
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    11,
+                    2
+                },
+                usedStrategies = new List<int>()
+                {
+                    11,
+                    2
+                }
             }
         };
 
