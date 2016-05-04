@@ -209,11 +209,77 @@ namespace Math_App.Solutions
         {
             new Combination()
             {
-
+                strategies = new List<int>()
+                {
+                    1,
+                    2,
+                    6
+                },
+                usedStrategies = new List<int>()
+                {
+                    1,
+                    6
+                }
             },
             new Combination()
             {
-
+                strategies = new List<int>()
+                {
+                    2,
+                    4,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>()
+                {
+                    2,
+                    7
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    3,
+                    4,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>()
+                {
+                    3,
+                    7
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    2,
+                    4,
+                    5,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>()
+                {
+                    5,
+                    7
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    4,
+                    6,
+                    7,
+                },
+                usedStrategies = new List<int>()
+                {
+                    4,
+                    7
+                }
             }
         };
 
