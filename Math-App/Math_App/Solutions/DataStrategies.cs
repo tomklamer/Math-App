@@ -251,6 +251,7 @@ namespace Math_App.Solutions
                 strategies = new List<int>()
                 {
                     1,
+                    2,
                     12
                 },
                 usedStrategies = new List<int>()
@@ -330,8 +331,8 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
-                    7,
-                    2
+                    2,
+                    7
                 },
                 usedStrategies = new List<int>()
                 {
