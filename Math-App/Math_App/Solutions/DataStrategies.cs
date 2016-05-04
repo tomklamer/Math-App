@@ -237,8 +237,13 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
+                    1,
+                    3,
                     6,
-                    12
+                    11,
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -251,8 +256,10 @@ namespace Math_App.Solutions
                 strategies = new List<int>()
                 {
                     1,
-                    2,
-                    12
+                    5,
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -264,21 +271,13 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
-                    5,
-                    12
-                },
-                usedStrategies = new List<int>()
-                {
-                    5,
-                    12
-                }
-            },
-            new Combination()
-            {
-                strategies = new List<int>()
-                {
+                    1,
+                    3,
                     4,
-                    12
+                    8,
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -290,8 +289,11 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
+                    1,
                     3,
-                    12
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -302,37 +304,48 @@ namespace Math_App.Solutions
             new Combination()
             {
                 strategies = new List<int>()
+                {
+                    1,
+                    8,
+                    12,
+                    13,
+                    14
+                },
+                usedStrategies = new List<int>()
                 {
                     8,
                     12
-                },
-                usedStrategies = new List<int>()
-                {
-                    8,
-                    12
                 }
             },
             new Combination()
             {
                 strategies = new List<int>()
                 {
-                    10,
-                    12,
-                    13
-                },
-                usedStrategies = new List<int>()
-                {
-                    10,
-                    12,
-                    13
-                }
-            },
-            new Combination()
-            {
-                strategies = new List<int>()
-                {
+                    1,
                     2,
-                    7
+                    10,
+                    12,
+                    13,
+                    14
+                },
+                usedStrategies = new List<int>()
+                {
+                    10,
+                    12,
+                    13
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>()
+                {
+                    1,
+                    2,
+                    7,
+                    11,
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -344,7 +357,10 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
+                    1,
                     2,
+                    12,
+                    13,
                     14
                 },
                 usedStrategies = new List<int>()
@@ -357,8 +373,13 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
+                    1,
+                    2,
+                    3,
                     9,
-                    2
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
@@ -370,8 +391,12 @@ namespace Math_App.Solutions
             {
                 strategies = new List<int>()
                 {
+                    1,
+                    2,
                     11,
-                    2
+                    12,
+                    13,
+                    14
                 },
                 usedStrategies = new List<int>()
                 {
