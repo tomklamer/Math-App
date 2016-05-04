@@ -8,12 +8,20 @@ namespace Math_App.Solutions.StrategyChain.Division
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 4;
         public string title = "Delen door herhaald aftrekken met afschatten";
 
         public void DoAnalyze(string b, string c)
         {
-            nextInChain.DoAnalyze(b, c);
+            if(Convert.ToInt32(b) > 99 && c.Length < b.Length)
+            {
+                this.use = true;
+            }
+
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

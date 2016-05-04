@@ -4,6 +4,7 @@ using System.Text;
 using Math_App.Solutions.StrategyChain;
 using Math_App.Solutions.StrategyChain.Substraction;
 using Math_App.Solutions.StrategyChain.Multiplication;
+using Math_App.Solutions.StrategyChain.Division;
 
 namespace Math_App.Solutions
 {
@@ -89,23 +90,41 @@ namespace Math_App.Solutions
     {
         StrategiesToDisplay data = new StrategiesToDisplay();
 
-        ICheckStrategy strat1;
-        ICheckStrategy strat2;
+        ICheckStrategy delen_door_gebruik_van_inverse;
+        ICheckStrategy delen_door_herhaald_aftrekken_rest;
+        ICheckStrategy delen_door_herhaald_aftrekken;
+        ICheckStrategy delen_door_herhaald_aftrekken_met_afschatten;
+        ICheckStrategy delen_naar_analogie_met_nullen;
 
         public Devide()
         {
+            delen_door_gebruik_van_inverse = new Delen_door_gebruik_van_inverse_relatie();
+            delen_door_herhaald_aftrekken_rest = new Delen_door_herhaald_aftrekken_rest();
+            delen_door_herhaald_aftrekken = new Delen_door_herhaald_aftrekken();
+            delen_door_herhaald_aftrekken_met_afschatten = new Delen_door_herhaald_aftrekken_met_afschatten();
+            delen_naar_analogie_met_nullen = new Delen_naar_analogie_met_nullen();
         }
 
         public List<ICheckStrategy> getSolutions()
         {
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+            lijst.Add(delen_door_gebruik_van_inverse.ReturnStrat());
+            lijst.Add(delen_door_herhaald_aftrekken_rest.ReturnStrat());
+            lijst.Add(delen_door_herhaald_aftrekken.ReturnStrat());
+            lijst.Add(delen_door_herhaald_aftrekken_met_afschatten.ReturnStrat());
+            lijst.Add(delen_naar_analogie_met_nullen.ReturnStrat());
 
-            return lijst;
+            lijst.RemoveAll(item => item == null);
+
+            return data.GetStratsToDisplay(lijst);
         }
 
         public void chainOrder()
         {
-
+            delen_door_gebruik_van_inverse.setNextChain(delen_door_herhaald_aftrekken_rest);
+            delen_door_herhaald_aftrekken_rest.setNextChain(delen_door_herhaald_aftrekken);
+            delen_door_herhaald_aftrekken.setNextChain(delen_door_herhaald_aftrekken_met_afschatten);
+            delen_door_herhaald_aftrekken_met_afschatten.setNextChain(delen_naar_analogie_met_nullen);
         }
     }
 

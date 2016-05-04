@@ -8,12 +8,69 @@ namespace Math_App.Solutions.StrategyChain.Division
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 5;
         public string title = "Delen naar analogie met nullen";
 
         public void DoAnalyze(string b, string c)
         {
-            nextInChain.DoAnalyze(b, c);
+            char[] listB = b.ToCharArray();
+            char[] listC = c.ToCharArray();
+            bool tempB = false;
+            bool tempC = false;
+
+            for (int i = 0; i < listB.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (Convert.ToInt32(listB[i]) > 0)
+                    {
+                        tempB = true;
+                    }
+                }
+                if (i != 0)
+                {
+                    if (Convert.ToInt32(listB[i]) == 0)
+                    {
+                        tempB = true;
+                    }
+                    else
+                    {
+                        tempB = false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < listC.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (Convert.ToInt32(listC[i]) > 0)
+                    {
+                        tempC = true;
+                    }
+                }
+                if (i != 0)
+                {
+                    if (Convert.ToInt32(listC[i]) == 0)
+                    {
+                        tempC = true;
+                    }
+                    else
+                    {
+                        tempC = false;
+                    }
+                }
+            }
+
+            if (tempB && tempC)
+            {
+                this.use = true;
+            }
+
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()
