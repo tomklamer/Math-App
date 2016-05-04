@@ -8,12 +8,21 @@ namespace Math_App.Solutions.StrategyChain.Division
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
-        public string title = "Delen door herhaald aftrekken";
+        private int importance = 3;
+        public string title = "Delen door herhaald aftrekken (met rest)";
 
         public void DoAnalyze(string b, string c)
         {
-            nextInChain.DoAnalyze(b, c);
+            if (Convert.ToInt32(c) < 10 && Convert.ToInt32(b) > Convert.ToInt32(c) &&
+                Convert.ToInt32(b) % Convert.ToInt32(c) != 0)
+            {
+                this.use = true;
+            }
+
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()
