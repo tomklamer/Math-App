@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain.Multiplication
 {
-    class Vermenigvuldigen_naar_analogie_met_nullen : ICheckStrategy
+    public class Vermenigvuldigen_naar_analogie_met_nullen : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 10;
         public string title = "Vermenigvuldigen naar analogie met nullen";
 
         public void DoAnalyze(string b, string c)
@@ -66,7 +66,10 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
                 this.use = true;
             }
 
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

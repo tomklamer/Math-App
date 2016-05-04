@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Math_App.Solutions.StrategyChain.Substraction
+namespace Math_App.Solutions.StrategyChain.Multiplication
 {
     public class Vermenigvuldigen_met_de_helft_van_10x : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 6;
         public string title = "Vermenigvuldigen met de helft van 10x";
 
         public void DoAnalyze(string b, string c)
@@ -18,7 +18,10 @@ namespace Math_App.Solutions.StrategyChain.Substraction
                 this.use = true;
             }
 
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

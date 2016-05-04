@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain.Multiplication
 {
-    class Vermenigvuldigen_kolomsgewijs : ICheckStrategy
+    public class Vermenigvuldigen_kolomsgewijs : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
@@ -18,7 +18,10 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
                 this.use = true;
             }
 
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

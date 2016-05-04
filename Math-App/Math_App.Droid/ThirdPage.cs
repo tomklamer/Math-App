@@ -46,13 +46,17 @@ namespace Math_App.Droid
 
             // Get Strategy types
             CalculationTypeAnalyzer an = new CalculationTypeAnalyzer();
-            List<ICheckStrategy> lijst = an.GetCalcType(sign, a, b).getSolutions();           
-
-            // Put Strategy info in view
-            for(int i = 0; i < lijst.Count; i++)
+            List<ICheckStrategy> lijst;
+            if (an.GetCalcType(sign, a, b).getSolutions() != null)
             {
-                adapter.Add(lijst[i]);
-            }
+                lijst = an.GetCalcType(sign, a, b).getSolutions();
+
+                // Put Strategy info in view
+                for (int i = 0; i < lijst.Count; i++)
+                {
+                    adapter.Add(lijst[i]);
+                }
+            }                 
 
             // Put Strategies info in view
             TextView textview0 = (TextView)FindViewById(Resource.Id.page3_equation);

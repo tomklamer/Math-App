@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Math_App.Solutions.StrategyChain.Multiplication
 {
-    class Vermenigvulidgen_door_te_verdubbelen : ICheckStrategy
+    public class Vermenigvulidgen_door_te_verdubbelen : ICheckStrategy
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 11;
         public string title = "Vermenigvuldigen door te verdubbelen";
 
         public void DoAnalyze(string b, string c)
@@ -19,8 +19,10 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
                 this.use = true;
             }
 
-            nextInChain.DoAnalyze(b, c);
-
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

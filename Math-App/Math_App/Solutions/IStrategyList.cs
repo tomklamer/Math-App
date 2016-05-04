@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Math_App.Solutions.StrategyChain;
 using Math_App.Solutions.StrategyChain.Substraction;
+using Math_App.Solutions.StrategyChain.Multiplication;
 
 namespace Math_App.Solutions
 {
@@ -18,23 +19,68 @@ namespace Math_App.Solutions
     {
         StrategiesToDisplay data = new StrategiesToDisplay();
 
+        ICheckStrategy vermenigvuldigen_met_de_helft_van_10x;
+        ICheckStrategy vermenigvuldigen_kolomsgewijs;
+        ICheckStrategy vermenigvuldigen_door_halveren;
+        ICheckStrategy vermenigvuldigen_met_1x_meer;
+        ICheckStrategy vermenigvuldigen_met_1x_minder;
+        ICheckStrategy vermenigvuldigen_met_1x_minder_10;
+        ICheckStrategy vermenigvuldigen_met_een_handig_getal;
+        ICheckStrategy vermenigvuldigen_met_omkeringsprincipe;
+        ICheckStrategy vermenigvuldigen_naar_analogie_met_nullen;
+        ICheckStrategy vermenigvuldigen_met_rond_getal;
+        ICheckStrategy vermenigvulidgen_door_te_verdubbelen;
+
         public Multiply(string a, string b)
         {
-             
+            vermenigvuldigen_met_de_helft_van_10x = new Vermenigvuldigen_met_de_helft_van_10x();
+            vermenigvuldigen_kolomsgewijs = new Vermenigvuldigen_kolomsgewijs();
+            vermenigvuldigen_door_halveren = new Vermenigvuldigen_door_halveren();
+            vermenigvuldigen_met_1x_meer = new Vermenigvuldigen_met_1x_meer();
+            vermenigvuldigen_met_1x_minder = new Vermenigvuldigen_met_1x_minder();
+            vermenigvuldigen_met_1x_minder_10 = new Vermenigvuldigen_met_1x_minder_10();
+            vermenigvuldigen_met_een_handig_getal = new Vermenigvuldigen_met_een_handig_getal();
+            vermenigvuldigen_met_omkeringsprincipe = new Vermenigvuldigen_met_omkeringsprincipe();
+            vermenigvuldigen_naar_analogie_met_nullen = new Vermenigvuldigen_naar_analogie_met_nullen();
+            vermenigvuldigen_met_rond_getal = new Vermenigvuldigen_met_rond_getal();
+            vermenigvulidgen_door_te_verdubbelen = new Vermenigvulidgen_door_te_verdubbelen();
+            chainOrder();
+            vermenigvuldigen_met_de_helft_van_10x.DoAnalyze(a, b);
         }
 
         public List<ICheckStrategy> getSolutions()
         {
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
+            lijst.Add(vermenigvuldigen_met_de_helft_van_10x.ReturnStrat());
+            lijst.Add(vermenigvuldigen_kolomsgewijs.ReturnStrat());
+            lijst.Add(vermenigvuldigen_door_halveren.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_1x_meer.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_1x_minder.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_1x_minder_10.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_een_handig_getal.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_omkeringsprincipe.ReturnStrat());
+            lijst.Add(vermenigvuldigen_naar_analogie_met_nullen.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_rond_getal.ReturnStrat());
+            lijst.Add(vermenigvulidgen_door_te_verdubbelen.ReturnStrat());
 
+            lijst.RemoveAll(item => item == null);
 
-
-            return lijst;
+            return data.GetStratsToDisplay(lijst);
         }
 
         public void chainOrder()
         {
-
+            vermenigvuldigen_met_de_helft_van_10x.setNextChain(vermenigvuldigen_kolomsgewijs);
+            vermenigvuldigen_kolomsgewijs.setNextChain(vermenigvuldigen_door_halveren);
+            vermenigvuldigen_door_halveren.setNextChain(vermenigvuldigen_met_1x_meer);
+            vermenigvuldigen_met_1x_meer.setNextChain(vermenigvuldigen_met_1x_minder);
+            vermenigvuldigen_met_1x_minder.setNextChain(vermenigvuldigen_met_1x_minder_10);
+            vermenigvuldigen_met_1x_minder_10.setNextChain(vermenigvuldigen_met_een_handig_getal);
+            vermenigvuldigen_met_een_handig_getal.setNextChain(vermenigvuldigen_met_omkeringsprincipe);
+            vermenigvuldigen_met_omkeringsprincipe.setNextChain(vermenigvuldigen_met_1x_minder_10);
+            vermenigvuldigen_met_1x_minder.setNextChain(vermenigvuldigen_naar_analogie_met_nullen);
+            vermenigvuldigen_naar_analogie_met_nullen.setNextChain(vermenigvuldigen_met_rond_getal);
+            vermenigvuldigen_met_rond_getal.setNextChain(vermenigvulidgen_door_te_verdubbelen);
         }
     }
 

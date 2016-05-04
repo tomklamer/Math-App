@@ -8,11 +8,16 @@ namespace Math_App.Solutions.StrategyChain.Division
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 2;
+        private int importance = 1;
         public string title = "Delen door gebruik van inverse relatie";
 
         public void DoAnalyze(string b, string c)
         {
+            if(Convert.ToInt32(c) < 10 && (Convert.ToInt32(b) / Convert.ToInt32(c) == Convert.ToInt32(b)))
+            {
+                this.use = true;
+            }
+
             nextInChain.DoAnalyze(b, c);
         }
 

@@ -234,9 +234,8 @@ namespace Math_App.Droid
                         textviewCalc.Text += "(";
                     }
                 }
-            };           
-
-            // NumberPicker dialogs
+            };          
+            
             Button buttonBracketRight = FindViewById<Button>(Resource.Id.BracketRight);
             buttonBracketRight.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
             buttonBracketRight.Click += delegate
@@ -252,6 +251,7 @@ namespace Math_App.Droid
                 }
             };
 
+            // NumberPicker dialogs
             Button FracB = FindViewById<Button>(Resource.Id.FracionB);
             FracB.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
             FracB.Click += delegate
@@ -295,15 +295,6 @@ namespace Math_App.Droid
                 pickerC = "";
                 pickerB = "";
             };
-
-            //Button FracAdd = FindViewById<Button>(Resource.Id.FracionAdd);
-            //FracAdd.Click += (sender, args) => buttonBracketRight.StartAnimation(animAlpha);
-            //FracAdd.Click += delegate
-            //{
-            //    textviewCalc.Text += val.CreateFraction(pickerB, pickerC);
-            //    pickerC = "";
-            //    pickerB = "";
-            //};
         }
     }
 }

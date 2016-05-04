@@ -18,17 +18,24 @@ namespace Math_App.Solutions
 
             List<int> stratsImp = data.ReturnStrats(1, tempList);
             List<ICheckStrategy> finalList = new List<ICheckStrategy>();
-            for (int i = 0; i < stratsImp.Count; i++)
+            if(stratsImp != null)
             {
-                for (int x = 0; x < a.Count; x++)
+                for (int i = 0; i < stratsImp.Count; i++)
                 {
-                    if (stratsImp[i] == a[x].ReturnImportance())
+                    for (int x = 0; x < a.Count; x++)
                     {
-                        finalList.Add(a[x]);
+                        if (stratsImp[i] == a[x].ReturnImportance())
+                        {
+                            finalList.Add(a[x]);
+                        }
                     }
                 }
+                return finalList;
             }
-            return finalList;
+            else
+            {
+                return null;
+            }
         }
     }       
 }
