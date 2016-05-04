@@ -6,6 +6,7 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
 {
     public class Cijferend : ICheckStrategy
     {
+        //henk
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 14;
