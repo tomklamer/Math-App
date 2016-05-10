@@ -4,287 +4,347 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Math_App.TempStorage;
+using System.Diagnostics;
 
 namespace Math_App.StaticObjects
 {
-	public static class Analyzer
-	{
+    public static class Analyzer
+    {
+        public static void getBrackets(string equation, List<Bracket> brackets)
+        {
+            List<int> usedBrackets = new List<int>();
 
-		public static void getBrackets(string equation, List<Bracket> brackets)
-		{
-			List<int> usedBrackets = new List<int>();
+            for (int openCursor = 0; openCursor < equation.Length; openCursor++)
+            {
+                // 'openCursor + 1' - Value is increased by one in all cases 
+                // Zero here also means false.
 
-			for (int openCursor = 0; openCursor < equation.Length; openCursor++)
-			{ 
-				// 'openCursor + 1' - Value is increased by one in all cases 
-				// Zero here also means false.
-			
-				// Look for opening for bracket and check if it was found earlier
+                // Look for opening for bracket and check if it was found earlier
 
-				if (equation[openCursor] == '(' && usedBrackets.Find(x => x == (openCursor + 1)) == 0)
-				{
-					// Once opening is found I start looking for bracket closing
-					// from the place an opening was found
+                if (equation[openCursor] == '(' && usedBrackets.Find(x => x == (openCursor + 1)) == 0)
+                {
+                    // Once opening is found I start looking for bracket closing
+                    // from the place an opening was found
 
-					for (int closeCursor = openCursor; closeCursor < equation.Length; closeCursor++)
-					{
-						// I keep going left until closing is found
+                    for (int closeCursor = openCursor; closeCursor < equation.Length; closeCursor++)
+                    {
+                        // I keep going left until closing is found
 
-						if (equation[closeCursor] == ')' && usedBrackets.Find(x => x == (closeCursor + 1)) == 0)
-						{
-							// Closing found and its index added to usedBrackets list
+                        if (equation[closeCursor] == ')' && usedBrackets.Find(x => x == (closeCursor + 1)) == 0)
+                        {
+                            // Closing found and its index added to usedBrackets list
 
-							usedBrackets.Add(closeCursor + 1);
-							
-							// Look back for the first bracket opening
+                            usedBrackets.Add(closeCursor + 1);
 
-							for (int openCursorBis = closeCursor; openCursorBis >= 0; openCursorBis--)
-							{
-								// If found add it to used brackets 
+                            // Look back for the first bracket opening
 
-								if (equation[openCursorBis] == '(' && usedBrackets.Find(x => x == (openCursorBis + 1)) == 0)
-								{
-									usedBrackets.Add(openCursorBis + 1);
-									Bracket tempBracket = new Bracket();
+                            for (int openCursorBis = closeCursor; openCursorBis >= 0; openCursorBis--)
+                            {
+                                // If found add it to used brackets 
 
-									// get string inside the bracket
+                                if (equation[openCursorBis] == '(' && usedBrackets.Find(x => x == (openCursorBis + 1)) == 0)
+                                {
+                                    usedBrackets.Add(openCursorBis + 1);
+                                    Bracket tempBracket = new Bracket();
 
-									tempBracket.setString(getEquationFragment((openCursorBis + 1), (closeCursor - 1), equation));
+                                    // get string inside the bracket
 
-									brackets.Add(tempBracket);
-									break;
-								}
-							}
+                                    tempBracket.setString(getEquationFragment((openCursorBis + 1), (closeCursor - 1), equation));
 
-						}
-					}
-				}
-			}
-			// Create a bracket with whole equation 
-			// string in it since it is ommited in code
+                                    brackets.Add(tempBracket);
+                                    break;
+                                }
+                            }
 
-			Bracket tempBracketBis = new Bracket();
-			tempBracketBis.setString(equation);
-			brackets.Add(tempBracketBis);
-		}
+                        }
+                    }
+                }
+            }
+            // Create a bracket with whole equation 
+            // string in it since it is ommited in code
 
-		// Returns string from begin index to the end
+            Bracket tempBracketBis = new Bracket();
+            tempBracketBis.setString(equation);
+            brackets.Add(tempBracketBis);
+        }
 
-		public static string getEquationFragment(int begin, int end, string equation)
-		{
-			StringBuilder sb = new StringBuilder();
+        // Returns string from begin index to the end
 
-			for (int i = begin; i <= end; i++)
-			{
-				sb.Append(equation[i]);
-			}
+        public static string getEquationFragment(int begin, int end, string equation)
+        {
+            StringBuilder sb = new StringBuilder();
 
-			//string tempString = sb.ToString();
-			//return tempString;
+            for (int i = begin; i <= end; i++)
+            {
+                sb.Append(equation[i]);
+            }
 
-			return sb.ToString();
-		}
+            //string tempString = sb.ToString();
+            //return tempString;
 
-		public static void buildCalculationList(MainEquation equation)
-		{
-			int index = 0;
-			foreach(Bracket bracket in equation.brackets)
-			{
-				index = 0;
-				StringBuilder sb = new StringBuilder();
+            return sb.ToString();
+        }
 
-				// Go through whole string in bracket and
-				// Convert it to strings of <number / bracket> <sign>
-				// for example 
-				// 2 +
-				// 3-
-				// (4-3)+
-				// 2
+        public static void buildCalculationList(MainEquation equation)
+        {
+            int index = 0;
+            foreach (Bracket bracket in equation.brackets)
+            {
+                //if (isFraction(bracket.getString()))
+                if (hasSign(bracket.getString()) == false)
+                {
+                    bracket.addToCalculationList(bracket.getString());
+                }
+                else {
+                    index = 0;
+                    StringBuilder sb = new StringBuilder();
 
-				while(index + 1 < bracket.getString().Length)
-				{
-					//Get number / bracket first
-					sb.Append(getNumberOrBracket(bracket.getString(), ref index));
+                    // Go through whole string in bracket and
+                    // Convert it to strings of <number / bracket> <sign>
+                    // for example 
+                    // 2 +
+                    // 3-
+                    // (4-3)+
+                    // 2
 
-					//Then get sign
-					sb.Append(getSign(bracket.getString(), ref index));
+                    while (index + 1 < bracket.getString().Length)
+                    {
+                        //Debug.WriteLine("Index is {0}", index);
+                        //Get number / bracket first
+                        sb.Append(getNumberOrBracket(bracket.getString(), ref index));
 
-					//End of element - add it to Calculation List 
-					bracket.addToCalculationList(sb.ToString());
+                        //Then get sign
+                        sb.Append(getSign(bracket.getString(), ref index));
 
-					sb.Clear();
-				}
-				//Console.WriteLine("Build Calculation List: ");
-			}
-		}
+                        //End of element - add it to Calculation List 
+                        bracket.addToCalculationList(sb.ToString());
 
-		// Returns first number or bracket from startNum index, modifies index variable
+                        sb.Clear();
+                    }
+                }
+                //Console.WriteLine("Build Calculation List: ");
+            }
+        }
 
-		public static string getNumberOrBracket(string equation, ref int curIndex)
-		{
-			StringBuilder sb = new StringBuilder();
-			int numBracketOpen = 0;
-			int numBracketClose = 0;
+        // Returns first number or bracket from startNum index, modifies index variable
 
-			// Go through string
+        public static string getNumberOrBracket(string equation, ref int curIndex)
+        {
+            StringBuilder sb = new StringBuilder();
+            int numBracketOpen = 0;
+            int numBracketClose = 0;
 
-			for(int i = curIndex; i < equation.Length; i++)
-			{
-				// Number Found
+            // Go through string
 
-				if (Char.IsNumber(equation[i]))
-				{
-					// Append till the end of number
-					while (Char.IsNumber(equation[i]))
-					{
-						sb.Append(equation[i]);
-						i++;
-						if(i >= equation.Length)
-						{
-							break;
-						}
-					}
-					curIndex = i + 1;
-					break;
-				}else if (equation[i] == '(')
+            for (int i = curIndex; i < equation.Length; i++)
+            {
+                // Number Found
 
-				// Bracket opening found
+                if (Char.IsNumber(equation[i]))
+                {
+                    // Append till the end of number
+                    while (Char.IsNumber(equation[i]))
+                    {
+                        sb.Append(equation[i]);
+                        i++;
+                        if (i >= equation.Length)
+                        {
+                            break;
+                        }
+                    }
+                    curIndex = i + 1;
+                    break;
+                }
+                else if (equation[i] == '(')
 
-				{
-					sb.Append(equation[i]);
-					numBracketOpen++;
+                // Bracket opening found
 
-					// Append till the end of brackets
-					// Number of openings and closings must be the same
-					// and not zero
+                {
+                    sb.Append(equation[i]);
+                    numBracketOpen++;
 
-					do
-					{
-						i++;
-						sb.Append(equation[i]);
-						if(equation[i] == '(')
-						{
-							numBracketOpen++;
-						}else if(equation[i] == ')')
-						{
-							numBracketClose++;
-						}
-					} while (numBracketOpen != numBracketClose);
-					curIndex = i + 1; 
-					break;
-				}
-				curIndex = i + 1;
-			}
-			return sb.ToString();
-		}
+                    // Append till the end of brackets
+                    // Number of openings and closings must be the same
+                    // and not zero
 
-		// Returns first sign from startNum index, modifies index variable
+                    do
+                    {
+                        i++;
+                        sb.Append(equation[i]);
+                        if (equation[i] == '(')
+                        {
+                            numBracketOpen++;
+                        }
+                        else if (equation[i] == ')')
+                        {
+                            numBracketClose++;
+                        }
+                    } while (numBracketOpen != numBracketClose);
+                    curIndex = i + 1;
+                    break;
+                }
+                curIndex = i + 1;
+            }
+            return sb.ToString();
+        }
 
-		public static char getSign(string equation, ref int curIndex)
-		{
-			for(int i = curIndex; i < equation.Length; i++)
-			{
-				if (isSign(equation[i]))
-				{
-					return equation[i];
-				}
-			}
-			return '\0';
-		}
+        // Returns first sign from startNum index, modifies index variable
 
-		// Checks if input char is a sign
+        public static char getSign(string equation, ref int curIndex)
+        {
+            for (int i = curIndex; i < equation.Length; i++)
+            {
+                if (isSign(equation[i]))
+                {
+                    //Debug.WriteLine("{0} has a sign", equation);
+                    return equation[i];
+                }
+            }
+            //Debug.WriteLine("{0} has no sign", equation);
+            return '\0';
+        }
 
-		public static bool isSign(char toCheck)
-		{
-			if (toCheck == '+' ||
-				toCheck == '-' ||
-				toCheck == 'x' ||
-				toCheck == '÷')
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
+        // Checks if input char is a sign
 
-		// Gets number from prepared into of format <number><sign>
-		// In case of bracket it returns the solution of bracket equation
+        public static bool isSign(char toCheck)
+        {
+            if (toCheck == '+' ||
+                toCheck == '-' ||
+                toCheck == 'x' ||
+                toCheck == '÷')
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-		public static string getNumber(string stringToCheck, int curBracket, List<Bracket> brackets)
-		{
-			StringBuilder sb = new StringBuilder();
-			bool containsBracket = false;
-
-			// Go through string
-
-			for (int i = 0; i < stringToCheck.Length; i++)
-			{
-				int bracketCount = brackets[curBracket].getBracketCount() - 1;
-
-				// Look for sign
-
-				// No sign
-				// Number or bracket opening
-				if (isSign(stringToCheck[i]) == false)
-				{
-					// Check if there is bracket opening
-
-					if (stringToCheck[i] == '(')
-					{
-						containsBracket = true;
-					}
-
-					// Append digit or bracket opening
-
-					sb.Append(stringToCheck[i]);
-				}
-				else
-				// Encounters sign
-				{
-					if (containsBracket == true)
-					{
-						if(brackets[curBracket].getBracketCount() > 1)
-						{
-							// More than one bracket
-
-							for(int j = curBracket; j >= 0; j--)
-							{
-								// Go through other brackets from curBracket to 0
-
-								// If checked bracket does not contain another bracket
-								// reduce number of bracketCount
-								// BracketCount - number of empty brackets to omit
-								// before finding the one you are looking for
-
-								if (brackets[j].getContainsBracket() == false ) {
-									bracketCount--;
-									if(bracketCount == 0)
-									{
-										// Reduce BracketCount by one
-
-										brackets[curBracket].setBracketCount(brackets[curBracket].getBracketCount() - 1);
-										return brackets[j - 1].getSolution().ToString("G");
-									}
-								}
-							}
-						}
-						else
-						{
-							// Single bracket - return its solution
-							return brackets[curBracket - 1].getSolution().ToString("G");
-						}
-						return brackets[curBracket - 1].getSolution().ToString("G");
-					}
-					break;
-				}
-			}
-			return sb.ToString();
-
-		}
-		
+        public static bool hasSign(string toCheck)
+        {
+            for (int i = 0; i < toCheck.Length; i++)
+            {
+                if (isSign(toCheck[i]))
+                {
+                    Debug.WriteLine("{0} has a sign", toCheck);
+                    return true;
+                }
+            }
+            Debug.WriteLine("{0} has no sign", toCheck);
+            return false;
+        }
 
 
-	}
+        public static bool isFraction(string toCheck)
+        {
+            for (int i = 0; i < toCheck.Length; i++)
+            {
+                if (toCheck[i] == '/')
+                {
+                    Debug.WriteLine("{0} is fraction", toCheck);
+
+                    return true;
+                }
+            }
+            Debug.WriteLine("{0} is not a fraction", toCheck);
+            return false;
+        }
+
+        // Gets number from prepared into of format <number><sign>
+        // In case of bracket it returns the solution of bracket equation
+
+        public static string getNumber(string stringToCheck, int curBracket, List<Bracket> brackets)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool containsBracket = false;
+            bool hasSign = false;
+            bool isFraction = false;
+            // Go through string
+
+            for (int i = 0; i < stringToCheck.Length; i++)
+            {
+                int bracketCount = brackets[curBracket].getBracketCount() - 1;
+
+                // Look for sign
+
+                // No sign
+                // Number or bracket opening
+                if (isSign(stringToCheck[i]) == false)
+                {
+                    // Check if there is bracket opening
+
+                    if (stringToCheck[i] == '(')
+                    {
+                        containsBracket = true;
+                    }
+                    else if (stringToCheck[i] == '/')
+                    {
+                        isFraction = true;
+                    }
+
+                    // Append digit or bracket opening
+
+                    sb.Append(stringToCheck[i]);
+
+
+                }
+                else
+                // Encounters sign
+                {
+                    hasSign = true;
+                    if (containsBracket == true)
+                    {
+                        if (brackets[curBracket].getBracketCount() > 1)
+                        {
+                            // More than one bracket
+
+                            for (int j = curBracket; j >= 0; j--)
+                            {
+                                // Go through other brackets from curBracket to 0
+
+                                // If checked bracket does not contain another bracket
+                                // reduce number of bracketCount
+                                // BracketCount - number of empty brackets to omit
+                                // before finding the one you are looking for
+
+                                if (brackets[j].getContainsBracket() == false)
+                                {
+                                    bracketCount--;
+                                    if (bracketCount == 0)
+                                    {
+                                        // Reduce BracketCount by one
+
+                                        brackets[curBracket].setBracketCount(brackets[curBracket].getBracketCount() - 1);
+                                        //if (isFraction)
+                                        //{
+                                        //	return sb.ToString();
+                                        //}
+
+                                        return brackets[j - 1].getSolution();
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // Single bracket - return its solution
+                            //if (isFraction)
+                            //{
+                            //	return sb.ToString();
+                            //}
+                            return brackets[curBracket - 1].getSolution();
+                        }
+                        //if (isFraction)
+                        //{
+                        //	return sb.ToString();
+                        //}
+                        return brackets[curBracket - 1].getSolution();
+                    }
+                    break;
+                }
+            }
+            return sb.ToString();
+        }
+    }
 }
