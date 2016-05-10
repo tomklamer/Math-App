@@ -8,7 +8,7 @@ namespace Math_App.Fractions
     {
 
 
-        // Fraction Multiplication
+        // Fraction Multiplication -
         public static Fraction Multiply(Fraction a, Fraction b)
         {
             Fraction solution = new Fraction();
