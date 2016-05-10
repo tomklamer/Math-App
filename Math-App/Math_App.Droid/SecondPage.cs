@@ -54,7 +54,7 @@ namespace Math_App.Droid
                 equations.Add( new Equation(curEquation.getSolution().ToString(), 
                                             curEquation.getString(), 
                                             curEquation.getEquationsStrings()[i], 
-                                            curEquation.getEquationsSolution()[i], 
+                                            curEquation.getEquationsSolution()[i],
                                             curEquation.equationsToShow[i].a,
                                             curEquation.equationsToShow[i].b,
                                             curEquation.equationsToShow[i].sign));
@@ -85,8 +85,8 @@ namespace Math_App.Droid
                 extras.PutString("partEquation", equations[x].partEquation);
                 extras.PutString("solution", equations[x].completeAnswer);
                 extras.PutString("equation", equations[x].completeEquation);
-                extras.PutFloat("a", equations[x].a);
-                extras.PutFloat("b", equations[x].b);
+                extras.PutString("a", equations[x].a);
+                extras.PutString("b", equations[x].b);
                 third.PutExtras(extras);
                 StartActivity(third);
             };

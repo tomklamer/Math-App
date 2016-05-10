@@ -8,6 +8,11 @@ namespace Math_App.TempStorage
 {
     public class EquationToShow
     {
+        //public float a;
+        //public float b;
+        //public char sign;
+        //public float solution;
+
         public string a;
         public string b;
         public char sign;
