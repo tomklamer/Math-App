@@ -8,7 +8,7 @@ namespace Math_App.Solutions
     {
         DataStrategies data = new DataStrategies();
 
-        public List<ICheckStrategy> GetStratsToDisplay(List<ICheckStrategy> a)
+        public List<ICheckStrategy> GetStratsToDisplay(List<ICheckStrategy> a, int b)
         {
             List<int> tempList = new List<int>();
             for (int i = 0; i < a.Count; i++)
@@ -16,7 +16,7 @@ namespace Math_App.Solutions
                 tempList.Add(a[i].ReturnImportance());
             }
 
-            List<int> stratsImp = data.ReturnStrats(1, tempList);
+            List<int> stratsImp = data.ReturnStrats(b, tempList);
             List<ICheckStrategy> finalList = new List<ICheckStrategy>();
             if(stratsImp != null)
             {

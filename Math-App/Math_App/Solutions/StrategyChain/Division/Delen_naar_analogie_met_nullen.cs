@@ -20,16 +20,9 @@ namespace Math_App.Solutions.StrategyChain.Division
 
             for (int i = 0; i < listB.Length; i++)
             {
-                if (i == 0)
-                {
-                    if (Convert.ToInt32(listB[i]) > 0)
-                    {
-                        tempB = true;
-                    }
-                }
                 if (i != 0)
                 {
-                    if (Convert.ToInt32(listB[i]) == 0)
+                    if (listB[i] == '0')
                     {
                         tempB = true;
                     }
@@ -42,24 +35,23 @@ namespace Math_App.Solutions.StrategyChain.Division
 
             for (int i = 0; i < listC.Length; i++)
             {
-                if (i == 0)
-                {
-                    if (Convert.ToInt32(listC[i]) > 0)
-                    {
-                        tempC = true;
-                    }
-                }
                 if (i != 0)
                 {
-                    if (Convert.ToInt32(listC[i]) == 0)
+                    if (listC[i] == '0')
                     {
                         tempC = true;
                     }
                     else
                     {
                         tempC = false;
+                        Console.WriteLine(tempC);
                     }
                 }
+            }
+
+            if ((tempB || tempC) && b.Length + c.Length != 2)
+            {
+                this.use = true;
             }
 
             if (tempB && tempC)

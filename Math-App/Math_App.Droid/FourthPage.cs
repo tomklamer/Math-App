@@ -18,7 +18,7 @@ using Android.Content.PM;
 namespace Math_App.Droid
 {
 
-    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class ViewFlipperActivity : Activity
     {
 

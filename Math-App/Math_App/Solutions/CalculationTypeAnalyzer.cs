@@ -15,11 +15,11 @@ namespace Math_App.Solutions
                 case "+":
                     return new Addition(b, c);
                 case "÷":
-                    return new Devide();
+                    return new Devide(b, c);
                 case "x":
                     return new Multiply(b, c);
                 case "fracture??":
-                    return new Fracture();
+                    return new Fracture(b, c);
             }
             return null;
         }

@@ -31,6 +31,9 @@ namespace Math_App.Solutions
         ICheckStrategy vermenigvuldigen_naar_analogie_met_nullen;
         ICheckStrategy vermenigvuldigen_met_rond_getal;
         ICheckStrategy vermenigvulidgen_door_te_verdubbelen;
+        ICheckStrategy vermenigvulidgen_met_sprongen_op_de_getallenlijn;
+        ICheckStrategy vermenigvulidgen_met_oppervlaktemodel;
+        ICheckStrategy cijferend;
 
         public Multiply(string a, string b)
         {
@@ -45,43 +48,57 @@ namespace Math_App.Solutions
             vermenigvuldigen_naar_analogie_met_nullen = new Vermenigvuldigen_naar_analogie_met_nullen();
             vermenigvuldigen_met_rond_getal = new Vermenigvuldigen_met_rond_getal();
             vermenigvulidgen_door_te_verdubbelen = new Vermenigvulidgen_door_te_verdubbelen();
+            vermenigvulidgen_met_sprongen_op_de_getallenlijn = new Vermenigvuldigen_met_sprongen_op_de_getallenlijn();
+            vermenigvulidgen_met_oppervlaktemodel = new Vermenigvuldigen_met_oppervlaktemodel();
+            cijferend = new Cijferend();
             chainOrder();
-            vermenigvuldigen_met_de_helft_van_10x.DoAnalyze(a, b);
+            vermenigvuldigen_door_halveren.DoAnalyze(a, b);
         }
 
         public List<ICheckStrategy> getSolutions()
         {
-            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
-            lijst.Add(vermenigvuldigen_met_de_helft_van_10x.ReturnStrat());
-            lijst.Add(vermenigvuldigen_kolomsgewijs.ReturnStrat());
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();            
             lijst.Add(vermenigvuldigen_door_halveren.ReturnStrat());
+            lijst.Add(vermenigvuldigen_kolomsgewijs.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_1x_meer.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_1x_minder.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_1x_minder_10.ReturnStrat());
+            lijst.Add(vermenigvuldigen_met_de_helft_van_10x.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_een_handig_getal.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_omkeringsprincipe.ReturnStrat());
             lijst.Add(vermenigvuldigen_naar_analogie_met_nullen.ReturnStrat());
             lijst.Add(vermenigvuldigen_met_rond_getal.ReturnStrat());
             lijst.Add(vermenigvulidgen_door_te_verdubbelen.ReturnStrat());
+            lijst.Add(vermenigvulidgen_met_sprongen_op_de_getallenlijn.ReturnStrat());
+            lijst.Add(vermenigvulidgen_met_oppervlaktemodel.ReturnStrat());
+            lijst.Add(cijferend.ReturnStrat());
 
             lijst.RemoveAll(item => item == null);
 
-            return data.GetStratsToDisplay(lijst);
+            for (int i = 0; i < lijst.Count; i++)
+            {
+                Console.WriteLine(lijst[i].ReturnImportance());
+            }
+
+            return data.GetStratsToDisplay(lijst, 4);
         }
 
         public void chainOrder()
         {
-            vermenigvuldigen_met_de_helft_van_10x.setNextChain(vermenigvuldigen_kolomsgewijs);
-            vermenigvuldigen_kolomsgewijs.setNextChain(vermenigvuldigen_door_halveren);
-            vermenigvuldigen_door_halveren.setNextChain(vermenigvuldigen_met_1x_meer);
-            vermenigvuldigen_met_1x_meer.setNextChain(vermenigvuldigen_met_1x_minder);
-            vermenigvuldigen_met_1x_minder.setNextChain(vermenigvuldigen_met_1x_minder_10);
-            vermenigvuldigen_met_1x_minder_10.setNextChain(vermenigvuldigen_met_een_handig_getal);
+
+            vermenigvuldigen_door_halveren.setNextChain(vermenigvuldigen_kolomsgewijs);
+            vermenigvuldigen_kolomsgewijs.setNextChain(vermenigvuldigen_met_1x_meer);
+            vermenigvuldigen_met_1x_meer.setNextChain(vermenigvuldigen_met_1x_minder_10);
+            vermenigvuldigen_met_1x_minder_10.setNextChain(vermenigvuldigen_met_1x_minder);
+            vermenigvuldigen_met_1x_minder.setNextChain(vermenigvuldigen_met_de_helft_van_10x);
+            vermenigvuldigen_met_de_helft_van_10x.setNextChain(vermenigvuldigen_met_een_handig_getal);
             vermenigvuldigen_met_een_handig_getal.setNextChain(vermenigvuldigen_met_omkeringsprincipe);
-            vermenigvuldigen_met_omkeringsprincipe.setNextChain(vermenigvuldigen_met_1x_minder_10);
-            vermenigvuldigen_met_1x_minder.setNextChain(vermenigvuldigen_naar_analogie_met_nullen);
-            vermenigvuldigen_naar_analogie_met_nullen.setNextChain(vermenigvuldigen_met_rond_getal);
-            vermenigvuldigen_met_rond_getal.setNextChain(vermenigvulidgen_door_te_verdubbelen);
+            vermenigvuldigen_met_omkeringsprincipe.setNextChain(vermenigvuldigen_met_rond_getal);
+            vermenigvuldigen_met_rond_getal.setNextChain(vermenigvuldigen_naar_analogie_met_nullen);
+            vermenigvuldigen_naar_analogie_met_nullen.setNextChain(vermenigvulidgen_door_te_verdubbelen);
+            vermenigvulidgen_door_te_verdubbelen.setNextChain(vermenigvulidgen_met_sprongen_op_de_getallenlijn);
+            vermenigvulidgen_met_sprongen_op_de_getallenlijn.setNextChain(vermenigvulidgen_met_oppervlaktemodel);
+            vermenigvulidgen_met_oppervlaktemodel.setNextChain(cijferend);
         }
     }
 
@@ -96,13 +113,15 @@ namespace Math_App.Solutions
         ICheckStrategy delen_door_herhaald_aftrekken_met_afschatten;
         ICheckStrategy delen_naar_analogie_met_nullen;
 
-        public Devide()
+        public Devide(string a, string b)
         {
             delen_door_gebruik_van_inverse = new Delen_door_gebruik_van_inverse_relatie();
             delen_door_herhaald_aftrekken_rest = new Delen_door_herhaald_aftrekken_rest();
             delen_door_herhaald_aftrekken = new Delen_door_herhaald_aftrekken();
             delen_door_herhaald_aftrekken_met_afschatten = new Delen_door_herhaald_aftrekken_met_afschatten();
             delen_naar_analogie_met_nullen = new Delen_naar_analogie_met_nullen();
+            chainOrder();
+            delen_door_gebruik_van_inverse.DoAnalyze(a, b);
         }
 
         public List<ICheckStrategy> getSolutions()
@@ -116,7 +135,12 @@ namespace Math_App.Solutions
 
             lijst.RemoveAll(item => item == null);
 
-            return data.GetStratsToDisplay(lijst);
+            for (int i = 0; i < lijst.Count; i++)
+            {
+                Console.WriteLine(lijst[i].ReturnImportance());
+            }
+
+            return lijst;
         }
 
         public void chainOrder()
@@ -164,7 +188,12 @@ namespace Math_App.Solutions
 
             lijst.RemoveAll(item => item == null);
 
-            return data.GetStratsToDisplay(lijst);
+            for (int i = 0; i < lijst.Count; i++)
+            {
+                Console.WriteLine(lijst[i].ReturnImportance());
+            }
+
+            return data.GetStratsToDisplay(lijst, 3);
         }
         public void chainOrder()
         {
@@ -184,8 +213,9 @@ namespace Math_App.Solutions
         ICheckStrategy strat1;
         ICheckStrategy strat2;
 
-        public Fracture()
+        public Fracture(string a, string b)
         {
+
         }
 
         public List<ICheckStrategy> getSolutions()
@@ -237,7 +267,12 @@ namespace Math_App.Solutions
 
             lijst.RemoveAll(item => item == null);
 
-            return data.GetStratsToDisplay(lijst);
+            for (int i = 0; i < lijst.Count; i++)
+            {
+                Console.WriteLine(lijst[i].ReturnImportance());
+            }
+
+            return data.GetStratsToDisplay(lijst, 1);
         }
 
         public void chainOrder()
