@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 3;
-        public string title = "Rekenen met enn rond getal";
+        public string title = "Aftrekken met enn rond getal";
 
         public void DoAnalyze(string b, string c)
         {
@@ -19,26 +19,31 @@ namespace Math_App.Solutions.StrategyChain.Substraction
             Array.Reverse(arrayC);
             int ListCount = 0;
 
-            if (arrayB.Length < arrayC.Length)
+            if(b.Length >= 2 && c.Length >= 1)
             {
-                ListCount = arrayB.Length;
-            }
-            else
-            {
-                ListCount = arrayC.Length;
-            }
-
-            for (int i = 0; i < ListCount; i++)
-            {
-                if (i != 0)
+                if (arrayB.Length < arrayC.Length)
                 {
-                    if ((Convert.ToInt32(arrayC[i]) == 9 && Convert.ToInt32(arrayB[i]) >= 1) ||
-                        (Convert.ToInt32(arrayC[i]) == 8 && Convert.ToInt32(arrayB[i]) >= 2))
+                    ListCount = arrayB.Length;
+                }
+                else
+                {
+                    ListCount = arrayC.Length;
+                }
+
+                for (int i = 0; i < ListCount; i++)
+                {
+                    if( i == 0)
                     {
-                        this.use = true;
-                    }
+                        if ((Convert.ToInt32(Char.GetNumericValue(arrayC[i])) == 9 && Convert.ToInt32(Char.GetNumericValue(arrayB[i])) >= 1) ||
+                            (Convert.ToInt32(Char.GetNumericValue(arrayC[i])) == 8 && Convert.ToInt32(Char.GetNumericValue(arrayB[i])) >= 2))
+                        {
+                            this.use = true;
+                            break;
+                        }
+                    }              
                 }
             }
+            
             if (nextInChain != null)
             {
                 nextInChain.DoAnalyze(b, c);
