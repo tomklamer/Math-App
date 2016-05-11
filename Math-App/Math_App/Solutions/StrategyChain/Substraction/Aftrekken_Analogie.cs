@@ -13,25 +13,53 @@ namespace Math_App.Solutions.StrategyChain.Substraction
 
         public void DoAnalyze(string b, string c)
         {
-            if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
-            {
-                char[] listB = b.ToCharArray();
-                char[] listC = c.ToCharArray();
 
-                for (int i = 1; i < listB.Length; i++)
+            char[] listB = b.ToCharArray();
+            char[] listC = c.ToCharArray();
+            bool tempB = false;
+            bool tempC = false;
+
+            for (int i = 0; i < listB.Length; i++)
+            {
+                if (i != 0)
                 {
-                    if (listB[i].ToString() == "0" && listC[i].ToString() == "0")
+                    if (listB[i] == '0')
                     {
-                        this.use = true;
+                        tempB = true;
                     }
                     else
                     {
-                        this.use = false;
+                        tempB = false;
                         break;
                     }
                 }
             }
-            nextInChain.DoAnalyze(b, c);
+
+            for (int i = 0; i < listC.Length; i++)
+            {
+                if (i != 0)
+                {
+                    if (listC[i] == '0')
+                    {
+                        tempC = true;
+                    }
+                    else
+                    {
+                        tempC = false;
+                        break;
+                    }
+                }
+            }
+
+            if ((tempB || tempC) && b.Length + c.Length != 2)
+            {
+                this.use = true;
+            }
+
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

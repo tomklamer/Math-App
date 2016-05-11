@@ -29,6 +29,7 @@ namespace Math_App.Solutions.StrategyChain.Division
                     else
                     {
                         tempB = false;
+                        break;
                     }
                 }
             }
@@ -44,7 +45,7 @@ namespace Math_App.Solutions.StrategyChain.Division
                     else
                     {
                         tempC = false;
-                        Console.WriteLine(tempC);
+                        break;
                     }
                 }
             }

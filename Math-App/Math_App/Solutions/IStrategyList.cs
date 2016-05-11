@@ -85,7 +85,6 @@ namespace Math_App.Solutions
 
         public void chainOrder()
         {
-
             vermenigvuldigen_door_halveren.setNextChain(vermenigvuldigen_kolomsgewijs);
             vermenigvuldigen_kolomsgewijs.setNextChain(vermenigvuldigen_met_1x_meer);
             vermenigvuldigen_met_1x_meer.setNextChain(vermenigvuldigen_met_1x_minder_10);
@@ -173,18 +172,18 @@ namespace Math_App.Solutions
             aftrekken_analogie = new Aftrekken_Analogie();
             Aftrekken_met_reigen = new Aftrekken_met_reigen();
             chainOrder();
-            aftrekken_door_verschil_te_bepalen.DoAnalyze(a, b);
+            aftrekken_analogie.DoAnalyze(a, b);
         }
 
         public List<ICheckStrategy> getSolutions()
         {
             List<ICheckStrategy> lijst = new List<ICheckStrategy>();
-            lijst.Add(aftrekken_door_verschil_te_bepalen.ReturnStrat());
+            lijst.Add(aftrekken_analogie.ReturnStrat());
             lijst.Add(komols_gewijs_aftrekken.ReturnStrat());
             lijst.Add(rekenen_met_een_rond_getal.ReturnStrat());
             lijst.Add(splitstrategie_substraction.ReturnStrat());
-            lijst.Add(aftrekken_analogie.ReturnStrat());
             lijst.Add(Aftrekken_met_reigen.ReturnStrat());
+            lijst.Add(aftrekken_door_verschil_te_bepalen.ReturnStrat());        
 
             lijst.RemoveAll(item => item == null);
 
@@ -193,15 +192,16 @@ namespace Math_App.Solutions
                 Console.WriteLine(lijst[i].ReturnImportance());
             }
 
-            return data.GetStratsToDisplay(lijst, 3);
+            return lijst;
+           // return data.GetStratsToDisplay(lijst, 3);
         }
         public void chainOrder()
         {
-            aftrekken_door_verschil_te_bepalen.setNextChain(komols_gewijs_aftrekken);
+            aftrekken_analogie.setNextChain(komols_gewijs_aftrekken);
             komols_gewijs_aftrekken.setNextChain(rekenen_met_een_rond_getal);
             rekenen_met_een_rond_getal.setNextChain(splitstrategie_substraction);
-            splitstrategie_substraction.setNextChain(aftrekken_analogie);
-            aftrekken_analogie.setNextChain(Aftrekken_met_reigen);
+            splitstrategie_substraction.setNextChain(Aftrekken_met_reigen);
+            Aftrekken_met_reigen.setNextChain(aftrekken_door_verschil_te_bepalen);
         }
     }
 

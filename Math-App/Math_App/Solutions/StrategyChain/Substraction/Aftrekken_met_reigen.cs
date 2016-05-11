@@ -8,7 +8,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 1;
+        private int importance = 5;
         public string title = "Aftrekken met reigen";
 
         public void DoAnalyze(string b, string c)
@@ -48,7 +48,10 @@ namespace Math_App.Solutions.StrategyChain.Substraction
                     this.use = true;
                 }
             }
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

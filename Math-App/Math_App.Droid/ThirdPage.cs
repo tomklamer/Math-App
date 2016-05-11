@@ -40,8 +40,8 @@ namespace Math_App.Droid
             string partEquation = intent.GetStringExtra("partEquation");
             string solution = intent.GetStringExtra("solution");
             string equation = intent.GetStringExtra("equation");
-            string a = intent.GetFloatExtra("a", -1).ToString();
-            string b = intent.GetFloatExtra("b", -1).ToString();
+            string a = intent.GetStringExtra("a");
+            string b = intent.GetStringExtra("b");
             var nb = intent.GetIntExtra("index", -1);
 
             // Get Strategy types

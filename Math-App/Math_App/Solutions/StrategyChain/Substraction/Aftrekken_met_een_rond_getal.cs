@@ -39,7 +39,10 @@ namespace Math_App.Solutions.StrategyChain.Substraction
                     }
                 }
             }
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()

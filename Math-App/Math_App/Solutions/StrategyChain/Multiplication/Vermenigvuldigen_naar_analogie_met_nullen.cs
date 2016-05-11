@@ -29,6 +29,7 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
                     else
                     {
                         tempB = false;
+                        break;
                     }
                 }
             }
@@ -44,7 +45,7 @@ namespace Math_App.Solutions.StrategyChain.Multiplication
                     else
                     {
                         tempC = false;
-                        Console.WriteLine(tempC);
+                        break;
                     }
                 }
             }
