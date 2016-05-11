@@ -391,6 +391,20 @@ namespace Math_App.Solutions
                     3,
                     5
                 }
+            },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    5,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    5,
+                    6
+                }
             }
             
         };
