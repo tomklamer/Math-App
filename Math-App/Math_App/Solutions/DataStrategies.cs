@@ -354,6 +354,8 @@ namespace Math_App.Solutions
                     3,
                     5,
                     6,
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
@@ -370,7 +372,9 @@ namespace Math_App.Solutions
                     2,
                     3,
                     5,
-                    6
+                    6,
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
