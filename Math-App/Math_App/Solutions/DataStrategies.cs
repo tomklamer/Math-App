@@ -60,7 +60,10 @@ namespace Math_App.Solutions
                  strategies = new List<int>
                  {
                      1,
-                     2
+                     2,
+                     7,
+                     8,
+                     9
                  },
                  usedStrategies = new List<int>
                  {
@@ -71,7 +74,10 @@ namespace Math_App.Solutions
              {
                  strategies = new List<int>
                  {
-                     2
+                     2,
+                     7,
+                     8,
+                     9
                  },
                  usedStrategies = new List<int>
                  {
