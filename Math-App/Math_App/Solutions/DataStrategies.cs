@@ -330,6 +330,68 @@ namespace Math_App.Solutions
                     3
                 }
             },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    3,
+                    5,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    3,
+                    7,
+                    5
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    2,
+                    4,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    2,
+                    6
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    3,
+                    5,
+                    6,
+                },
+                usedStrategies = new List<int>
+                {
+                    6,
+                    3,
+                    5
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    2,
+                    3,
+                    5,
+                    6
+                },
+                usedStrategies = new List<int>
+                {
+                    6,
+                    3,
+                    5
+                }
+            }
             
         };
 
