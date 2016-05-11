@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 3;
-        public string title = "Aftrekken met enn rond getal";
+        public string title = "Aftrekken met een rond getal";
 
         public void DoAnalyze(string b, string c)
         {

@@ -44,8 +44,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
                 B = Convert.ToInt32(Char.GetNumericValue(listC[i]));
 
                 if (A - B < 0)
-                {
-                    
+                {                    
                     this.use = true;
                 }
             }

@@ -13,26 +13,12 @@ namespace Math_App.Solutions.StrategyChain
 
         public void DoAnalyze(string b, string c)
         {
-            if (b.Length >= 2 && c.Length >= 2 && b.Length == c.Length)
+            this.use = true;
+
+            if (nextInChain != null)
             {
-                char[] listB = b.ToCharArray();
-                char[] listC = c.ToCharArray();
-
-                for (int i = 1; i < listB.Length; i++)
-                {
-                    if (listB[i].ToString() == "0" && listC[i].ToString() == "0")
-                    {
-                        this.use = true;
-                    }
-                    else
-                    {
-                        this.use = false;
-                        break;
-                    }
-                }
-            }
-
-            nextInChain.DoAnalyze(b, c);
+                nextInChain.DoAnalyze(b, c);
+            }        
 
             //if (d != null)
             //{

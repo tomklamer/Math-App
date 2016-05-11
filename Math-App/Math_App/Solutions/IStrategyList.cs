@@ -162,6 +162,8 @@ namespace Math_App.Solutions
         ICheckStrategy splitstrategie_substraction;
         ICheckStrategy aftrekken_analogie;
         ICheckStrategy Aftrekken_met_reigen;
+        ICheckStrategy aftrekken_algoritmisch;
+        ICheckStrategy aftrekken_met_reigen_met_rond_getal;
 
         public Minus(string a, string b)
         {
@@ -171,6 +173,8 @@ namespace Math_App.Solutions
             splitstrategie_substraction = new Splitstrategie_substraction();
             aftrekken_analogie = new Aftrekken_Analogie();
             Aftrekken_met_reigen = new Aftrekken_met_reigen();
+            aftrekken_algoritmisch = new Aftrekken_algoritmisch();
+            aftrekken_met_reigen_met_rond_getal = new Aftrekken_met_rijgen_met_rond_getal();
             chainOrder();
             aftrekken_analogie.DoAnalyze(a, b);
         }
@@ -183,7 +187,9 @@ namespace Math_App.Solutions
             lijst.Add(rekenen_met_een_rond_getal.ReturnStrat());
             lijst.Add(splitstrategie_substraction.ReturnStrat());
             lijst.Add(Aftrekken_met_reigen.ReturnStrat());
-            lijst.Add(aftrekken_door_verschil_te_bepalen.ReturnStrat());        
+            lijst.Add(aftrekken_door_verschil_te_bepalen.ReturnStrat());
+            lijst.Add(aftrekken_algoritmisch.ReturnStrat());
+            lijst.Add(aftrekken_met_reigen_met_rond_getal.ReturnStrat());
 
             lijst.RemoveAll(item => item == null);
 
@@ -201,6 +207,8 @@ namespace Math_App.Solutions
             rekenen_met_een_rond_getal.setNextChain(splitstrategie_substraction);
             splitstrategie_substraction.setNextChain(Aftrekken_met_reigen);
             Aftrekken_met_reigen.setNextChain(aftrekken_door_verschil_te_bepalen);
+            aftrekken_door_verschil_te_bepalen.setNextChain(aftrekken_algoritmisch);
+            aftrekken_algoritmisch.setNextChain(aftrekken_met_reigen_met_rond_getal);
         }
     }
 
@@ -241,6 +249,9 @@ namespace Math_App.Solutions
         ICheckStrategy rekenen_met_rond_getal;
         ICheckStrategy splitstrategie;
         ICheckStrategy optellen_met_reigen;
+        ICheckStrategy optellen_met_algoritmisch;
+        ICheckStrategy optellen_met_reigen_met_rond_getal;
+        ICheckStrategy optellen_splitsen_analogie;
 
         public Addition(string a, string b)
         {
@@ -250,6 +261,9 @@ namespace Math_App.Solutions
             rekenen_met_rond_getal = new Rekenen_met_rond_getal();
             splitstrategie = new Splitstrategie();
             optellen_met_reigen = new Optellen_met_reigen();
+            optellen_met_algoritmisch = new Optellen_algoritmisch();
+            optellen_met_reigen_met_rond_getal = new Optellen_met_rijgen_met_rond_getal();
+            optellen_splitsen_analogie = new Optellen_splitsen_analogie();
             chainOrder();
             analogie.DoAnalyze(a, b);
         }
@@ -262,7 +276,10 @@ namespace Math_App.Solutions
             lijst.Add(optellen_met_reigen.ReturnStrat());
             lijst.Add(rekenen_met_rond_getal.ReturnStrat());
             lijst.Add(optellen_kolomsgewijs.ReturnStrat());
-            lijst.Add(rekenen_met_mooie_getallen.ReturnStrat());                     
+            lijst.Add(rekenen_met_mooie_getallen.ReturnStrat());
+            lijst.Add(optellen_met_algoritmisch.ReturnStrat());
+            lijst.Add(optellen_met_reigen_met_rond_getal.ReturnStrat());
+            lijst.Add(optellen_splitsen_analogie.ReturnStrat());
 
             lijst.RemoveAll(item => item == null);
 
@@ -281,6 +298,9 @@ namespace Math_App.Solutions
             optellen_met_reigen.setNextChain(rekenen_met_rond_getal);
             rekenen_met_rond_getal.setNextChain(optellen_kolomsgewijs);
             optellen_kolomsgewijs.setNextChain(rekenen_met_mooie_getallen);
+            rekenen_met_mooie_getallen.setNextChain(optellen_met_algoritmisch);
+            optellen_met_algoritmisch.setNextChain(optellen_met_reigen_met_rond_getal);
+            optellen_met_reigen_met_rond_getal.setNextChain(optellen_splitsen_analogie);
         }
     }
 }

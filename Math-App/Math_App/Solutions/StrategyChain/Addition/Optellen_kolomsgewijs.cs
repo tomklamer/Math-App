@@ -15,9 +15,36 @@ namespace Math_App.Solutions.StrategyChain
         {
             if (b.Length >= 3 && c.Length >= 3)
             {
-                this.use = true;
+                char[] bAr = b.ToCharArray();
+                char[] cAr = c.ToCharArray();
+                int x = 0;
+                int y = 0;
+
+                for (int i = 0; i < bAr.Length; i++)
+                {
+                    if (i != 0)
+                    {
+                        x += Convert.ToInt32(Char.GetNumericValue(bAr[i]));
+                    }
+                }
+                for (int i = 0; i < cAr.Length; i++)
+                {
+                    if (i != 0)
+                    {
+                        y += Convert.ToInt32(Char.GetNumericValue(cAr[i]));
+                    }
+                }
+
+                if (x != 0 && y != 0)
+                {
+                    this.use = true;
+                }
             }
-            nextInChain.DoAnalyze(b, c);
+
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
         }
 
         public string ReturnTitle()
