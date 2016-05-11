@@ -71,8 +71,11 @@ namespace Math_App.Solutions
              {
                  strategies = new List<int>
                  {
-                     2,
-                     
+                     2
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     2
                  }
              }
         };
