@@ -78,6 +78,68 @@ namespace Math_App.Solutions
                      2
                  }
              },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
+                     3,
+                     7,
+                     8,
+                     9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     3,
+                     9
+                 }
+             },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
+                     3,
+                     4,
+                     7,
+                     8,
+                     9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     4,
+                     8,
+                     3
+                 }
+             },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
+                     2,
+                     5,
+                     7,
+                     8,
+                     9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     5,
+                     7
+                 }
+             },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
+                     6,
+                     7,
+                     8,
+                     9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     6
+                 }
+             }
         };
 
         // All devition combination stored in list
