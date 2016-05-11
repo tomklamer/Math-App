@@ -45,6 +45,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
 
                 if (A - B < 0)
                 {
+                    
                     this.use = true;
                 }
             }

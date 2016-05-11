@@ -192,8 +192,7 @@ namespace Math_App.Solutions
                 Console.WriteLine(lijst[i].ReturnImportance());
             }
 
-            return lijst;
-           // return data.GetStratsToDisplay(lijst, 3);
+            return data.GetStratsToDisplay(lijst, 3);
         }
         public void chainOrder()
         {
