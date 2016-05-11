@@ -22,9 +22,7 @@ namespace Math_App.Solutions.StrategyChain
                 if (i != 0)
                 {
                     if (arrayA[i].ToString() == "9" ||
-                        arrayA[i].ToString() == "6" ||
-                        arrayA[i].ToString() == "4" ||
-                        arrayA[i].ToString() == "1")
+                        arrayA[i].ToString() == "6")
                     {
                         temp = true;
                     }
@@ -35,9 +33,7 @@ namespace Math_App.Solutions.StrategyChain
                 if (i != 0)
                 {
                     if (arrayB[i].ToString() == "9" ||
-                        arrayB[i].ToString() == "6" ||
-                        arrayB[i].ToString() == "4" ||
-                        arrayB[i].ToString() == "1")
+                        arrayB[i].ToString() == "6")
                     {
                         temp = true;
                     }

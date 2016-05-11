@@ -56,152 +56,25 @@ namespace Math_App.Solutions
         private List<Combination> ADDcombinations = new List<Combination>()
         {            
              new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    2
-                },
-                usedStrategies = new List<int>
-                {
-                    2
-                }
-            },
-              new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    3
-                },
-                usedStrategies = new List<int>
-                {
-                    3
-                }
-            },
-                  new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    4
-                },
-                usedStrategies = new List<int>
-                {
-                    4
-                }
-            },
-                  new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    1,
-                    2
-                },
-                usedStrategies = new List<int>
-                {
-                    1,
-                    2
-                }
-            },
-                        new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    1,
-                    2,
-                    3,
-                    5
-                },
-                usedStrategies = new List<int>
-                {
-                    1,
-                    2,
-                    3,
-                    5
-                }
-            },
-                  new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    1,
-                    2,
-                    5
-                },
-                usedStrategies = new List<int>
-                {
-                    1,
-                    2,
-                    5
-                }
-            },
-               new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    2,
-                    4
-                },
-                usedStrategies = new List<int>
-                {
-                    2,
-                    4
-                }
-            },             
-            new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    1,
-                    2,
-                    3
-                },
-                usedStrategies = new List<int>
-                {
-                    1,
-                    2,
-                    3
-                }
-            },
+             {
+                 strategies = new List<int>
+                 {
+                     1,
+                     2
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     1
+                 }
+             },
              new Combination()
-            {
-                strategies = new List<int>()
-                {                    
-                    2,
-                    3,
-                    4
-                },
-                usedStrategies = new List<int>
-                {                    
-                    2,
-                    3,
-                    4
-                }
-            },
-             new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    1,
-                    2
-                },
-                usedStrategies = new List<int>
-                {
-                    1,
-                    2
-                }
-            },
-              new Combination()
-            {
-                strategies = new List<int>()
-                {
-                    2,
-                    3
-                },
-                usedStrategies = new List<int>
-                {
-                    2,
-                    3
-                }
-            }
+             {
+                 strategies = new List<int>
+                 {
+                     2,
+                     
+                 }
+             }
         };
 
         // All devition combination stored in list
