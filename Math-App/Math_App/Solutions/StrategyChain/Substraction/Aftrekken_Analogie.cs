@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 1;
-        public string title = "Aftrekken door verschil te bepalen";
+        public string title = "Aftrekken analogie";
 
         public void DoAnalyze(string b, string c)
         {
@@ -19,41 +19,37 @@ namespace Math_App.Solutions.StrategyChain.Substraction
             bool tempB = false;
             bool tempC = false;
 
-            for (int i = 0; i < listB.Length; i++)
+            if(b.Length == c.Length)
             {
-                if (i != 0)
+                for (int i = 0; i < listB.Length; i++)
                 {
-                    if (listB[i] == '0')
+                    if (i != 0)
                     {
-                        tempB = true;
-                    }
-                    else
-                    {
-                        tempB = false;
-                        break;
+                        if (listB[i].ToString() == "0")
+                        {
+                            tempB = true;
+                        }
+                        else
+                        {
+                            tempB = false;
+                            break;
+                        }
+
+                        if (listC[i].ToString() == "0")
+                        {
+                            tempC = true;
+                        }
+                        else
+                        {
+                            tempC = false;
+                            break;
+                        }
                     }
                 }
-            }
-
-            for (int i = 0; i < listC.Length; i++)
-            {
-                if (i != 0)
+                if ((tempB && tempC) && b.Length + c.Length != 2)
                 {
-                    if (listC[i] == '0')
-                    {
-                        tempC = true;
-                    }
-                    else
-                    {
-                        tempC = false;
-                        break;
-                    }
+                    this.use = true;
                 }
-            }
-
-            if ((tempB || tempC) && b.Length + c.Length != 2)
-            {
-                this.use = true;
             }
 
             if (nextInChain != null)
