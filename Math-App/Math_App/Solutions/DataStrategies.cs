@@ -74,6 +74,20 @@ namespace Math_App.Solutions
              {
                  strategies = new List<int>
                  {
+                    1,
+                    7,
+                    8,
+                    9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     1
+                 }
+             },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
                      2,
                      7,
                      8,
