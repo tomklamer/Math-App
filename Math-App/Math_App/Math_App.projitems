@@ -46,6 +46,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_met_reigen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_kolomsgewijs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_met_een_rond_getal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_met_rijgen_met_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_Splitstrategie.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Analyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\BracketAnalyzer.cs" />

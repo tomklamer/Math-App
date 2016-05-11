@@ -288,12 +288,49 @@ namespace Math_App.Solutions
         {
             new Combination()
             {
+                strategies = new List<int>
+                {
+                    1,
+                    4,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    1,
+                    4
+                }
 
             },
             new Combination()
             {
-
-            }
+                strategies = new List<int>
+                {
+                    4,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    4
+                }
+            },
+            new Combination()
+            {
+                strategies = new List<int>
+                {
+                    3,
+                    5,
+                    6,
+                    7
+                },
+                usedStrategies = new List<int>
+                {
+                    5,
+                    3
+                }
+            },
+            
         };
 
         // All muliplication combination stored in list
