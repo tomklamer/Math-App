@@ -77,6 +77,10 @@ namespace Math_App.Solutions
                  {
                      2
                  }
+             },
+             new Combination()
+             {
+                 strategies = 
              }
         };
 
