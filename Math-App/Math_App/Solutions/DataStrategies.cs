@@ -326,21 +326,6 @@ namespace Math_App.Solutions
                 },
                 usedStrategies = new List<int>
                 {
-                    5,
-                    3
-                }
-            },
-            new Combination()
-            {
-                strategies = new List<int>
-                {
-                    3,
-                    5,
-                    7,
-                    8
-                },
-                usedStrategies = new List<int>
-                {
                     3,
                     8,
                     5
