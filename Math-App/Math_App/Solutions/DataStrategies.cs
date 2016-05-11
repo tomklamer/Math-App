@@ -292,8 +292,8 @@ namespace Math_App.Solutions
                 {
                     1,
                     4,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
@@ -307,8 +307,8 @@ namespace Math_App.Solutions
                 strategies = new List<int>
                 {
                     4,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
@@ -321,8 +321,8 @@ namespace Math_App.Solutions
                 {
                     3,
                     5,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
@@ -336,13 +336,13 @@ namespace Math_App.Solutions
                 {
                     3,
                     5,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
                     3,
-                    7,
+                    8,
                     5
                 }
             },
@@ -352,17 +352,18 @@ namespace Math_App.Solutions
                 {
                     2,
                     4,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
                     2,
-                    6
+                    7
                 }
             },
             new Combination()
             {
+                //deze is goed
                 strategies = new List<int>
                 {
                     3,
@@ -378,6 +379,7 @@ namespace Math_App.Solutions
             },
             new Combination()
             {
+                //deze is goed
                 strategies = new List<int>
                 {
                     2,
@@ -397,13 +399,13 @@ namespace Math_App.Solutions
                 strategies = new List<int>
                 {
                     5,
-                    6,
-                    7
+                    7,
+                    8
                 },
                 usedStrategies = new List<int>
                 {
                     5,
-                    6
+                    7
                 }
             }
             

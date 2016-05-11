@@ -8,7 +8,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 7;
+        private int importance = 8;
         public string title = "Aftrekken met rijgen met rond rond getal";
 
         public void DoAnalyze(string b, string c)

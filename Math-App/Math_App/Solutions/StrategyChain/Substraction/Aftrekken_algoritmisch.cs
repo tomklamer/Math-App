@@ -8,7 +8,7 @@ namespace Math_App.Solutions.StrategyChain.Substraction
     {
         private ICheckStrategy nextInChain;
         private bool use = false;
-        private int importance = 6;
+        private int importance = 7;
         public string title = "Aftrekken algoritmisch (cijferen)";
 
         public void DoAnalyze(string b, string c)
