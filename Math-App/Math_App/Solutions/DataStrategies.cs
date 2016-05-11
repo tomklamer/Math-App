@@ -78,10 +78,6 @@ namespace Math_App.Solutions
                      2
                  }
              },
-             new Combination()
-             {
-                 strategies = 
-             }
         };
 
         // All devition combination stored in list

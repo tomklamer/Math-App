@@ -32,7 +32,10 @@ namespace Math_App.Solutions.StrategyChain
                 }
             }
 
-            nextInChain.DoAnalyze(b, c);
+            if (nextInChain != null)
+            {
+                nextInChain.DoAnalyze(b, c);
+            }
 
             //if (d != null)
             //{
