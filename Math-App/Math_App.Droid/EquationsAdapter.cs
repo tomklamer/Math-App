@@ -28,11 +28,29 @@ namespace Math_App.Droid
                 convertView = LayoutInflater.From(Context).Inflate(Resource.Layout.Listview, parent, false);
             }
             // Lookup view for data population
+            ImageView ivIcon = (ImageView)convertView.FindViewById(Resource.Id.Image);
             TextView tvName = (TextView)convertView.FindViewById(Resource.Id.tvName);
             TextView tvHome = (TextView)convertView.FindViewById(Resource.Id.tvHome);
             // Populate the data into the template view using the data object
             tvName.Text = Equation.partEquation;
             tvHome.Text = Equation.partAnswer;
+
+            char sign = Equation.sign;
+            switch (sign)
+            {
+                case '+':
+                    ivIcon.SetImageResource(Resource.Drawable.Plus);
+                    break;
+                case '-':
+                    ivIcon.SetImageResource(Resource.Drawable.Min);
+                    break;
+                case 'x':
+                    ivIcon.SetImageResource(Resource.Drawable.Mul);
+                    break;
+                case '÷':
+                    ivIcon.SetImageResource(Resource.Drawable.Div);
+                    break;
+            }
             // Return the completed view to render on screen
             return convertView;
         }
