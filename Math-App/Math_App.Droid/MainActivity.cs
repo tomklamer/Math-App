@@ -14,19 +14,25 @@ using System.Reflection;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using Math_App.Xml;
+using Math_App.Memory;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
+    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/Plus")]
     public class MainActivity : Activity
     {       
 
         // validator class
         private ValidatorCalc val = new ValidatorCalc();
+        //  storage class
+        private Storage sto = new Storage();
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            ActionBar.SetDisplayShowHomeEnabled(true);
+            //ActionBar.SetIcon(Resource.Drawable.Plus);
 
             // Prefix
             var resourcePrefix = "Math_App.Droid.";
@@ -52,11 +58,14 @@ namespace Math_App.Droid
                 string text = textviewCalc.Text.ToString();
                 if (text.Length > 0 && val.lastChar(text.Substring(Math.Max(0, text.Length - 1)) ))
                 {
+                    // new page
                     var second = new Intent(this, typeof(SecondPage));
                     Bundle extras = new Bundle();
                     extras.PutString("calculation", textviewCalc.Text.ToString());
                     second.PutExtras(extras);
                     StartActivity(second);
+                    // set memory
+                    sto.AddEquation(text);
                 }
             };
 
@@ -294,6 +303,44 @@ namespace Math_App.Droid
                 textviewCalc.Text += val.CreateFraction(pickerB, pickerC);                
                 pickerC = "";
                 pickerB = "";
+            };
+
+            // Memory buttons
+            int counter = 0;
+            ImageButton MemBack = FindViewById<ImageButton>(Resource.Id.memBack);
+            ImageButton MemNext = FindViewById<ImageButton>(Resource.Id.memNext);
+            MemNext.Enabled = false;
+
+            MemBack.Click += (sender, args) => MemBack.StartAnimation(animAlpha);
+            MemBack.Click += delegate
+            {
+                if (counter < 4 && sto.CheckIfEmpty(counter + 1))
+                {
+                    MemNext.Enabled = true;
+                    counter += 1;
+                    Console.WriteLine(counter);
+                    textviewCalc.Text = sto.ReturnEquation(counter);
+                    if(counter == 4)
+                    {
+                        MemBack.Enabled = false;
+                    }
+                }                
+            };            
+           
+            MemNext.Click += (sender, args) => MemNext.StartAnimation(animAlpha);
+            MemNext.Click += delegate
+            {
+                if (counter > 0 && sto.CheckIfEmpty(counter -1))
+                {
+                    MemBack.Enabled = true;
+                    counter -= 1;
+                    Console.WriteLine(counter);
+                    textviewCalc.Text = sto.ReturnEquation(counter);
+                    if(counter == 0)
+                    {
+                        MemNext.Enabled = false;
+                    }
+                }                
             };
         }
     }

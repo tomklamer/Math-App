@@ -76,14 +76,10 @@
         android:layout_height="12.5dp"
         android:id="@+id/linearLayout5"
         android:background="@color/window_background" />
-    <GridView
-        android:id="@+id/grid"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:numColumns="2"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:scrollbarStyle="outsideOverlay"
-        android:verticalScrollbarPosition="right"
-        android:scrollbars="vertical" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/grid" />
 </LinearLayout>

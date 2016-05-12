@@ -13,6 +13,7 @@ using Math_App.Models;
 using Math_App.TempStorage;
 using Math_App.StaticObjects;
 using Android.Content.PM;
+using Android.Views.Animations;
 
 namespace Math_App.Droid
 {
@@ -34,6 +35,9 @@ namespace Math_App.Droid
             // Attach the adapter to a ListView
             ListView listView = (ListView)FindViewById(Resource.Id.listView1);
             listView.Adapter = adapter;
+            // set animation
+            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Fade_in);
+            listView.StartAnimation(anim);
 
             // Get data from bundle
             Intent intent = this.Intent;

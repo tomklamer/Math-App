@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Fractions\FractionCalc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Memory\Storage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\DataStrategies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\ICheckStrategy.cs" />

@@ -13,17 +13,17 @@
       android:layout_marginLeft="8.0dp"
       android:layout_marginRight="60dp" />
   <TextView
-      android:id="@+id/tvName"
+      android:id="@+id/title"
       android:layout_width="180dp"
       android:layout_height="wrap_content"
       android:textColor="@color/window_background"
       android:layout_margin="8dp"
       android:text="jkhlkjjhjjkhjkljk"
       android:textSize="20dp"
-      android:layout_gravity="center_vertical"  
+      android:layout_gravity="center_vertical"
       android:gravity="bottom" />
   <TextView
-      android:id="@+id/tvHome"
+      android:id="@+id/extra"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textColor="@android:color/holo_orange_dark"

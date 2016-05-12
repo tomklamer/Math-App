@@ -12,6 +12,7 @@ using Android.Widget;
 using Math_App.Models;
 using Android.Content.PM;
 using Math_App.Solutions;
+using Android.Views.Animations;
 
 namespace Math_App.Droid
 {
@@ -28,10 +29,16 @@ namespace Math_App.Droid
             // Construct the data source
             List<ICheckStrategy> arrayOfUsers = new List<ICheckStrategy>();
             // Create the adapter to convert the array to views
-            GridAdapter adapter = new GridAdapter(this, arrayOfUsers);
+            StrategyAdapter adapter = new StrategyAdapter(this, arrayOfUsers);
             // Attach the adapter to a ListView
-            GridView grid = (GridView)FindViewById(Resource.Id.grid);
-            grid.Adapter = adapter;
+            ListView listView = (ListView)FindViewById(Resource.Id.grid);
+            listView.Adapter = adapter;
+            // set animation
+            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Fade_in);
+            listView.StartAnimation(anim);
+
+            // create equation class
+            List<ICheckStrategy> strats = new List<ICheckStrategy>();
 
             // Get intent data
             Intent intent = this.Intent;
@@ -65,7 +72,7 @@ namespace Math_App.Droid
             textview1.Text = partAnswer;
 
             // item click -> navigate to next page
-            GridView gridje = (GridView)FindViewById(Resource.Id.grid);
+            ListView gridje = (ListView)FindViewById(Resource.Id.grid);
             gridje.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 Console.WriteLine(e.ToString());

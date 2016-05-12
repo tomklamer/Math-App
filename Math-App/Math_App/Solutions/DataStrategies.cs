@@ -54,13 +54,16 @@ namespace Math_App.Solutions
 
         // All addition combination stored in list
         private List<Combination> ADDcombinations = new List<Combination>()
-        {            
+        {
              new Combination()
              {
                  strategies = new List<int>
                  {
                      1,
-                     2
+                     2,
+                     7,
+                     8,
+                     9
                  },
                  usedStrategies = new List<int>
                  {
@@ -71,7 +74,24 @@ namespace Math_App.Solutions
              {
                  strategies = new List<int>
                  {
-                     2
+                    1,
+                    7,
+                    8,
+                    9
+                 },
+                 usedStrategies = new List<int>
+                 {
+                     1
+                 }
+             },
+             new Combination()
+             {
+                 strategies = new List<int>
+                 {
+                     2,
+                     7,
+                     8,
+                     9
                  },
                  usedStrategies = new List<int>
                  {
