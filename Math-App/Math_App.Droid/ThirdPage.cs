@@ -13,6 +13,7 @@ using Math_App.Models;
 using Android.Content.PM;
 using Math_App.Solutions;
 using Android.Views.Animations;
+using System.Threading.Tasks;
 
 namespace Math_App.Droid
 {
@@ -34,8 +35,10 @@ namespace Math_App.Droid
             ListView listView = (ListView)FindViewById(Resource.Id.grid);
             listView.Adapter = adapter;
             // set animation
-            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Fade_in);
-            listView.StartAnimation(anim);
+            Animation in_ = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_in);
+            Animation out_ = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_out);
+
+            listView.StartAnimation(in_);
 
             // create equation class
             List<ICheckStrategy> strats = new List<ICheckStrategy>();
@@ -73,8 +76,10 @@ namespace Math_App.Droid
 
             // item click -> navigate to next page
             ListView gridje = (ListView)FindViewById(Resource.Id.grid);
-            gridje.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
+            gridje.ItemClick += async (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
+                e.View.StartAnimation(out_);
+                await Task.Delay(700);
                 Console.WriteLine(e.ToString());
                 Intent fourth = new Intent(this, typeof(ViewFlipperActivity));
                 Bundle extras = new Bundle();
