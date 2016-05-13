@@ -3,9 +3,7 @@
    <StrategyXmlObject>
        <Level1>
            <image>foto1</image>
-           <text>
-             Bij de som 40+50= denk je direct aan de som
-             4+5=9; dus 40+50=90.
+           <text>Bij de som 40+50= denk je direct aan de som 4+5=9; dus 40+50=90.
            </text>
           <title>Symboliseren</title>
          
@@ -13,39 +11,21 @@
        
        <Level2>
            <image>foto2</image>
-           <text>
-             De som 4+5=9 is geautomatiseerde kennis.
-             Wanneer je de som 40+50= moet uitrekenen,
-             denk je direct aan de som 4+5=9. Dus dan is de
-             som 40+50=90.
-           </text>
+           <text>De som 4+5=9 is geautomatiseerde kennis. Wanneer je de som 40+50= moet uitrekenen, denk je direct aan de som 4+5=9. Dus dan is de som 40+50=90.</text>
            <title>Voorstellen - schematiseren</title>
          
        </Level2>
      
        <Level3>
            <image>foto3</image>
-           <text>
-             Op de tafel liggen vier briefjes van tien euro.
-             Ernaast liggen vijf briefjes van tien euro. Je weet
-             de som 4+5=9. Dus er zijn 4+5=9 briefjes van
-             tien euro. Als 4+5=9 is, dan weet je nu ook dat
-             40+50=90.
-           </text>
+           <text>Op de tafel liggen vier briefjes van tien euro. Ernaast liggen vijf briefjes van tien euro. Je weet de som 4+5=9. Dus er zijn 4+5=9 briefjes van tien euro. Als 4+5=9 is, dan weet je nu ook dat 40+50=90.</text>
            <title>Voorstellen - concreet</title>
          
        </Level3>
      
        <Level4>
            <image>foto4</image>
-           <text>
-             Tel de eieren. In iedere eierdoos zitten tien
-             eieren. Je hebt vier dozen van tien eieren en je
-             hebt vijf dozen van tien eieren. De som van de
-             eieren is dus 40+50= . Je ziet 4+5 dozen, dus 9
-             dozen. Je denkt daarom dan aan de som 4+5=9.
-             Dan is 40+50=90.
-           </text>
+           <text>Tel de eieren. In iedere eierdoos zitten tien eieren. Je hebt vier dozen van tien eieren en je hebt vijf dozen van tien eieren. De som van de eieren is dus 40+50= . Je ziet 4+5 dozen, dus 9 dozen. Je denkt daarom dan aan de som 4+5=9. Dan is 40+50=90.</text>
            <title>Concreet handelen</title>
          
        </Level4>
