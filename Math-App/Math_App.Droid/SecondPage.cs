@@ -36,7 +36,7 @@ namespace Math_App.Droid
             ListView listView = (ListView)FindViewById(Resource.Id.listView1);
             listView.Adapter = adapter;
             // set animation
-            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Fade_in);
+            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_in);
             listView.StartAnimation(anim);
 
             // Get data from bundle
