@@ -67,7 +67,7 @@
                 android:textColor="@android:color/holo_red_light"
                 android:background="@android:color/black"
                 android:textSize="20dp"
-                android:layout_width="155.5dp"
+                android:layout_width="154.5dp"
                 android:layout_marginRight="4.0dp" />
             <Button
                 android:id="@+id/Delete"

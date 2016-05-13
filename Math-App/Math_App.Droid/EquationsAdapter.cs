@@ -9,6 +9,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Math_App.Models;
+using Android.Views.Animations;
 
 namespace Math_App.Droid
 {
@@ -20,6 +21,7 @@ namespace Math_App.Droid
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
+
             // Get the data item for this position
             Equation Equation = GetItem(position);
             // Check if an existing view is being reused, otherwise inflate the view

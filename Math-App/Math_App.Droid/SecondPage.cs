@@ -14,6 +14,8 @@ using Math_App.TempStorage;
 using Math_App.StaticObjects;
 using Android.Content.PM;
 using Android.Views.Animations;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Math_App.Droid
 {
@@ -36,8 +38,9 @@ namespace Math_App.Droid
             ListView listView = (ListView)FindViewById(Resource.Id.listView1);
             listView.Adapter = adapter;
             // set animation
-            Animation anim = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_in);
-            listView.StartAnimation(anim);
+            Animation in_ = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_in);
+            Animation out_ = AnimationUtils.LoadAnimation(this, Resource.Layout.Slide_out);
+            listView.StartAnimation(in_);
 
             // Get data from bundle
             Intent intent = this.Intent;
@@ -78,8 +81,11 @@ namespace Math_App.Droid
 
             // item click -> navigate to next page
             TextView textView = (TextView)FindViewById(Resource.Id.textView1);
-            listView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
+            listView.ItemClick += async (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
+                //listView.StartAnimation(out_);
+                e.View.StartAnimation(out_);
+                await Task.Delay(700);
                 int x = e.Position;
                 Intent third = new Intent(this, typeof(Thirdpage));
                 Bundle extras = new Bundle();

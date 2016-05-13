@@ -139,83 +139,83 @@ namespace Math_App.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070030
+			public const int Addition = 2131165232;
+			
+			// aapt resource value: 0x7f07002d
+			public const int BracketLeft = 2131165229;
+			
 			// aapt resource value: 0x7f07002f
-			public const int Addition = 2131165231;
+			public const int BracketRight = 2131165231;
 			
-			// aapt resource value: 0x7f07002c
-			public const int BracketLeft = 2131165228;
-			
-			// aapt resource value: 0x7f07002e
-			public const int BracketRight = 2131165230;
-			
-			// aapt resource value: 0x7f07001e
-			public const int Delete = 2131165214;
-			
-			// aapt resource value: 0x7f070023
-			public const int Devide = 2131165219;
-			
-			// aapt resource value: 0x7f070021
-			public const int Eight = 2131165217;
-			
-			// aapt resource value: 0x7f070025
-			public const int Five = 2131165221;
+			// aapt resource value: 0x7f07001f
+			public const int Delete = 2131165215;
 			
 			// aapt resource value: 0x7f070024
-			public const int Four = 2131165220;
+			public const int Devide = 2131165220;
 			
-			// aapt resource value: 0x7f070030
-			public const int FracionA = 2131165232;
+			// aapt resource value: 0x7f070022
+			public const int Eight = 2131165218;
 			
-			// aapt resource value: 0x7f070033
-			public const int FracionAdd = 2131165235;
+			// aapt resource value: 0x7f070026
+			public const int Five = 2131165222;
+			
+			// aapt resource value: 0x7f070025
+			public const int Four = 2131165221;
 			
 			// aapt resource value: 0x7f070031
-			public const int FracionB = 2131165233;
+			public const int FracionA = 2131165233;
+			
+			// aapt resource value: 0x7f070034
+			public const int FracionAdd = 2131165236;
 			
 			// aapt resource value: 0x7f070032
-			public const int FracionC = 2131165234;
+			public const int FracionB = 2131165234;
+			
+			// aapt resource value: 0x7f070033
+			public const int FracionC = 2131165235;
 			
 			// aapt resource value: 0x7f070011
 			public const int Image = 2131165201;
 			
-			// aapt resource value: 0x7f07002b
-			public const int Minus = 2131165227;
-			
-			// aapt resource value: 0x7f070027
-			public const int Multiply = 2131165223;
-			
-			// aapt resource value: 0x7f070022
-			public const int Nine = 2131165218;
+			// aapt resource value: 0x7f07002c
+			public const int Minus = 2131165228;
 			
 			// aapt resource value: 0x7f070028
-			public const int One = 2131165224;
+			public const int Multiply = 2131165224;
 			
-			// aapt resource value: 0x7f07001f
-			public const int Revert = 2131165215;
+			// aapt resource value: 0x7f070023
+			public const int Nine = 2131165219;
+			
+			// aapt resource value: 0x7f070029
+			public const int One = 2131165225;
+			
+			// aapt resource value: 0x7f070020
+			public const int Revert = 2131165216;
 			
 			// aapt resource value: 0x7f070005
 			public const int SCROLLER_ID = 2131165189;
 			
-			// aapt resource value: 0x7f070020
-			public const int Seven = 2131165216;
+			// aapt resource value: 0x7f070021
+			public const int Seven = 2131165217;
 			
-			// aapt resource value: 0x7f07001d
-			public const int ShowMe = 2131165213;
+			// aapt resource value: 0x7f07001e
+			public const int ShowMe = 2131165214;
 			
-			// aapt resource value: 0x7f070026
-			public const int Six = 2131165222;
+			// aapt resource value: 0x7f070027
+			public const int Six = 2131165223;
+			
+			// aapt resource value: 0x7f07002b
+			public const int Three = 2131165227;
 			
 			// aapt resource value: 0x7f07002a
-			public const int Three = 2131165226;
+			public const int Two = 2131165226;
 			
-			// aapt resource value: 0x7f070029
-			public const int Two = 2131165225;
+			// aapt resource value: 0x7f07002e
+			public const int Zero = 2131165230;
 			
-			// aapt resource value: 0x7f07002d
-			public const int Zero = 2131165229;
-			
-			// aapt resource value: 0x7f070035
-			public const int answer = 2131165237;
+			// aapt resource value: 0x7f070036
+			public const int answer = 2131165238;
 			
 			// aapt resource value: 0x7f070010
 			public const int btnNext = 2131165200;
@@ -223,8 +223,8 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f070000
 			public const int btnPrev = 2131165184;
 			
-			// aapt resource value: 0x7f070038
-			public const int calculation = 2131165240;
+			// aapt resource value: 0x7f070039
+			public const int calculation = 2131165241;
 			
 			// aapt resource value: 0x7f070006
 			public const int explanation = 2131165190;
@@ -238,14 +238,17 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f07000f
 			public const int explanation4 = 2131165199;
 			
-			// aapt resource value: 0x7f070015
-			public const int extra = 2131165205;
+			// aapt resource value: 0x7f070016
+			public const int extra = 2131165206;
 			
-			// aapt resource value: 0x7f07003e
-			public const int grid = 2131165246;
+			// aapt resource value: 0x7f07003f
+			public const int grid = 2131165247;
 			
-			// aapt resource value: 0x7f070018
-			public const int hlTopBar = 2131165208;
+			// aapt resource value: 0x7f070019
+			public const int hlTopBar = 2131165209;
+			
+			// aapt resource value: 0x7f070014
+			public const int hoi = 2131165204;
 			
 			// aapt resource value: 0x7f070003
 			public const int img = 2131165187;
@@ -259,29 +262,29 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f07000d
 			public const int img4 = 2131165197;
 			
-			// aapt resource value: 0x7f070016
-			public const int linearLayout1 = 2131165206;
+			// aapt resource value: 0x7f070017
+			public const int linearLayout1 = 2131165207;
 			
-			// aapt resource value: 0x7f07003b
-			public const int linearLayout2 = 2131165243;
+			// aapt resource value: 0x7f07003c
+			public const int linearLayout2 = 2131165244;
 			
-			// aapt resource value: 0x7f070034
-			public const int linearLayout3 = 2131165236;
+			// aapt resource value: 0x7f070035
+			public const int linearLayout3 = 2131165237;
 			
-			// aapt resource value: 0x7f070036
-			public const int linearLayout4 = 2131165238;
-			
-			// aapt resource value: 0x7f070039
-			public const int linearLayout5 = 2131165241;
+			// aapt resource value: 0x7f070037
+			public const int linearLayout4 = 2131165239;
 			
 			// aapt resource value: 0x7f07003a
-			public const int listView1 = 2131165242;
+			public const int linearLayout5 = 2131165242;
 			
-			// aapt resource value: 0x7f07001a
-			public const int memBack = 2131165210;
+			// aapt resource value: 0x7f07003b
+			public const int listView1 = 2131165243;
 			
-			// aapt resource value: 0x7f070017
-			public const int memNext = 2131165207;
+			// aapt resource value: 0x7f07001b
+			public const int memBack = 2131165211;
+			
+			// aapt resource value: 0x7f070018
+			public const int memNext = 2131165208;
 			
 			// aapt resource value: 0x7f070004
 			public const int nameAndLevel = 2131165188;
@@ -295,29 +298,29 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f07000e
 			public const int nameAndLevel4 = 2131165198;
 			
-			// aapt resource value: 0x7f07003c
-			public const int page3_answer = 2131165244;
-			
 			// aapt resource value: 0x7f07003d
-			public const int page3_equation = 2131165245;
+			public const int page3_answer = 2131165245;
+			
+			// aapt resource value: 0x7f07003e
+			public const int page3_equation = 2131165246;
 			
 			// aapt resource value: 0x7f070002
 			public const int scroller = 2131165186;
 			
-			// aapt resource value: 0x7f07001b
-			public const int tableId = 2131165211;
-			
 			// aapt resource value: 0x7f07001c
-			public const int tableRow1 = 2131165212;
+			public const int tableId = 2131165212;
 			
-			// aapt resource value: 0x7f070019
-			public const int textView1 = 2131165209;
+			// aapt resource value: 0x7f07001d
+			public const int tableRow1 = 2131165213;
 			
-			// aapt resource value: 0x7f070037
-			public const int textView2 = 2131165239;
+			// aapt resource value: 0x7f07001a
+			public const int textView1 = 2131165210;
 			
-			// aapt resource value: 0x7f070014
-			public const int title = 2131165204;
+			// aapt resource value: 0x7f070038
+			public const int textView2 = 2131165240;
+			
+			// aapt resource value: 0x7f070015
+			public const int title = 2131165205;
 			
 			// aapt resource value: 0x7f070013
 			public const int tvHome = 2131165203;
