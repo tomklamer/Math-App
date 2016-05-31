@@ -77,7 +77,7 @@ namespace Math_App.Solutions
 
             for (int i = 0; i < lijst.Count; i++)
             {
-                Console.WriteLine(lijst[i].ReturnImportance());
+                //Console.WriteLine(lijst[i].ReturnImportance());
             }
 
             return data.GetStratsToDisplay(lijst, 4);
@@ -136,7 +136,7 @@ namespace Math_App.Solutions
 
             for (int i = 0; i < lijst.Count; i++)
             {
-                Console.WriteLine(lijst[i].ReturnImportance());
+                //Console.WriteLine(lijst[i].ReturnImportance());
             }
 
             return lijst;
@@ -195,7 +195,7 @@ namespace Math_App.Solutions
 
             for (int i = 0; i < lijst.Count; i++)
             {
-                Console.WriteLine(lijst[i].ReturnImportance());
+                //Console.WriteLine(lijst[i].ReturnImportance());
             }
 
             return data.GetStratsToDisplay(lijst, 3);
@@ -220,7 +220,7 @@ namespace Math_App.Solutions
         ICheckStrategy strat1;
         ICheckStrategy strat2;
 
-        public Fracture(string a, string b)
+        public Fracture(string a, string b, string sign)
         {
 
         }
@@ -285,7 +285,7 @@ namespace Math_App.Solutions
 
             for (int i = 0; i < lijst.Count; i++)
             {
-                Console.WriteLine(lijst[i].ReturnImportance());
+                //Console.WriteLine(lijst[i].ReturnImportance());
             }
 
             return data.GetStratsToDisplay(lijst, 1);

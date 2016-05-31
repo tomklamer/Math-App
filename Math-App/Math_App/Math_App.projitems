@@ -9,7 +9,36 @@
     <Import_RootNamespace>Math_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Fractions\FractionCalc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\MainFunctionality\CalculationPerformer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\MainFunctionality\EqBracketCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\MainFunctionality\EquationCalculationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\MainFunctionality\EquationSolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\MainFunctionality\RegularCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Constants\Const.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculation\FractionAddition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculation\FractionDivision.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculation\FractionMultiplication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculation\FractionSubstraction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCalculatorFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionClassFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Fraction\FractionLCM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\BracketFinder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\BracketMoveIndex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\BracketStringCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\CalcListElementGet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\CalculationListBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\CalculationListCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\CharCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\EquationCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\MainEquationUpdater.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\StringGetter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\StringSpaceRemoval.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\EquationReturnStruct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\FractionClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\InputEquation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\PartialEquation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Memory\Storage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\CalculationTypeAnalyzer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\DataStrategies.cs" />
@@ -52,15 +81,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_met_een_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_met_rijgen_met_rond_getal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solutions\StrategyChain\Substraction\Aftrekken_Splitstrategie.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Analyzer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\BracketAnalyzer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\Contants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\SolutionFinder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StaticObjects\StringAnalyzer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fractions\Fraction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TempStorage\Bracket.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TempStorage\EquationToShow.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TempStorage\MainEquation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Equation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StrategyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validator\ValidatorCalc.cs" />

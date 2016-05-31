@@ -14,9 +14,9 @@ namespace Math_App.Models
         public string image;
         public string a;
         public string b;
-        public char sign;
+        public string sign;
 
-        public Equation(string a, string b, string c, string d, string e, string f, char g)
+        public Equation(string a, string b, string c, string d, string e, string f, string g)
         {
             this.completeAnswer = a;
             this.completeEquation = b;
