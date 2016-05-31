@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="x.x" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="RekenApp" android:icon="@drawable/Plus" android:theme="@style/RekenAppTheme" />
+	<application android:label="RekenApp" android:icon="@drawable/App_icon" android:theme="@style/RekenAppTheme" />
+  <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

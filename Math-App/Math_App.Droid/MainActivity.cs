@@ -18,7 +18,7 @@ using Math_App.Memory;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/Plus")]
+    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/App_icon")]
     public class MainActivity : Activity
     {       
 
@@ -31,11 +31,14 @@ namespace Math_App.Droid
         {
             base.OnCreate(bundle);
 
-            ActionBar.SetDisplayShowHomeEnabled(true);
+            //ActionBar.SetDisplayShowHomeEnabled(true);
             //ActionBar.SetIcon(Resource.Drawable.Plus);
 
             // Prefix
             var resourcePrefix = "Math_App.Droid.";
+
+            // set vibration
+            Vibrator v = (Vibrator)this.GetSystemService(Context.VibratorService);
 
             // NumberPicker values
             string pickerB = "";
@@ -67,6 +70,11 @@ namespace Math_App.Droid
                     // set memory
                     sto.AddEquation(text);
                 }
+                else
+                {
+                    // Vibrate for 500 milliseconds
+                    v.Vibrate(200);
+                }
             };
 
             // Remove all input
@@ -79,7 +87,7 @@ namespace Math_App.Droid
                 {
                     text = text.Remove(text.Length - 1);
                     textviewCalc.Text = text;
-                }
+                }                
             };
 
             // Remove last input

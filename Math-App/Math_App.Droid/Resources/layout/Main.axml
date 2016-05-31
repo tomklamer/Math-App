@@ -67,7 +67,7 @@
                 android:textColor="@android:color/holo_red_light"
                 android:background="@android:color/black"
                 android:textSize="20dp"
-                android:layout_width="154.5dp"
+                android:layout_width="151.5dp"
                 android:layout_marginRight="4.0dp" />
             <Button
                 android:id="@+id/Delete"
@@ -77,7 +77,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:background="@android:color/black"
                 android:textSize="20dp"
-                android:layout_width="74.5dp" />
+                android:layout_width="68.5dp" />
             <Button
                 android:id="@+id/Revert"
                 android:text="«"
@@ -86,7 +86,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:background="@android:color/black"
                 android:textSize="20dp"
-                android:layout_width="76.5dp" />
+                android:layout_width="67.5dp" />
         </TableRow>
     </TableLayout>
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"

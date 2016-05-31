@@ -38,7 +38,7 @@ namespace Math_App.Droid
 
             // Create stream with path
             var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); ;
+            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); 
 
             // Read Xml file & create strategy object
             StrategyXmlObject strat = new StrategyXmlObject();
@@ -55,7 +55,7 @@ namespace Math_App.Droid
             info.Text = strat.Level1.text;
 
             //image = FindViewById<ImageView>(Resource.Id.img);
-            //int id = Resources.GetIdentifier(strat.Level1.image, "drawable", "Math_App.Droid");
+            //int id = Resources.GetIdentifier(strat.Level2.image, "drawable", "Math_App.Droid");
             //image.SetImageResource(id);
 
             titel2 = FindViewById<TextView>(Resource.Id.nameAndLevel2);

@@ -32,7 +32,7 @@
             android:id="@+id/scroller"
             android:scrollbars="vertical">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
+                android:src="@drawable/foto1"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img"
@@ -77,7 +77,7 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
+                android:src="@drawable/foto2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:id="@+id/img2"
@@ -123,7 +123,7 @@
             android:id="@+id/scroller"
             android:scrollbars="vertical">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
+                android:src="@drawable/foto3"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img3"
@@ -169,7 +169,7 @@
             android:id="@+id/scroller"
             android:scrollbars="vertical">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
+                android:src="@drawable/foto4"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:id="@+id/img4"
