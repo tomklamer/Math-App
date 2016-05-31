@@ -17,6 +17,8 @@ using Android.Views.Animations;
 using System.Threading.Tasks;
 using System.Threading;
 
+using Math_App.Logics;
+
 namespace Math_App.Droid
 {
     [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
@@ -46,31 +48,47 @@ namespace Math_App.Droid
             Intent intent = this.Intent;
             var calc = intent.GetStringExtra("calculation");
 
-            // Do calculation operations
-            MainEquation curEquation = new MainEquation();
+			// Do calculation operations
+			InputEquation currentEquation = new InputEquation(StringAnalyzer.AddStrings(calc));
+			currentEquation.interpretMainEquation();
+            //MainEquation curEquation = new MainEquation();
             Console.WriteLine(StringAnalyzer.AddStrings(calc));
-            curEquation.setString(StringAnalyzer.AddStrings(calc));
-            curEquation.buildBrackets();
+            //curEquation.setString(StringAnalyzer.AddStrings(calc));
+
+           // curEquation.buildBrackets();
 
             // create equation class
             List<Equation> equations = new List<Equation>();
 
             // copy equations list and create equation class
-            for (int i = 0; i < curEquation.getEquationsStrings().Count; i++)
-            {
-                equations.Add( new Equation(curEquation.getSolution().ToString(), 
-                                            curEquation.getString(), 
-                                            curEquation.getEquationsStrings()[i], 
-                                            curEquation.getEquationsSolution()[i],
-                                            curEquation.equationsToShow[i].a,
-                                            curEquation.equationsToShow[i].b,
-                                            curEquation.equationsToShow[i].sign));
-            }
 
-            // Set Answer and calculation
-            TextView answer = (TextView)FindViewById(Resource.Id.answer);
+            //for (int i = 0; i < currentEquation.partEquations.Count; i++)
+            //{
+            //    equations.Add( new Equation(curEquation.getSolution().ToString(), 
+            //                                curEquation.getString(), 
+            //                                curEquation.getEquationsStrings()[i], 
+            //                                curEquation.getEquationsSolution()[i],
+            //                                curEquation.equationsToShow[i].a,
+            //                                curEquation.equationsToShow[i].b,
+            //                                curEquation.equationsToShow[i].sign));
+            //}
+
+			for (int i = 0; i < currentEquation.partialEquations.Count; i++)
+			{
+				equations.Add(new Equation(currentEquation.solution,
+											currentEquation.mainEquation,
+											currentEquation.partialEquations[i].equation,
+											currentEquation.partialEquations[i].solution,
+											currentEquation.partialEquations[i].a,
+											currentEquation.partialEquations[i].b,
+											currentEquation.partialEquations[i].sign));
+			}
+
+
+			// Set Answer and calculation
+			TextView answer = (TextView)FindViewById(Resource.Id.answer);
             TextView calculation = (TextView)FindViewById(Resource.Id.calculation);
-            answer.Text = curEquation.getSolution().ToString();
+            answer.Text = currentEquation.solution;
             calculation.Text = calc;
 
             // Fill adapter

@@ -37,19 +37,19 @@ namespace Math_App.Droid
             tvName.Text = Equation.partEquation;
             tvHome.Text = Equation.partAnswer;
 
-            char sign = Equation.sign;
+            string sign = Equation.sign;
             switch (sign)
             {
-                case '+':
+                case "+":
                     ivIcon.SetImageResource(Resource.Drawable.Plus);
                     break;
-                case '-':
+                case "-":
                     ivIcon.SetImageResource(Resource.Drawable.Min);
                     break;
-                case 'x':
+                case "x":
                     ivIcon.SetImageResource(Resource.Drawable.Mul);
                     break;
-                case '÷':
+                case "÷":
                     ivIcon.SetImageResource(Resource.Drawable.Div);
                     break;
             }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Math_App.Logics;
+
 
 namespace Math_App.Solutions
 {
@@ -8,6 +10,11 @@ namespace Math_App.Solutions
     {
         public IStrategyList GetCalcType(string sign, string b, string c)
         {
+			if(FractionCheck.hasOnlyFraction(b) || FractionCheck.hasOnlyFraction(c))
+			{
+				return new Fracture(b, c, sign);
+			}
+
             switch (sign)
             {
                 case "-":
@@ -18,8 +25,8 @@ namespace Math_App.Solutions
                     return new Devide(b, c);
                 case "x":
                     return new Multiply(b, c);
-                case "fracture??":
-                    return new Fracture(b, c);
+                //case "/":
+                //    return new Fracture(b, c, sign);
             }
             return null;
         }
