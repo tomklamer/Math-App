@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ArrayOfStrategyXmlObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--
+      Addition
+      -->
    <StrategyXmlObject>
        <Level1>
            <image>foto1</image>
@@ -33,5 +36,101 @@
        <Title>Optellen naar analogie</Title>
      
   </StrategyXmlObject>
+  <!--
+      ///////////////////////////////////////////////
+      -->
+  <StrategyXmlObject>
+    <Level1>
+      <image>foto1</image>
+      <text>
+        De getallen 35 en 65 passen precies bij elkaar en maken samen 100.
+      </text>
+      <title>Symboliseren</title>
+
+    </Level1>
+
+    <Level2>
+      <image>foto2</image>
+      <text>Op een kralenstaaf van 100 kralen, zie je dat de handige getallen 35 en 65 precies bij elkaar passen.</text>
+      <title>Voorstellen - schematiseren</title>
+
+    </Level2>
+
+    <Level3>
+      <image>foto3</image>
+      <text>In de maatbeker van 100cl. Zie je heel goed dat 35cl + 65cl = 100cl.</text>
+      <title>Voorstellen - concreet</title>
+
+    </Level3>
+
+    <Level4>
+      <image>foto4</image>
+      <text>Om 1 liter in een maatbeker te vullen, kun je bij 35cl precies 65cl. doen, want 35+65=100 </text>
+      <title>Concreet handelen</title>
+
+    </Level4>
+
+    <Title>Optellen met handige getallen</Title>
+
+  </StrategyXmlObject>
+  <!--
+      ///////////////////////////////////////////////
+      -->
+  <StrategyXmlObject>
+    <Level1>
+      <image>foto1</image>
+      <text>
+        Maak de som 35+65=, door de som in twee sommen te splitsen: 30+60=90 en 5+5=10.
+        Dus 35+65=90+10=100.
+      </text>
+      <title>Symboliseren</title>
+
+    </Level1>
+
+    <Level2>
+      <image>foto2</image>
+      <text>
+        Leg de staven van tien bij elkaar en leg de losse enen bij elkaar.
+        30+60 | 5+5 = 100.
+      </text>
+      <title>Voorstellen - schematiseren</title>
+
+    </Level2>
+
+    <Level3>
+      <image>foto3</image>
+      <text>
+        Splits bij het geld de tienen en de lossen:
+        €30+€60 en €5+€5; dus €90+€10=€100.
+      </text>
+      <title>Voorstellen - concreet</title>
+
+    </Level3>
+
+    <Level4>
+      <image>foto4</image>
+      <text>Wanneer je €35 en €65 samenvoegt, neem je de tientjes en de euro’s apart: €90 + €10 = €100.</text>
+      <title>Concreet handelen</title>
+
+    </Level4>
+
+    <Title>Optellen met splitsen</Title>
+
+  </StrategyXmlObject>
+  <!--
+      ///////////////////////////////////////////////
+      -->
+  <!--
+      Devision
+      -->
+  <!--
+      Multiplication
+      -->
+  <!--
+      Minus
+      -->
+  <!--
+      Fraction
+      -->
 
 </ArrayOfStrategyXmlObject>
