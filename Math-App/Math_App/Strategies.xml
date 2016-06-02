@@ -6,8 +6,7 @@
    <StrategyXmlObject>
        <Level1>
            <image>foto1</image>
-           <text>Bij de som 40+50= denk je direct aan de som 4+5=9; dus 40+50=90.
-           </text>
+           <text>Bij de som 40+50= denk je direct aan de som 4+5=9; dus 40+50=90.</text>
           <title>Symboliseren</title>
          
        </Level1>
@@ -42,9 +41,7 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        De getallen 35 en 65 passen precies bij elkaar en maken samen 100.
-      </text>
+      <text>De getallen 35 en 65 passen precies bij elkaar en maken samen 100.</text>
       <title>Symboliseren</title>
 
     </Level1>
@@ -79,27 +76,21 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        Maak de som 35+65=, door de som in twee sommen te splitsen: 30+60=90 en 5+5=10. Dus 35+65=90+10=100.
-      </text>
+      <text>Maak de som 35+65=, door de som in twee sommen te splitsen: 30+60=90 en 5+5=10. Dus 35+65=90+10=100.</text>
       <title>Symboliseren</title>
 
     </Level1>
 
     <Level2>
       <image>foto2</image>
-      <text>
-        Leg de staven van tien bij elkaar en leg de losse enen bij elkaar. 30+60 | 5+5 = 100.
-      </text>
+      <text>Leg de staven van tien bij elkaar en leg de losse enen bij elkaar. 30+60 | 5+5 = 100.</text>
       <title>Voorstellen - schematiseren</title>
 
     </Level2>
 
     <Level3>
       <image>foto3</image>
-      <text>
-        Splits bij het geld de tienen en de lossen: €30+€60 en €5+€5; dus €90+€10=€100.
-      </text>
+      <text>Splits bij het geld de tienen en de lossen: €30+€60 en €5+€5; dus €90+€10=€100.</text>
       <title>Voorstellen - concreet</title>
 
     </Level3>
@@ -120,27 +111,21 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        Bij de som 40+50= denk je direct aan de som 4+5=9; dus 40+50=90.
-      </text>
+      <text>Bij de som 40+50= denk je direct aan de som 4+5=9; dus 40+50=90.</text>
       <title>Symboliseren</title>
 
     </Level1>
 
     <Level2>
       <image>foto2</image>
-      <text>
-        De som 4+5=9 is geautomatiseerde kennis. Wanneer je de som 40+50= moet uitrekenen, denk je direct aan de som 4+5=9. Dus dan is de som 40+50=90.
-      </text>
+      <text>De som 4+5=9 is geautomatiseerde kennis. Wanneer je de som 40+50= moet uitrekenen, denk je direct aan de som 4+5=9. Dus dan is de som 40+50=90.</text>
       <title>Voorstellen - schematiseren</title>
 
     </Level2>
 
     <Level3>
       <image>foto3</image>
-      <text>
-        Op de tafel liggen vier briefjes van tien euro. Ernaast liggen vijf briefjes van tien euro. Je weet de som 4+5=9. Dus er zijn 4+5=9 briefjes van tien euro. Als 4+5=9 is, dan weet je nu ook dat 40+50=90.
-      </text>
+      <text>Op de tafel liggen vier briefjes van tien euro. Ernaast liggen vijf briefjes van tien euro. Je weet de som 4+5=9. Dus er zijn 4+5=9 briefjes van tien euro. Als 4+5=9 is, dan weet je nu ook dat 40+50=90.</text>
       <title>Voorstellen - concreet</title>
 
     </Level3>
@@ -161,27 +146,21 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        Bij de som 40+50= rijg je direct vanaf het getal 40 de 50 erbij; dus 40+50=90.
-      </text>
+      <text>Bij de som 40+50= rijg je direct vanaf het getal 40 de 50 erbij; dus 40+50=90.</text>
       <title>Symboliseren</title>
 
     </Level1>
 
     <Level2>
       <image>foto2</image>
-      <text>
-        Teken een getallenlijn. Je zet het getal 40 op deze lege getallenlijn en je rijgt er vervolgens 50 bij. Bij voorkeur in één stap, maar het kan uiteraard ook in losse stappen van 10.
-      </text>
+      <text>Teken een getallenlijn. Je zet het getal 40 op deze lege getallenlijn en je rijgt er vervolgens 50 bij. Bij voorkeur in één stap, maar het kan uiteraard ook in losse stappen van 10.</text>
       <title>Voorstellen - schematiseren</title>
 
     </Level2>
 
     <Level3>
       <image>foto3</image>
-      <text>
-        Op de kralenstang begin je bij 40. Je rijgt er vervolgens telkens 10 bij totdat je er 50 bij hebt geregen. Je kunt natuurlijk ook ineens 50 erbij rijgen. Je ziet op de kralenstang dat 40+50=90.
-      </text>
+      <text>Op de kralenstang begin je bij 40. Je rijgt er vervolgens telkens 10 bij totdat je er 50 bij hebt geregen. Je kunt natuurlijk ook ineens 50 erbij rijgen. Je ziet op de kralenstang dat 40+50=90.</text>
       <title>Voorstellen - concreet</title>
 
     </Level3>
@@ -202,27 +181,21 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        Maak van de som 46+29= een nieuwe som. Je maakt van 29 het getal 30. Dat kan door van 46 het getal 45 te maken. 46+29=45+30=75
-      </text>
+      <text>Maak van de som 46+29= een nieuwe som. Je maakt van 29 het getal 30. Dat kan door van 46 het getal 45 te maken. 46+29=45+30=75</text>
       <title>Symboliseren</title>
 
     </Level1>
 
     <Level2>
       <image>foto2</image>
-      <text>
-        Maak een rond getal door bij 29 er 1 bij te doen. Die haal je bij 46 eraf. Zo krijg je een nieuwe som die veel gemakkelijker is geworden: 45+30=75.
-      </text>
+      <text>Maak een rond getal door bij 29 er 1 bij te doen. Die haal je bij 46 eraf. Zo krijg je een nieuwe som die veel gemakkelijker is geworden: 45+30=75.</text>
       <title>Voorstellen - schematiseren</title>
 
     </Level2>
 
     <Level3>
       <image>foto3</image>
-      <text>
-        Je plaatst één ei van uit de doos met 6 naar de doos met 9 eieren. Zo maak je de eierdoos vol. Je hebt nu de nieuwe som 45+30=.
-      </text>
+      <text>Je plaatst één ei van uit de doos met 6 naar de doos met 9 eieren. Zo maak je de eierdoos vol. Je hebt nu de nieuwe som 45+30=.</text>
       <title>Voorstellen - concreet</title>
 
     </Level3>
@@ -243,27 +216,21 @@
   <StrategyXmlObject>
     <Level1>
       <image>foto1</image>
-      <text>
-        Maak de som 46+29=, door er eerst 30 bij op te tellen en daarna weer 1 eraf. Dus 46+29=46+30-1=75.
-      </text>
+      <text>Maak de som 46+29=, door er eerst 30 bij op te tellen en daarna weer 1 eraf. Dus 46+29=46+30-1=75.</text>
       <title>Symboliseren</title>
 
     </Level1>
 
     <Level2>
       <image>foto2</image>
-      <text>
-        Rijgstrategie met een rond getal: sprong van 30 vooruit (of 3 sprongen van 10: 56, 66, 76). Je moet er alleen geen 30 bij optellen, maar 29. Dus daarom weer één stap eraf.
-      </text>
+      <text>Rijgstrategie met een rond getal: sprong van 30 vooruit (of 3 sprongen van 10: 56, 66, 76). Je moet er alleen geen 30 bij optellen, maar 29. Dus daarom weer één stap eraf.</text>
       <title>Voorstellen - schematiseren</title>
 
     </Level2>
 
     <Level3>
       <image>foto3</image>
-      <text>
-        Je zoekt het getal 46 op de kralenstang en rijgt er vervolgens 30 bij; je bent nu bij 76 en er moet nog eentje afgehaald worden omdat je er één teveel bij had opgeteld.
-      </text>
+      <text>Je zoekt het getal 46 op de kralenstang en rijgt er vervolgens 30 bij; je bent nu bij 76 en er moet nog eentje afgehaald worden omdat je er één teveel bij had opgeteld.</text>
       <title>Voorstellen - concreet</title>
 
     </Level3>
