@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 1;
-        public string title = "Analogie";
+        public string title = "Optellen naar analogie";
 
         public void DoAnalyze(string b, string c)
         {

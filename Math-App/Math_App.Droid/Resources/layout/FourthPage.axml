@@ -39,7 +39,7 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal" />
             <TextView
-                android:text="Text"
+                android:text="nameAndLevel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/nameAndLevel"
@@ -84,7 +84,7 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal" />
             <TextView
-                android:text="Text"
+                android:text="nameAndLeve2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/nameAndLevel2"
@@ -130,7 +130,7 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal" />
             <TextView
-                android:text="Text"
+                android:text="nameAndLeve3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/nameAndLevel3"
@@ -176,7 +176,7 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal" />
             <TextView
-                android:text="Text"
+                android:text="nameAndLeve4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/nameAndLevel4"

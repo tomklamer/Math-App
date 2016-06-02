@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 3;
-        public string title = "Optellen met reigen";
+        public string title = "Optellen met rijgen";
 
         public void DoAnalyze(string b, string c)
         {

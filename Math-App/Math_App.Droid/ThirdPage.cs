@@ -56,7 +56,7 @@ namespace Math_App.Droid
 
             // Get Strategy types
             CalculationTypeAnalyzer an = new CalculationTypeAnalyzer();
-            List<ICheckStrategy> lijst;
+            List<ICheckStrategy> lijst = new List<ICheckStrategy>();
             if (an.GetCalcType(sign, a, b).getSolutions() != null)
             {
                 lijst = an.GetCalcType(sign, a, b).getSolutions();
@@ -80,12 +80,11 @@ namespace Math_App.Droid
             {
                 e.View.StartAnimation(out_);
                 await Task.Delay(700);
-                Console.WriteLine(e.ToString());
                 Intent fourth = new Intent(this, typeof(ViewFlipperActivity));
                 Bundle extras = new Bundle();
                 extras.PutString("answer", partAnswer);
                 extras.PutString("equation", partEquation);
-                extras.PutString("equation", partEquation);
+                extras.PutString("title", lijst[e.Position].ReturnTitle());
                 fourth.PutExtras(extras);
                 StartActivity(fourth);
             };

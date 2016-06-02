@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 6;
-        public string title = "Optellen met mooie getallen";
+        public string title = "Optellen met handige getallen";
 
         public void DoAnalyze(string b, string c)
         {

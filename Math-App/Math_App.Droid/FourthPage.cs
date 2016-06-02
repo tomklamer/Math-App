@@ -21,7 +21,6 @@ namespace Math_App.Droid
     [Activity(Label = "RekenApp", ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/icon")]
     public class ViewFlipperActivity : Activity
     {
-
         private ViewFlipper _flipper;
         private Button btnPrev, btnNext;
         private TextView info, titel, info2, titel2, info3, titel3, info4, titel4;
@@ -38,17 +37,25 @@ namespace Math_App.Droid
 
             // Create stream with path
             var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml"); 
+            Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Strategies.xml");
+
+            // get title from bundle
+            Intent intent = this.Intent;
+            string title = intent.GetStringExtra("title");
 
             // Read Xml file & create strategy object
             StrategyXmlObject strat = new StrategyXmlObject();
-            strat = ReaderXml.ReadFile(stream, "Optellen naar analogie");
+            strat = ReaderXml.ReadFile(stream, title);
+            Console.WriteLine(title);
 
+            // create flipper
             _flipper = FindViewById<ViewFlipper>(Resource.Id.viewFlipper);
 
+            // create buttons
             btnNext = FindViewById<Button>(Resource.Id.btnNext);
             btnPrev = FindViewById<Button>(Resource.Id.btnPrev);
 
+            // different views flipper
             titel = FindViewById<TextView>(Resource.Id.nameAndLevel);
             titel.Text = strat.Level1.title;
             info = FindViewById<TextView>(Resource.Id.explanation);

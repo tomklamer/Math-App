@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 2;
-        public string title = "Splitstrategie";
+        public string title = "Optellen met splitsen";
 
         public void DoAnalyze(string b, string c)
         {

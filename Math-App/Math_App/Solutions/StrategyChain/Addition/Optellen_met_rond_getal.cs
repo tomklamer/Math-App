@@ -9,7 +9,7 @@ namespace Math_App.Solutions.StrategyChain
         private ICheckStrategy nextInChain;
         private bool use = false;
         private int importance = 4;
-        public string title = "Rekenen met rond getal";
+        public string title = "Optellen met een rond getal";
 
         public void DoAnalyze(string b, string c)
         {
