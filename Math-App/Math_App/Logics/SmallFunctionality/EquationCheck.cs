@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Math_App.Logics
 {
-    public static class EqCheck
+    public static class EquationCheck
     {
         public static bool isSolved(string input)
         {
-			if (CharCheck.isDigit(input) == true)
+			//if (CharCheck.isPartOfDigit(input) == true)
+			if(StringCheck.isDigit(input))
 			{
 				return true;
 			}else

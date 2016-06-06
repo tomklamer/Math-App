@@ -58,9 +58,9 @@ namespace Math_App.Logics
 						i = bracketOpeningIndex;
 					}
 				}
-				else if (CharCheck.isDigit(input[i]))
+				else if (CharCheck.isPartOfDigit(input[i].ToString()))
 				{
-					while (CharCheck.isDigit(input[i]))
+					while (CharCheck.isPartOfDigit(input[i].ToString()))
 					{
 						sb.Append(input[i].ToString());
 						if (i + 1 >= input.Length)

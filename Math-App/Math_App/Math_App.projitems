@@ -33,8 +33,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\CharCheck.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\EquationCheck.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\MainEquationUpdater.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\StringCheck.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\StringGetter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\SmallFunctionality\StringSpaceRemoval.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Testing\TestCases.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logics\Testing\TestMainClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\EquationReturnStruct.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\FractionClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logics\UsableClasses\InputEquation.cs" />
