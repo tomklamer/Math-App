@@ -13,9 +13,9 @@ namespace Math_App.Logics
 			int amountOfNumbers = 0;
 			for(int i = 0; i < input.Length; i++)
 			{
-				if (CharCheck.isDigit(input[i])){
+				if (CharCheck.isPartOfDigit(input[i].ToString())){
 					amountOfNumbers++;
-					while (CharCheck.isDigit(input[i])){
+					while (CharCheck.isPartOfDigit(input[i].ToString())){
 						i++;
 					}
 				}
@@ -29,10 +29,10 @@ namespace Math_App.Logics
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < input.Length; i++)
 			{
-				if (CharCheck.isDigit(input[i]))
+				if (CharCheck.isPartOfDigit(input[i].ToString()))
 				{
 					numberCount++;
-					while (CharCheck.isDigit(input[i]))
+					while (CharCheck.isPartOfDigit(input[i].ToString()))
 					{
 						sb.Append(input[i]);
 						i++;

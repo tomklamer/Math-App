@@ -32,10 +32,8 @@ namespace Math_App.Logics
 					{
 						//keep going
 					}
-
 				}
 			}
-
 			// Something went wrong
 
 			return null;
