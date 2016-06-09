@@ -13,7 +13,7 @@ namespace Math_App.Solutions.StrategyChain
 
         public void DoAnalyze(string b, string c)
         {
-            if ((Convert.ToInt32(b) + Convert.ToInt32(c) == 50 || Convert.ToInt32(b) + Convert.ToInt32(c) ==  100) && 
+            if ((Convert.ToSingle(b) + Convert.ToSingle(c) == 50 || Convert.ToSingle(b) + Convert.ToSingle(c) ==  100) && 
                 (b[b.Length-1].ToString() == "5" && c[c.Length-1].ToString() == "5"))
             {                
                 this.use = true;
@@ -43,8 +43,8 @@ namespace Math_App.Solutions.StrategyChain
             //    A = (int)Char.GetNumericValue(listB[i]);
             //    B = (int)Char.GetNumericValue(listC[i]);
 
-            //    A = Convert.ToInt32(Char.GetNumericValue(listB[i]));
-            //    B = Convert.ToInt32(Char.GetNumericValue(listC[i]));
+            //    A = Convert.ToSingle(Char.GetNumericValue(listB[i]));
+            //    B = Convert.ToSingle(Char.GetNumericValue(listC[i]));
 
             //    if ((A + B) == 10  && A == 5)
             //    {
