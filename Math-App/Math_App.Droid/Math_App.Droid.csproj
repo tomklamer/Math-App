@@ -266,7 +266,19 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\calc.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\App_icon.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\App_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\App_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\App_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\App_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\App_icon.png" />
   </ItemGroup>
   <Import Project="..\Math_App\Math_App.projitems" Label="Shared" Condition="Exists('..\Math_App\Math_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

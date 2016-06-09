@@ -15,15 +15,12 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using Math_App.Xml;
 using Math_App.Memory;
-using Math_App.Logics;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/App_icon")]
+    [Activity(Label = "   RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/App_icon")]
     public class MainActivity : Activity
-    {
-
+    {       
 
         // validator class
         private ValidatorCalc val = new ValidatorCalc();
@@ -34,17 +31,11 @@ namespace Math_App.Droid
         {
             base.OnCreate(bundle);
 
-			//Perform Tests
-			if(Const.PERFORM_TESTS == true)
-			{
-				TestMainClass.performTests();
-			}
+            //ActionBar.SetDisplayShowHomeEnabled(true);
+            //ActionBar.SetIcon(Resource.Drawable.App_icon);
 
-			//ActionBar.SetDisplayShowHomeEnabled(true);
-			//ActionBar.SetIcon(Resource.Drawable.Plus);
-
-			// Prefix
-			var resourcePrefix = "Math_App.Droid.";
+            // Prefix
+            var resourcePrefix = "Math_App.Droid.";
 
             // set vibration
             Vibrator v = (Vibrator)this.GetSystemService(Context.VibratorService);
