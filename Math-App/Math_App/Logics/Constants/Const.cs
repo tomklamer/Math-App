@@ -42,6 +42,9 @@ namespace Math_App.Logics
 		public const int FRACTION_SHOW_PROPER = 1;
 		public const int FRACTION_SHOW_IMPROPER = 2;
 
+		// Program variables and functions
+		public const bool PERFORM_TESTS = false;
+
 
 
 	}

@@ -32,10 +32,8 @@ namespace Math_App.Logics
 					{
 						//keep going
 					}
-
 				}
 			}
-
 			// Something went wrong
 
 			return null;
@@ -63,7 +61,7 @@ namespace Math_App.Logics
 				{
 					tempString.Add('s');
 				}
-				else if (CharCheck.isDigit(input[i]))
+				else if (CharCheck.isPartOfDigit(input[i].ToString()))
 				{
 					tempString.Add('d');
 				}

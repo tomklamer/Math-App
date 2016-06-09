@@ -22,13 +22,12 @@ namespace Math_App.Logics
         }
 
         public void interpretMainEquation()
-
         {
 			string tempMainEquation = mainEquation;
 			string topBracket;
 			EquationReturnStruct tempStruct = new EquationReturnStruct();
 
-            while(EqCheck.isSolved(tempMainEquation) == false)
+            while(EquationCheck.isSolved(tempMainEquation) == false)
 			{
 				BracketFinder.clearBrackets(ref tempMainEquation);
 				if (EqBracketCheck.hasBracketEquation(tempMainEquation) == true)
@@ -36,7 +35,6 @@ namespace Math_App.Logics
                     topBracket = BracketFinder.getTopBracket(tempMainEquation);
                     tempStruct = EquationSolver.solveSingleEquation(topBracket);
                     saveSingleEquation(tempStruct);
-					//BracketFinder.clearBrackets(ref tempMainEquation);
                     MainEquationUpdater.updateMainTempEquation(ref tempMainEquation, tempStruct);
                 }
                 else
@@ -47,7 +45,8 @@ namespace Math_App.Logics
                 }
             }
 			BracketFinder.clearBrackets(ref tempMainEquation);
-			this.solution = partialEquations[partialEquations.Count() - 1].solution;
+			//this.solution = partialEquations[partialEquations.Count() - 1].solution;
+			this.solution = tempMainEquation;
         }
 
 		public void saveSingleEquation(EquationReturnStruct temp)
