@@ -247,8 +247,8 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f070016
 			public const int extra = 2131165206;
 			
-			// aapt resource value: 0x7f07003f
-			public const int grid = 2131165247;
+			// aapt resource value: 0x7f07003e
+			public const int grid = 2131165246;
 			
 			// aapt resource value: 0x7f070019
 			public const int hlTopBar = 2131165209;
@@ -270,9 +270,6 @@ namespace Math_App.Droid
 			
 			// aapt resource value: 0x7f070017
 			public const int linearLayout1 = 2131165207;
-			
-			// aapt resource value: 0x7f07003c
-			public const int linearLayout2 = 2131165244;
 			
 			// aapt resource value: 0x7f070035
 			public const int linearLayout3 = 2131165237;
@@ -304,11 +301,11 @@ namespace Math_App.Droid
 			// aapt resource value: 0x7f07000e
 			public const int nameAndLevel4 = 2131165198;
 			
-			// aapt resource value: 0x7f07003d
-			public const int page3_answer = 2131165245;
+			// aapt resource value: 0x7f07003c
+			public const int page3_answer = 2131165244;
 			
-			// aapt resource value: 0x7f07003e
-			public const int page3_equation = 2131165246;
+			// aapt resource value: 0x7f07003d
+			public const int page3_equation = 2131165245;
 			
 			// aapt resource value: 0x7f070002
 			public const int scroller = 2131165186;

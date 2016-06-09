@@ -80,17 +80,8 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="324.5dp"
+        android:layout_height="411.5dp"
         android:textColor="@android:color/black"
         android:id="@+id/listView1"
         android:layout_marginBottom="0.0dp" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@android:color/black"
-        android:id="@+id/linearLayout2" />
 </LinearLayout>
