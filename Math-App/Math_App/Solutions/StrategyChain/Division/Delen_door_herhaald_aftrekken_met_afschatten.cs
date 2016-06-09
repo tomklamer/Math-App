@@ -13,7 +13,7 @@ namespace Math_App.Solutions.StrategyChain.Division
 
         public void DoAnalyze(string b, string c)
         {
-            if(Convert.ToInt32(b) > 99 && c.Length < b.Length)
+            if(Convert.ToSingle(b) > 99 && c.Length < b.Length)
             {
                 this.use = true;
             }

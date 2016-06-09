@@ -13,8 +13,8 @@ namespace Math_App.Solutions.StrategyChain.Division
 
         public void DoAnalyze(string b, string c)
         {
-            if (Convert.ToInt32(c) < 10 && Convert.ToInt32(b) > Convert.ToInt32(c) &&
-                Convert.ToInt32(b) % Convert.ToInt32(c) != 0)
+            if (Convert.ToSingle(c) < 10 && Convert.ToSingle(b) > Convert.ToSingle(c) &&
+                Convert.ToSingle(b) % Convert.ToSingle(c) != 0)
             {
                 this.use = true;
             }

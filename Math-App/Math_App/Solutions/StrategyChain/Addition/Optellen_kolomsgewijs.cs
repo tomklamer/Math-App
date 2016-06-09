@@ -17,21 +17,21 @@ namespace Math_App.Solutions.StrategyChain
             {
                 char[] bAr = b.ToCharArray();
                 char[] cAr = c.ToCharArray();
-                int x = 0;
-                int y = 0;
+                float x = 0;
+                float y = 0;
 
                 for (int i = 0; i < bAr.Length; i++)
                 {
                     if (i != 0)
                     {
-                        x += Convert.ToInt32(Char.GetNumericValue(bAr[i]));
+                        x += Convert.ToSingle(Char.GetNumericValue(bAr[i]));
                     }
                 }
                 for (int i = 0; i < cAr.Length; i++)
                 {
                     if (i != 0)
                     {
-                        y += Convert.ToInt32(Char.GetNumericValue(cAr[i]));
+                        y += Convert.ToSingle(Char.GetNumericValue(cAr[i]));
                     }
                 }
 

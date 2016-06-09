@@ -19,8 +19,8 @@ namespace Math_App.Solutions.StrategyChain
             Array.Reverse(listC);
             int ListCount;
 
-            int A;
-            int B;
+            float A;
+            float B;
 
             if (listB.Length < listC.Length)
             {
@@ -37,8 +37,8 @@ namespace Math_App.Solutions.StrategyChain
                 A = (int)Char.GetNumericValue(listB[i]);
                 B = (int)Char.GetNumericValue(listC[i]);
 
-                A = Convert.ToInt32(Char.GetNumericValue(listB[i]));
-                B = Convert.ToInt32(Char.GetNumericValue(listC[i]));
+                A = Convert.ToSingle(Char.GetNumericValue(listB[i]));
+                B = Convert.ToSingle(Char.GetNumericValue(listC[i]));
 
                 if (A + B < 10)
                 {
