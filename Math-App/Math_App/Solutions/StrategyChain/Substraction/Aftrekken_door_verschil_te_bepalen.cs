@@ -15,8 +15,8 @@ namespace Math_App.Solutions.StrategyChain.Substraction
 
         public void DoAnalyze(string b, string c)
         {
-            int first = Convert.ToInt32(b);
-            int second = Convert.ToInt32(c);
+            float first = Convert.ToSingle(b);
+            float second = Convert.ToSingle(c);
             int ListCount;
 
             char[] bAr = b.ToCharArray();
