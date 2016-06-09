@@ -18,7 +18,7 @@ using Math_App.Memory;
 
 namespace Math_App.Droid
 {
-    [Activity(Label = "RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/App_icon")]
+    [Activity(Label = "   RekenApp", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Icon = "@drawable/App_icon")]
     public class MainActivity : Activity
     {       
 
@@ -32,7 +32,7 @@ namespace Math_App.Droid
             base.OnCreate(bundle);
 
             //ActionBar.SetDisplayShowHomeEnabled(true);
-            //ActionBar.SetIcon(Resource.Drawable.Plus);
+            //ActionBar.SetIcon(Resource.Drawable.App_icon);
 
             // Prefix
             var resourcePrefix = "Math_App.Droid.";
